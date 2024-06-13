@@ -9,26 +9,22 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
-import tasks from './src/utils/tasks';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
+import astrowind from './vendor/integration';
 
-import { ANALYTICS, SITE } from './src/utils/config.ts';
+import {
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+  lazyImagesRehypePlugin,
+} from './src/utils/frontmatter.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const hasExternalScripts = false;
 const whenExternalScripts = (items = []) =>
-  ANALYTICS.vendors.googleAnalytics.id && ANALYTICS.vendors.googleAnalytics.partytown
-    ? Array.isArray(items)
-      ? items.map((item) => item())
-      : [items()]
-    : [];
+  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: SITE.site,
-  base: SITE.base,
-  trailingSlash: SITE.trailingSlash ? 'always' : 'never',
-
   output: 'static',
 
   integrations: [
@@ -73,16 +69,19 @@ export default defineConfig({
       Logger: 1,
     }),
 
-    tasks(),
+    astrowind({
+      config: './src/config.yaml',
+    }),
   ],
 
   image: {
     service: squooshImageService(),
+    domains: ['cdn.pixabay.com'],
   },
 
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin],
+    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
   vite: {
