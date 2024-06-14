@@ -1,18 +1,18 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from '~/layouts/PageLayout.astro';
 
-import Header from "~/components/widgets/Header.astro";
-import Hero from "~/components/widgets/Hero.astro";
-import Content from "~/components/widgets/Content.astro";
-import CallToAction from "~/components/widgets/CallToAction.astro";
-import Features3 from "~/components/widgets/Features3.astro";
-import Testimonials from "~/components/widgets/Testimonials.astro";
-import Steps from "~/components/widgets/Steps.astro";
-import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
-import { getPermalink } from "~/utils/permalinks";
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: "G Productions",
+  title: 'G Productions',
 };
 ---
 
@@ -21,17 +21,18 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: "ホーム", href: "#" },
-        { text: "事業概要", href: "#about" },
-        { text: "サービス", href: "#services" },
-        { text: "実績", href: "#works" },
+        { text: 'ホーム', href: '#' },
+        { text: '事業概要', href: '#about' },
+        { text: 'サービス', href: '#services' },
+        { text: '実績', href: '#works' },
+        { text: 'アクセス', href: '#access' },
         // { text: "Blog", href: "#blog" },
         // { text: "Github", href: "https://github.com/onwidget" },
       ]}
       actions={[
         {
-          text: "お問い合わせ",
-          href: "mailto:info@g-productions.studio",
+          text: 'お問い合わせ',
+          href: getPermalink('/contact#form'),
         },
       ]}
       isSticky
@@ -46,21 +47,20 @@ const metadata = {
     title="G Productions"
     tagline="AI x Creativity"
     image={{
-      src: "~/assets/images/hero-1.png",
-      alt: "G Productions",
+      src: '~/assets/images/hero-1.png',
+      alt: 'G Productions',
     }}
     actions={[
       {
-        variant: "primary",
-        text: "お問い合わせ",
-        href: "mailto:info@g-productions.studio",
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: getPermalink('/contact#form'),
       },
     ]}
   >
     <Fragment slot="subtitle">
       AI×人間×クリエイティビティで、ビジネスの限界を超える。<br />
-      <span class="font-semibold">G Productions</span>-
-      革新的ソリューションで、ビジネスの成功を加速します。
+      <span class="font-semibold">G Productions</span>- 革新的ソリューションで、ビジネスの成功を加速します。
     </Fragment>
   </Hero>
 
@@ -96,17 +96,13 @@ const metadata = {
       // },
     ]}
     image={{
-      src: "~/assets/images/f434805fd2c8.jpg",
-      alt: "G Productions事業内容",
-      loading: "eager",
+      src: '~/assets/images/f434805fd2c8.jpg',
+      alt: 'G Productions事業内容',
+      loading: 'eager',
     }}
   >
     <Fragment slot="content">
-      <h2
-        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
-      >
-        事業概要
-      </h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">事業概要</h2>
       <p>
         G
         Productionsは、AIを活用した革新的なソリューションを提供するクリエイティブスタジオです。ソフトウェア開発、デザイン、音楽制作、グローバル対応、メディア制作など、幅広い分野で最先端のテクノロジーと豊富な経験を融合し、お客様のビジネスに変革をもたらします。
@@ -120,6 +116,9 @@ const metadata = {
         G
         Productionsは、お客様との緊密な連携を通じて、ビジネスの成長と変革を推進するパートナーです。AIを活用した革新的なソリューションで、お客様の成功を支えます。
       </p>
+      <br />
+      <p><strong>創業</strong> 2024年2月</p>
+      <p><strong>事業名</strong> G プロダクションズ</p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -127,14 +126,14 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Features3
+  <Features2
     title="サービス"
     subtitle="未来を切り拓く、AI × 人間 × クリエイティビティの融合"
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: "AIソリューション",
+        title: 'AIソリューション',
         description: `<ul>
           <li>AIを活用したソフトウェア開発</li>
           <li>AIワークフロー設計</li>
@@ -142,9 +141,10 @@ const metadata = {
           <li>AIコンテンツ制作</li>
           <li>AIコンサルティング</li>
         </ul>`,
+        icon: 'tabler:school',
       },
       {
-        title: "ソフトウェア開発",
+        title: 'ソフトウェア開発',
         description: `<ul>
       <li>ウェブサイト開発</li>
       <li>フルスタック開発</li>
@@ -154,9 +154,10 @@ const metadata = {
       <li>ネイティブアプリ開発</li>
       <li>テスト自動化</li>
     </ul>`,
+        icon: 'tabler:code',
       },
       {
-        title: "デザイン",
+        title: 'デザイン',
         description: `<ul>
       <li>コンテンツ制作</li>
       <li>ブランド開発</li>
@@ -165,17 +166,19 @@ const metadata = {
       <li>プロダクトデザイン</li>
       <li>プロトタイプ制作</li>
     </ul>`,
+        icon: 'tabler:palette',
       },
       {
-        title: "音楽制作と配信",
+        title: '音楽制作と配信',
         description: `<ul>
           <li>音楽コンテンツ制作</li>
           <li>音楽レーベル運営</li>
           <li>デジタル配信</li>
         </ul>`,
+        icon: 'tabler:music',
       },
       {
-        title: "イベント制作",
+        title: 'イベント制作',
         description: `<ul>
           <li>イベント制作</li>
           <li>運営コンサルティング</li>
@@ -184,34 +187,39 @@ const metadata = {
           <li>ライティング</li>
           <li>総合プロダクション</li>
         </ul>`,
+        icon: 'tabler:calendar',
       },
       {
-        title: "グローバル対応",
+        title: 'グローバル対応',
         description: `<ul>
           <li>翻訳</li>
           <li>通訳</li>
           <li>ローカライゼーション</li>
+          <li>インバウンドコンサルティング</li>
           <li>グローバルマーケティング</li>
         </ul>`,
+        icon: 'tabler:globe',
       },
       {
-        title: "映像制作",
+        title: '映像制作',
         description: `<ul>
           <li>動画制作</li>
           <li>動画編集</li>
           <li>字幕制作</li>
         </ul>`,
+        icon: 'tabler:video',
       },
       {
-        title: "メディア出演",
+        title: 'メディア出演',
         description: `<ul>
           <li>CM出演</li>
           <li>TV出演</li>
           <li>映画出演</li>
         </ul>`,
+        icon: 'tabler:radio',
       },
       {
-        title: "サービス開発",
+        title: 'サービス開発',
         description: `<ul>
             <li>B2Bサービス開発・運営</li>
             <li>B2Cサービス開発・運営</li>
@@ -219,6 +227,7 @@ const metadata = {
             <li>OSSプロジェクトサポート</li>
             <li>サービス運営</li>
           </ul>`,
+        icon: 'tabler:server',
       },
     ]}
   />
@@ -228,219 +237,217 @@ const metadata = {
     title="翻訳実績"
     items={[
       {
-        title: "令和6年分 宇都宮市調整給付金支給通知書",
-        description: "栃木県 宇都宮市",
-        icon: "tabler:language-hiragana",
+        title: '令和6年分 宇都宮市調整給付金支給通知書',
+        description: '栃木県 宇都宮市',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "令和５年 ゴミ分別マニュアル",
-        description: "埼玉県 鴻巣市",
-        icon: "tabler:language-hiragana",
+        title: '令和５年 ゴミ分別マニュアル',
+        description: '埼玉県 鴻巣市',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "令和６年分 源泉徴収に係る定額減税のための申告書",
-        description: "国税庁",
-        icon: "tabler:language-hiragana",
+        title: '令和６年分 源泉徴収に係る定額減税のための申告書',
+        description: '国税庁',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "令和６年分 年末調整に係る定額減税のための申告書",
-        description: "国税庁",
-        icon: "tabler:language-hiragana",
+        title: '令和６年分 年末調整に係る定額減税のための申告書',
+        description: '国税庁',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title:
-          "「伝統沖縄空手古武術指導を通じた青少年の育成」プロジェクトに係る終了時合同評価確認書",
-        description: "那覇市文化協会 ／ 国際協力機構JICA",
-        icon: "tabler:language-hiragana",
+        title: '「伝統沖縄空手古武術指導を通じた青少年の育成」プロジェクトに係る終了時合同評価確認書',
+        description: '那覇市文化協会 ／ 国際協力機構JICA',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "外国籍府民のための安心・安全情報",
-        description: "京都府内市町村等国際化推進担当課・地域国際化協会",
-        icon: "tabler:language-hiragana",
+        title: '外国籍府民のための安心・安全情報',
+        description: '京都府内市町村等国際化推進担当課・地域国際化協会',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "アーレスティグローバル年頭挨拶",
-        description: "株式会社アーレスティ",
-        icon: "tabler:language-hiragana",
+        title: 'アーレスティグローバル年頭挨拶',
+        description: '株式会社アーレスティ',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "宮古島を例に環境保全と観光開発",
-        description: "JICA ／ 特定非営利活動法人 おきなわ環境クラブ",
-        icon: "tabler:language-hiragana",
+        title: '宮古島を例に環境保全と観光開発',
+        description: 'JICA ／ 特定非営利活動法人 おきなわ環境クラブ',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "エクアドル国の融資契約書",
-        description: "非公開",
-        icon: "tabler:language-hiragana",
+        title: 'エクアドル国の融資契約書',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "チリ地震支援に関する事業計画",
-        description: "特定非営利活動法人ジャパン・プラットフォーム",
-        icon: "tabler:language-hiragana",
+        title: 'チリ地震支援に関する事業計画',
+        description: '特定非営利活動法人ジャパン・プラットフォーム',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "グアテマラ慢性栄養不良の削減プログラムの調査分析",
-        description: "大学国際関係研究室",
-        icon: "tabler:language-hiragana",
+        title: 'グアテマラ慢性栄養不良の削減プログラムの調査分析',
+        description: '大学国際関係研究室',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "決算説明会資料",
-        description: "株式会社ニッスイ",
-        icon: "tabler:language-hiragana",
+        title: '決算説明会資料',
+        description: '株式会社ニッスイ',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "乗用車向けコンフォートタイヤ「ADVAN dB」説明書",
-        description: "横浜ゴム株式会社",
-        icon: "tabler:language-hiragana",
+        title: '乗用車向けコンフォートタイヤ「ADVAN dB」説明書',
+        description: '横浜ゴム株式会社',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "業務委託契約書",
-        description:
-          "アルゼンチンタンゴ 教室 タンゴレッスン 東京 港区 ラ・クンパルシータ",
-        icon: "tabler:language-hiragana",
+        title: '業務委託契約書',
+        description: 'アルゼンチンタンゴ 教室 タンゴレッスン 東京 港区 ラ・クンパルシータ',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "地域医療連携室について",
-        description: "沖縄県立 南部医療センター・こども医療センター",
-        icon: "tabler:language-hiragana",
+        title: '地域医療連携室について',
+        description: '沖縄県立 南部医療センター・こども医療センター',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "ビーフカレー編DVDのナレーション・テロップ",
-        description: "S&B食品株式会社",
-        icon: "tabler:language-hiragana",
+        title: 'ビーフカレー編DVDのナレーション・テロップ',
+        description: 'S&B食品株式会社',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "八重山保健所管内の母子保健に関する観察",
-        description: "沖縄県 八重山保健所",
-        icon: "tabler:language-hiragana",
+        title: '八重山保健所管内の母子保健に関する観察',
+        description: '沖縄県 八重山保健所',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "会社案内ウェブサイト",
-        description: "株式会社H.I.S.",
-        icon: "tabler:language-hiragana",
+        title: '会社案内ウェブサイト',
+        description: '株式会社H.I.S.',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "京都市外国人観光客実態調査",
-        description: "京都市 産業観光局観光部観光振興課",
-        icon: "tabler:language-hiragana",
+        title: '京都市外国人観光客実態調査',
+        description: '京都市 産業観光局観光部観光振興課',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "外国人来所者アンケート",
-        description: "非公開",
-        icon: "tabler:language-hiragana",
+        title: '外国人来所者アンケート',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "妊婦健診保険指導チェックリスト",
-        description: "那覇市立病院",
-        icon: "tabler:language-hiragana",
+        title: '妊婦健診保険指導チェックリスト',
+        description: '那覇市立病院',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "B Vocalファンクラブ・ジャパン開設",
-        description: "オフィス サワイ(沢井事務所)",
-        icon: "tabler:language-hiragana",
+        title: 'B Vocalファンクラブ・ジャパン開設',
+        description: 'オフィス サワイ(沢井事務所)',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "世界大学野球選手権大会における科学的支援プロジェクト提案",
-        description: "国立スポーツ科学センター",
-        icon: "tabler:language-hiragana",
+        title: '世界大学野球選手権大会における科学的支援プロジェクト提案',
+        description: '国立スポーツ科学センター',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "初午祭について",
-        description: "一般社団法人 京都府北部地域連携都市圏振興社",
-        icon: "tabler:language-hiragana",
+        title: '初午祭について',
+        description: '一般社団法人 京都府北部地域連携都市圏振興社',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "「コーリングカード・ネオ」ウェブサイト",
-        description: "NTTコミュニケーションズ株式会社",
-        icon: "tabler:language-hiragana",
+        title: '「コーリングカード・ネオ」ウェブサイト',
+        description: 'NTTコミュニケーションズ株式会社',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "パスカルクランプモデルTYC取扱説明書",
-        description: "パスカル株式会社",
-        icon: "tabler:language-hiragana",
+        title: 'パスカルクランプモデルTYC取扱説明書',
+        description: 'パスカル株式会社',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "医療機器メーカー「ZERO SYSTEM」PVナレーション・テロップ",
-        description: "株式会社ジェイ･エム･エス",
-        icon: "tabler:language-hiragana",
+        title: '医療機器メーカー「ZERO SYSTEM」PVナレーション・テロップ',
+        description: '株式会社ジェイ･エム･エス',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "日本を訪れる外国人の消費動向調査",
-        description: "国土交通省",
-        icon: "tabler:language-hiragana",
+        title: '日本を訪れる外国人の消費動向調査',
+        description: '国土交通省',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "メキシコ調査票分析",
-        description: "非公開",
-        icon: "tabler:language-hiragana",
+        title: 'メキシコ調査票分析',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "受刑者移送関連文書",
-        description: "法務省",
-        icon: "tabler:language-hiragana",
+        title: '受刑者移送関連文書',
+        description: '法務省',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "化粧品小石丸シルク製品の海外ネーミング案チェック",
-        description: "非公開",
-        icon: "tabler:language-hiragana",
+        title: '化粧品小石丸シルク製品の海外ネーミング案チェック',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "宣誓書",
-        description: "株式会社エンネットワーク",
-        icon: "tabler:language-hiragana",
+        title: '宣誓書',
+        description: '株式会社エンネットワーク',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "履歴事項全部証明書",
-        description: "株式会社エンネットワーク",
-        icon: "tabler:language-hiragana",
+        title: '履歴事項全部証明書',
+        description: '株式会社エンネットワーク',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "サッカーに関する注意事項",
-        description: "非公開",
-        icon: "tabler:language-hiragana",
+        title: 'サッカーに関する注意事項',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "水上スポーツ機器ホームページ",
-        description: "ヤマハ発動機株式会社",
-        icon: "tabler:language-hiragana",
+        title: '水上スポーツ機器ホームページ',
+        description: 'ヤマハ発動機株式会社',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "アラームツール台詞",
-        description: "非公開",
-        icon: "tabler:language-hiragana",
+        title: 'アラームツール台詞',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "ISDB-T標準海外開発",
-        description: "総務省",
-        icon: "tabler:language-hiragana",
+        title: 'ISDB-T標準海外開発',
+        description: '総務省',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "地上デジタル放送への円滑な移行のための環境整備・支援",
-        description: "総務省",
-        icon: "tabler:language-hiragana",
+        title: '地上デジタル放送への円滑な移行のための環境整備・支援',
+        description: '総務省',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "新たな海上公園への取り組み",
-        description: "東京都生活文化スポーツ局",
-        icon: "tabler:language-hiragana",
+        title: '新たな海上公園への取り組み',
+        description: '東京都生活文化スポーツ局',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "メキシコ湾岸水質モニタリング",
-        description: "独立行政法人国際協力機構JICA",
-        icon: "tabler:language-hiragana",
+        title: 'メキシコ湾岸水質モニタリング',
+        description: '独立行政法人国際協力機構JICA',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "少林寺拳法ガイドブック",
-        description: "一般社団法人SHORINJI KEMPO UNITY",
-        icon: "tabler:language-hiragana",
+        title: '少林寺拳法ガイドブック',
+        description: '一般社団法人SHORINJI KEMPO UNITY',
+        icon: 'tabler:language-hiragana',
       },
       {
-        title: "琵琶湖の水質モニタリング調査",
-        description: "琵琶湖環境科学研究センター",
-        icon: "tabler:language-hiragana",
+        title: '琵琶湖の水質モニタリング調査',
+        description: '琵琶湖環境科学研究センター',
+        icon: 'tabler:language-hiragana',
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
+    classes={{ container: 'max-w-3xl' }}
   />
 
   <Steps
@@ -448,13 +455,12 @@ const metadata = {
     title="文字起こし実績"
     items={[
       {
-        title:
-          "エルサルバドル国「Anastasio y los del monte・Paz para vos」のMC及び歌詞",
-        description: "非公開",
-        icon: "tabler:language-hiragana",
+        title: 'エルサルバドル国「Anastasio y los del monte・Paz para vos」のMC及び歌詞',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
+    classes={{ container: 'max-w-3xl' }}
   />
 
   <Steps
@@ -462,17 +468,17 @@ const metadata = {
     title="通訳実績"
     items={[
       {
-        title: "東京地裁執行官による強制執行催告時通訳",
-        description: "東京地方裁判所執行官室 ／ 株式会社マイハート",
-        icon: "tabler:message-language",
+        title: '東京地裁執行官による強制執行催告時通訳',
+        description: '東京地方裁判所執行官室 ／ 株式会社マイハート',
+        icon: 'tabler:message-language',
       },
       {
-        title: "血糖自己測定装置法規制調査・現地アポイント代行",
-        description: "富士経済株式会社",
-        icon: "tabler:message-language",
+        title: '血糖自己測定装置法規制調査・現地アポイント代行',
+        description: '富士経済株式会社',
+        icon: 'tabler:message-language',
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
+    classes={{ container: 'max-w-3xl' }}
   />
 
   <Steps
@@ -480,38 +486,73 @@ const metadata = {
     title="メディア出演"
     items={[
       {
-        title: "「Jリーグ」CM・代表出演",
-        description: "日本プロサッカーリーグ",
-        icon: "tabler:ad",
+        title: '「Jリーグ」CM・代表出演',
+        description: '日本プロサッカーリーグ',
+        icon: 'tabler:ad',
       },
       {
-        title: "松本清張『ゼロの焦点』映画・アメリカ軍将兵出演",
-        description: "東宝株式会社",
-        icon: "tabler:movie",
+        title: '松本清張『ゼロの焦点』映画・アメリカ軍将兵出演',
+        description: '東宝株式会社',
+        icon: 'tabler:movie',
       },
       {
-        title: "「奇跡体験！アンビリバボー」・再現VTR多数回出演",
-        description: "フジテレビ",
-        icon: "tabler:device-tv",
+        title: '「奇跡体験！アンビリバボー」・再現VTR多数回出演',
+        description: 'フジテレビ',
+        icon: 'tabler:device-tv',
       },
       {
-        title: "『人生が変わる1分間の深イイ話』・再現VTR多数回出演",
-        description: "日本テレビ",
-        icon: "tabler:device-tv",
+        title: '『人生が変わる1分間の深イイ話』・再現VTR多数回出演',
+        description: '日本テレビ',
+        icon: 'tabler:device-tv',
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
+    classes={{ container: 'max-w-3xl' }}
   />
 
+  <Features2
+    id="access"
+    title="アクセス情報"
+    tagline="オフィス所在地"
+    columns={2}
+    items={[
+      {
+        title: '所在地',
+        description: `<strong>住所</strong> <br />
+<a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank">〒153-0042<br />東京都目黒区青葉台4丁目4番12号</a><br />
+<br />
+<strong>アクセス方法</strong> <br />
+・<a href="https://maps.app.goo.gl/MGr8F7YBspSKTkgD9" target="_blank">京王井の頭線「神泉」駅から徒歩7分</a><br />
+・<a href="https://maps.app.goo.gl/Ah8PRaTfMi2UiGbt7" target="_blank">田園都市線「池尻大橋」駅から徒歩9分</a><br />
+・<a href="https://maps.app.goo.gl/gC1Tt2m7Ncpv7WaV7" target="_blank">京王井の頭線「渋谷」駅から徒歩11分</a><br />
+・<a href="https://maps.app.goo.gl/urRUxS5cVmM6yyHq8" target="_blank">東急バス「大坂上」停留所から徒歩1分</a><br />
+<br />
+<strong>その他の交通情報</strong> <br />
+・<a href="https://maps.app.goo.gl/dZ2Wzp4p89AGDuUFA" target="_blank">LUUPポート利用可能</a>`,
+      },
+      {
+        title: 'オフィス地図',
+        description:
+          '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.939130188784!2d139.6871838896499!3d35.65387130193734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bc19eb8f00f%3A0x57ad9deb86b7683!2sTHE%20N3!5e0!3m2!1sen!2sus!4v1718330785155!5m2!1sen!2sus" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+      },
+    ]}
+  />
+  <!-- https://goo.gl/maps/rtzHaFw3j3DPAA6o8 -->
   <!-- Content Widget **************** -->
+
+  <Hero
+    image={{
+      src: '~/assets/images/office-02.jpeg',
+      alt: 'オフィス',
+    }}
+  />
 
   <CallToAction
     title="一緒に創造しましょう"
     actions={[
       {
-        variant: "primary",
-        text: "お問い合わせ",
-        href: "mailto:info@g-productions.studio",
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: getPermalink('/contact#form'),
       },
     ]}
   />
