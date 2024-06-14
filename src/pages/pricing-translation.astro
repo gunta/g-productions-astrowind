@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import Header from '~/components/widgets/Header.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
@@ -12,7 +13,22 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: '< ホームに戻る', href: '/' },
+        { text: '翻訳料金', href: '#' },
+      ]}
+      actions={[
+        {
+          text: 'お問い合わせ',
+          href: 'mailto:contact@g-productions.studio',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
 
   <HeroText
     tagline="最高の翻訳サービスを、驚きの価格で"
