@@ -1,0 +1,290 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: '翻訳 料金表',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="最高の翻訳サービスを、驚きの価格で"
+    title="翻訳料金プラン"
+    subtitle="ニーズにぴったりのプランをお選びください"
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="🇯🇵日本語⇒🇺🇸英語翻訳"
+    subtitle="AI x 人間校正による1ページの基準"
+    prices={[
+      {
+        title: '一般・手紙',
+        price: '2,900',
+        period: '日本語400字⇒英語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: '専門的文章',
+        price: '3,400',
+        period: '日本語400字⇒英語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+      },
+      {
+        title: '契約書・証明書・特許・医療',
+        price: '4,400',
+        period: '日本語400字⇒英語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+      },
+    ]}
+  />
+
+  <Prices
+    title="🇺🇸英語⇒🇯🇵日本語翻訳"
+    subtitle="AI x 人間校正による1ページの基準"
+    prices={[
+      {
+        title: '一般・手紙',
+        price: '2,500',
+        period: '英語200ワード⇒日本語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: '専門的文章',
+        price: '3,100',
+        period: '英語200ワード⇒日本語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+      },
+      {
+        title: '契約書・証明書・特許・医療',
+        price: '3,800',
+        period: '英語200ワード⇒日本語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+      },
+    ]}
+  />
+
+  <Prices
+    title="その他の言語⇔🇺🇸英語"
+    subtitle="AI x 人間校正による1ページの基準"
+    prices={[
+      {
+        title: '一般・手紙',
+        price: '3,900',
+        period: 'その他の言語200ワード⇔英語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: '専門的文章',
+        price: '4,400',
+        period: 'その他の言語200ワード⇔英語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+      },
+      {
+        title: '契約書・証明書・特許・医療',
+        price: '5,600',
+        period: 'その他の言語200ワード⇔英語',
+        callToAction: {
+          text: 'お見積を依頼する',
+          href: 'mailto:translation@g-productions.studio',
+        },
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="注意事項"
+    subtitle="翻訳依頼時の注意点"
+    columns={2}
+    items={[
+      {
+        title: '納期',
+        description: '納期は翻訳量によりますが、原則的には3日以上となります。 お急ぎの場合は事前に申し出て下さい。',
+        icon: 'tabler:clock',
+      },
+      {
+        title: '納期を早める方法',
+        description: '資料が揃える時間や翻訳開始を事前に教えていただくことで対応可能な場合があります。',
+        icon: 'tabler:alarm',
+      },
+      {
+        title: '特急料金',
+        description: '12時間以内の場合は100%、 24時間以内の場合は50%の割増料金を頂きます。',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: '1ページ未満の翻訳量',
+        description: '1ページ未満の翻訳量の場合でも1ページの料金を頂きます。',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: '固有名詞、地名、人名など',
+        description:
+          '固有名詞、地名、人名などが多い場合や、歌詞やその言語特有の表現が使われている場合、料金形態が変動する可能性があります。',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: '手書き文章',
+        description: '手書き文章は￥300増しとなります。',
+        icon: 'tabler:ballpen',
+      },
+      {
+        title: '内容の難易度、言語',
+        description: '内容の難易度、言語により、別途料金が発生いたします。',
+        icon: 'tabler:language',
+      },
+      {
+        title: '翻訳証明書A',
+        description: '発行料金別途　￥2,000（内容：Gプロダクションズの証明）',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: '翻訳証明書B',
+        description: '発行料金別途　￥5,000（内容：Gプロダクションズの証明＋翻訳者のサイン）',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'キャンセル料',
+        description:
+          'ご依頼頂いた内容に関してキャンセルが発生した場合は、キャンセル料を頂きます。ご発注後、翻訳者が作業を終えた分を請求いたします。但し翻訳作業が半分を超えていた場合、全額ご請求となります。',
+        icon: 'tabler:ban',
+      },
+      {
+        title: '消費税',
+        description: '消費税は別途請求となります。',
+        icon: 'tabler:receipt-tax',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <Steps
+    tagline="非常にシンプルな"
+    title="ご発注の流れ"
+    isReversed={true}
+    items={[
+      {
+        title: 'お客様からのご依頼',
+        icon: 'tabler:number-1',
+      },
+      {
+        title: 'お見積り書提出',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'お客様からのご発注及び翻訳原稿の送付',
+        icon: 'tabler:number-3',
+      },
+      {
+        title: '翻訳者の手配',
+        icon: 'tabler:number-4',
+      },
+      {
+        title: 'AI翻訳',
+        icon: 'tabler:number-5',
+      },
+      {
+        title: '人間翻訳者チェック',
+        icon: 'tabler:number-6',
+      },
+      {
+        title: 'お客様への納品',
+        icon: 'tabler:number-7',
+      },
+      {
+        title: '請求書発行',
+        icon: 'tabler:number-8',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1518976024611-28bf4b48222e?q=80&w=2785&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      // https://unsplash.com/photos/ck0i9Dnjtj0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzE4MzM4OTA0fA&force=true
+      // src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <Features3
+    title="見積りに関して"
+    columns={2}
+    items={[
+      {
+        title: '見積対応（1時間以内）',
+        description: '見積無料（ただし、原稿がない場合は目安としての金額になる場合があります）',
+        icon: 'tabler:clock',
+      },
+      {
+        title: '原稿がデジタルデータではない場合',
+        description: '文字カウントに時間がかかる場合があります。',
+        icon: 'tabler:file',
+      },
+      {
+        title: '原則原稿の確認後の対応',
+        description: '原則原稿の確認後の対応致します。',
+        icon: 'tabler:check',
+      },
+      {
+        title: 'ボリュームディスカウント',
+        description: 'ボリュームディスカウントに関してはお問合せ下さい。',
+        icon: 'tabler:discount',
+      },
+      {
+        title: 'デジタルデータの見積り料金割引',
+        description: '文字カウントが簡単に出来るデジタルデータには見積り料金5%OFFとさせていただきます。',
+        icon: 'tabler:percentage',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="翻訳サービスのご依頼"
+    subtitle=""
+    actions={[
+      {
+        variant: 'primary',
+        text: '翻訳を依頼する',
+        href: 'mailto:translation@g-productions.studio',
+      },
+    ]}
+  />
+</Layout>
