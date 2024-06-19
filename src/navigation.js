@@ -178,6 +178,6 @@ export const footerData = {
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm"></span>
-    Copyright <a class="text-blue-600 underline dark:text-muted" href="https://g-productions.studio/"> G Productions</a> · All rights reserved.
+    Copyright <a class="text-blue-600 underline dark:text-muted" href="https://g-productions.studio/"> G Productions, LLC</a> · All rights reserved.
   `,
 };

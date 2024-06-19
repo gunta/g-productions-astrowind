@@ -9,7 +9,7 @@ import Steps from '~/components/widgets/Steps.astro';
 // import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'G Productions',
+  title: 'G Productions, LLC',
 };
 ---
 
@@ -53,7 +53,7 @@ const metadata = {
   >
     <Fragment slot="subtitle">
       AI×人間×クリエイティビティで、ビジネスの限界を超える。<br />
-      <span class="font-semibold">G Productions</span>- 革新的ソリューションで、お客様の成功を加速します。
+      <span class="font-semibold">G Productions, LLC</span>- 革新的ソリューションで、お客様の成功を加速します。
     </Fragment>
   </Hero>
 
@@ -64,7 +64,7 @@ const metadata = {
     columns={3}
     image={{
       src: '~/assets/images/f434805fd2c8.jpg',
-      alt: 'G Productions事業内容',
+      alt: 'G Productions, LLC事業内容',
       loading: 'eager',
     }}
   >
@@ -84,8 +84,7 @@ const metadata = {
         Productionsは、お客様との緊密な連携を通じて、ビジネスの成長と変革を推進するパートナーです。AIを活用した革新的なソリューションで、お客様の成功を支えます。
       </p>
       <br />
-      <p><strong>創業</strong> 2024年2月</p>
-      <p><strong>事業名</strong> G プロダクションズ</p>
+      <p><strong>G Productions, LLC</strong></p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -477,12 +476,28 @@ const metadata = {
 
   <Features2
     id="access"
-    title="アクセス情報"
-    tagline="オフィス所在地"
+    title="Access | アクセス情報"
+    tagline="Office | オフィス所在地"
     columns={2}
     items={[
       {
-        title: '所在地',
+        title: 'USA Headquarters',
+        description: `<strong>Address</strong> <br />
+        30 N Gould St Ste N<br />
+        Sheridan, WY 82801 USA<br />
+        <br />
+        +1 (307) 291-9547<br />
+        <br />
+<br />`,
+      },
+      {
+        title: 'Office Map',
+        description:
+          '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167703411779!2d-106.9549504!3d44.797770799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a66677f%3A0x8f85bd068d1afb8a!2s30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sjp!4v1718789512794!5m2!1sen!2sjp" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+      },
+
+      {
+        title: '所在地（東京オフィス）',
         description: `<strong>住所</strong> <br />
 <a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank">〒153-0042<br />東京都目黒区青葉台4丁目4番12号</a><br />
 <br />
@@ -502,7 +517,7 @@ const metadata = {
       },
     ]}
   />
-  <!-- https://goo.gl/maps/rtzHaFw3j3DPAA6o8 -->
+
   <!-- Content Widget **************** -->
 
   <Hero
