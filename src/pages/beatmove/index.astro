@@ -1,6 +1,8 @@
 ---
 // Import Tailwind CSS
 import '../../styles/global.css';
+import { Picture } from 'astro:assets';
+import heroImage from './hero.png';
 ---
 
 <!doctype html>
@@ -23,7 +25,15 @@ import '../../styles/global.css';
     </header>
 
     <!-- ヒーローセクション -->
-    <section class="relative bg-cover bg-center h-screen" style="background-image: url('hero.jpg');">
+    <section class="relative h-screen">
+      <Picture
+        src={heroImage}
+        formats={['jpg']}
+        alt="BeatMove Hero Image"
+        widths={[400, 800, 1200]}
+        sizes="100vw"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="container mx-auto px-6 py-40 relative z-10 text-center">
         <h1 class="text-6xl font-bold mb-4">音楽を創る。身体が奏でる。</h1>
@@ -89,7 +99,7 @@ import '../../styles/global.css';
             <div class="md:w-1/2 order-2 md:order-1">
               <h3 class="text-4xl font-bold mb-6">ジムに革新をもたらす</h3>
               <p class="text-xl mb-6">
-                フィットネス業界に新たな風を。BeatMoveは、最先端技術と独自コンセプトにより、他にはない体験を提供します。
+                フィットネス業界に新たな風を。BeatMoveは、最先端技術と独自コンセプトにより、他にはない体験���提供します。
               </p>
               <p class="text-xl mb-6">
                 法人向けライセンスプログラムで、簡単導入。顧客満足度とリピート率の向上を実現し、進化するフィットネス市場の先駆者となる機会を提供します。
@@ -155,7 +165,7 @@ import '../../styles/global.css';
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-5xl font-bold mb-12">特許出願中の技術で新しい体験を</h2>
         <p class="text-xl mb-6">
-          現在、以下の技術について特許を出願中です。これらの技術により、今までにない新しいフィットネス体験を提供します。
+          現在、以下の技術について特許を出願中です。これらの技術により、今までにない新しい���ィットネス験を提供します。
         </p>
         <div class="md:flex md:space-x-6 mt-12">
           <div class="md:w-1/2 mb-8 md:mb-0">
