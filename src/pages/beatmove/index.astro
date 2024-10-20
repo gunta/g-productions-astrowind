@@ -61,6 +61,58 @@ import experienceImage from './experience.png';
         );
         mix-blend-mode: overlay;
       }
+      .vibrant-gradient {
+        background: linear-gradient(45deg, #ff0066, #ff4500, #ffd700, #00ced1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .vibrant-bg {
+        background: linear-gradient(
+          45deg,
+          rgba(255, 0, 102, 0.8),
+          rgba(255, 69, 0, 0.8),
+          rgba(255, 215, 0, 0.8),
+          rgba(0, 206, 209, 0.8)
+        );
+      }
+      .logo-gradient {
+        background: linear-gradient(45deg, #ff1493, #8b008b);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .title-gradient {
+        background: linear-gradient(45deg, #ff0066, #ff4500);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .vibrant-pink {
+        color: #ff1493; /* DeepPink */
+      }
+      .hover-vibrant-pink:hover {
+        color: #ff1493; /* DeepPink */
+      }
+      .violet-pink-gradient {
+        background: linear-gradient(45deg, #8b5cf6, #ec4899);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        mix-blend-mode: overlay;
+      }
+
+      .yellow-red-orange-gradient {
+        background: linear-gradient(45deg, #fcd34d, #ef4444, #f97316);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        mix-blend-mode: overlay;
+      }
+
+      .text-gradient {
+        mix-blend-mode: overlay;
+      }
     </style>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   </head>
@@ -77,11 +129,11 @@ import experienceImage from './experience.png';
       <div class="header-bg glass-effect">
         <div class="container mx-auto px-6 py-4">
           <div class="flex justify-between items-center">
-            <div class="text-2xl font-bold text-white">BeatMove</div>
+            <div class="text-2xl font-bold logo-gradient">BeatMove</div>
             <nav class="space-x-4">
-              <a href="#vision" class="text-white hover:text-pink-300 transition duration-300">ビジョン</a>
-              <a href="#revolution" class="text-white hover:text-pink-300 transition duration-300">革新</a>
-              <a href="#contact" class="text-white hover:text-pink-300 transition duration-300">お問い合わせ</a>
+              <a href="#vision" class="text-white hover-vibrant-pink transition duration-300">ビジョン</a>
+              <a href="#revolution" class="text-white hover:text-[#00CED1] transition duration-300">革新</a>
+              <a href="#contact" class="text-white hover:text-[#FFD700] transition duration-300">お問い合わせ</a>
             </nav>
           </div>
         </div>
@@ -101,20 +153,19 @@ import experienceImage from './experience.png';
       <div class="absolute inset-0 bg-black opacity-30"></div>
       <div class="container mx-auto px-6 relative z-10 text-center">
         <h1 class="text-8xl font-bold mb-16 leading-tight">
-          <span class="text-white">音楽を</span><span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">創る</span
-          ><span class="text-white">。</span><br /><br />
-          <span class="text-white">身体が</span><span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">奏でる</span
+          <span class="text-white">音楽を</span><span class="violet-pink-gradient text-gradient">創る</span><span
+            class="text-white">。</span
+          ><br /><br />
+          <span class="text-white">身体が</span><span class="yellow-red-orange-gradient text-gradient">奏でる</span
           ><span class="text-white">。</span>
         </h1>
         <p class="text-4xl mb-24 text-shadow-lg leading-relaxed">
           BeatMove - 世界初、フィットネスの概念を塗り替える、<br />
-          新時代のエンターテインメント
+          <span class="font-bold text-white">新時代のエンターテインメント</span>
         </p>
         <a
           href="#contact"
-          class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-16 py-8 rounded-full text-3xl hover:from-pink-600 hover:to-purple-600 transition duration-300 transform hover:scale-105"
+          class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
           >体験予約</a
         >
       </div>
@@ -134,21 +185,31 @@ import experienceImage from './experience.png';
       <div class="container mx-auto px-6 relative z-10 text-center">
         <h2 class="text-7xl font-bold mb-20">創造の鼓動</h2>
         <p class="text-3xl mb-16 leading-relaxed">
-          消費から創造へ。<br /><br />
+          <span class="font-bold text-white text-7xl italic relative">
+            <span class="absolute -left-8 -top-8 text-9xl text-pink-500 opacity-30">"</span>
+            消費から創造へ。
+            <span class="absolute -right-8 -bottom-8 text-9xl text-pink-500 opacity-30">"</span>
+          </span><br /><br />
           BeatMoveは、運動と音楽制作の融合により、<br />
-          新たな自己表現の扉を開きます。
+          <span class="font-bold">新たな自己表現の扉</span>を開きます。
         </p>
         <p class="text-3xl mb-16 leading-relaxed">
-          <a href="https://www.b-monster.jp/" target="_blank" rel="noopener noreferrer">b-monster</a>や<a
+          <a
+            href="https://www.b-monster.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-pink-400 hover:underline">b-monster</a
+          >や<a
             href="https://feelcycle.com/"
             target="_blank"
-            rel="noopener noreferrer">FEELCYCLE</a
+            rel="noopener noreferrer"
+            class="text-pink-400 hover:underline">FEELCYCLE</a
           >が切り拓いた道を更に前進させ、<br /><br />
           BeatMoveは運動を通じて、<br />
-          あなた自身のサウンドスケープを生み出します。
+          <span class="font-bold">あなた自身のサウンドスケープ</span>を生み出します。
         </p>
         <p class="text-3xl mb-24 leading-relaxed">
-          創造の喜びが、あなたと周りの世界を変える。<br /><br />
+          <span class="font-bold">創造の喜び</span>が、あなたと周りの世界を変える。<br /><br />
           その可能性を、我々は追求し続けます。
         </p>
       </div>
@@ -195,7 +256,9 @@ import experienceImage from './experience.png';
     <!-- BeatMoveとは -->
     <section class="py-40">
       <div class="container mx-auto px-6">
-        <h2 class="text-7xl font-bold mb-32 text-center">BeatMove - 三つの革新</h2>
+        <h2 class="text-7xl font-bold mb-32 text-center">
+          BeatMove - <span class="title-gradient">三つの革新</span>
+        </h2>
         <div class="space-y-56">
           <!-- 一般ユーザー向け -->
           <div class="relative min-h-screen flex items-center justify-center py-32">
@@ -211,20 +274,20 @@ import experienceImage from './experience.png';
             <div class="container mx-auto px-6 relative z-10 text-center">
               <h3 class="text-6xl font-bold mb-20">感動を生み出す身体</h3>
               <p class="text-3xl mb-16 leading-relaxed">
-                日々のトレーニングに、創造の歓びを。<br /><br />
+                日々のトレーニングに、<span class="font-bold vibrant-pink">創造の歓び</span>を。<br /><br />
                 BeatMoveは、運動と音楽制作の融合により、<br />
-                全く新しいフィットネス体験を実現します。
+                <span class="font-bold">全く新しいフィットネス体験</span>を実現します。
               </p>
               <p class="text-3xl mb-24 leading-relaxed">
-                心拍とシンクロするビートが、<br />
+                <span class="font-bold text-yellow-500">心拍とシンクロするビート</span>が、<br />
                 身体と音楽の一体感を生み出します。<br /><br />
                 専門知識不要の直感的操作で、<br />
-                あなただけの音楽が誕生。<br /><br />
-                単なる運動から、創造的な自己表現の時間へ。
+                <span class="font-bold">あなただけの音楽</span>が誕生。<br /><br />
+                単なる運動から、<span class="font-bold vibrant-pink">創造的な自己表現の時間</span>へ。
               </p>
               <a
                 href="#contact"
-                class="bg-pink-500 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-600 transition duration-300"
+                class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
                 >体験予約</a
               >
             </div>
@@ -244,20 +307,23 @@ import experienceImage from './experience.png';
             <div class="container mx-auto px-6 relative z-10 text-center">
               <h3 class="text-6xl font-bold mb-20">ジムに革新をもたらす</h3>
               <p class="text-3xl mb-16 leading-relaxed">
-                フィットネス業界に新たな風を。<br /><br />
-                BeatMoveは、最先端技術と独自コンセプトにより、<br />
-                他にはない体験を提供します。
+                フィットネス業界に<span class="font-bold vibrant-pink">新たな風</span>を。<br /><br />
+                BeatMoveは、<span class="font-bold">最先端技術</span>と<span class="font-bold">独自コンセプト</span
+                >により、<br />
+                <span class="font-bold text-cyan-500">他にはない体験</span>を提供します。
               </p>
               <p class="text-3xl mb-24 leading-relaxed">
-                法人向けライセンスプログラムで、<br />
+                <span class="font-bold">法人向けライセンスプログラム</span>で、<br />
                 簡単導入。<br /><br />
-                顧客満足度とリピート率の向上を実現し、<br />
+                <span class="font-bold vibrant-pink">顧客満足度</span>と<span class="font-bold vibrant-pink"
+                  >リピート率</span
+                >の向上を実現し、<br />
                 進化するフィットネス市場の<br />
-                先駆者となる機会を提供します。
+                <span class="font-bold text-yellow-500">先駆者</span>となる機会を提供します。
               </p>
               <a
                 href="#contact"
-                class="bg-pink-500 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-600 transition duration-300"
+                class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
                 >詳細資料請求</a
               >
             </div>
@@ -277,20 +343,20 @@ import experienceImage from './experience.png';
             <div class="container mx-auto px-6 relative z-10 text-center">
               <h3 class="text-6xl font-bold mb-20">未来のフィットネスを共に</h3>
               <p class="text-3xl mb-16 leading-relaxed">
-                新たなビジネスフロンティアを求めて。<br /><br />
-                BeatMoveは、運動と音楽制作を融合させた<br />
-                革新的なスタジオ型ジムの<br />
+                <span class="font-bold vibrant-pink">新たなビジネスフロンティア</span>を求めて。<br /><br />
+                BeatMoveは、<span class="font-bold">運動と音楽制作を融合</span>させた<br />
+                <span class="font-bold text-cyan-500">革新的なスタジオ型ジム</span>の<br />
                 コンセプトを提供します。
               </p>
               <p class="text-3xl mb-24 leading-relaxed">
-                特許出願中の独自システムで、<br />
-                未開拓の市場を共に切り拓く。<br /><br />
-                創造性とフィットネスの融合で、<br />
-                業界のパイオニアとなるチャンス。
+                <span class="font-bold vibrant-pink">特許出願中</span>の独自システムで、<br />
+                <span class="font-bold">未開拓の市場</span>を共に切り拓く。<br /><br />
+                <span class="font-bold">創造性</span>と<span class="font-bold">フィットネス</span>の融合で、<br />
+                業界の<span class="font-bold text-yellow-500">パイオニア</span>となるチャンス。
               </p>
               <a
                 href="#contact"
-                class="bg-pink-500 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-600 transition duration-300"
+                class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
                 >パートナー申込</a
               >
             </div>
@@ -314,19 +380,24 @@ import experienceImage from './experience.png';
         <h2 class="text-7xl font-bold mb-20">Ableton Moveとの連携</h2>
         <p class="text-3xl mb-16 leading-relaxed">
           BeatMove（ビートムーブ）は、<br />
-          2024年10月8日に発売された<br />
-          最新の音楽制作デバイス「Ableton Move」と連携し、<br />
-          より直感的でパワフルな音楽制作を可能にします。
+          <span class="font-bold vibrant-pink">2024年10月8日</span>に発売された<br />
+          最新の音楽制作デバイス<span class="font-bold">「Ableton Move」</span>と連携し、<br />
+          より<span class="font-bold text-cyan-500">直感的</span>で<span class="font-bold text-cyan-500">パワフル</span
+          >な音楽制作を可能にします。
         </p>
         <p class="text-3xl mb-16 leading-relaxed">
           「Ableton Move」は、<br />
-          シンセサイザー、サンプラー、エフェクター、シーケンサーを<br />
+          <span class="font-bold">シンセサイザー</span>、<span class="font-bold">サンプラー</span>、<span
+            class="font-bold">エフェクター</span
+          >、<span class="font-bold">シーケンサー</span>を<br />
           オールインワンで提供。<br /><br />
-          軽量コンパクトで、どこでも高品質な音楽制作が行えます。
+          <span class="font-bold vibrant-pink">軽量コンパクト</span>で、どこでも<span class="font-bold text-yellow-500"
+            >高品質な音楽制作</span
+          >が行えます。
         </p>
         <p class="text-3xl mb-20 leading-relaxed">
-          世界中のプロが愛用する「Ableton Live」の機能を、<br />
-          パソコンなしで手のひらに収めた革新的なデバイスです。
+          世界中のプロが愛用する<span class="font-bold">「Ableton Live」</span>の機能を、<br />
+          パソコンなしで手のひらに収めた<span class="font-bold vibrant-pink">革新的なデバイス</span>です。
         </p>
       </div>
     </section>
@@ -399,7 +470,7 @@ import experienceImage from './experience.png';
             <div
               class="bg-gray-900 bg-opacity-90 p-12 rounded-lg shadow-2xl transform hover:scale-105 transition duration-300"
             >
-              <iconify-icon icon="mdi:music-note-bluetooth" width="80" height="80" class="text-pink-500 mb-8"
+              <iconify-icon icon="mdi:music-note-bluetooth" width="80" height="80" class="vibrant-pink mb-8"
               ></iconify-icon>
               <h3 class="text-4xl font-bold mb-8">運動同期音楽生成コンセプト</h3>
               <p class="text-2xl leading-relaxed">
@@ -412,7 +483,7 @@ import experienceImage from './experience.png';
             <div
               class="bg-gray-900 bg-opacity-90 p-12 rounded-lg shadow-2xl transform hover:scale-105 transition duration-300"
             >
-              <iconify-icon icon="mdi:playlist-music" width="80" height="80" class="text-pink-500 mb-8"></iconify-icon>
+              <iconify-icon icon="mdi:playlist-music" width="80" height="80" class="vibrant-pink mb-8"></iconify-icon>
               <h3 class="text-4xl font-bold mb-8">プロフェッショナル楽曲更新システム</h3>
               <p class="text-2xl leading-relaxed">
                 毎月、プロの音楽家が制作する<br />32種類の最新ベース楽曲を提供。<br />
@@ -481,7 +552,7 @@ import experienceImage from './experience.png';
               ></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="bg-pink-500 text-white px-6 py-3 rounded-full text-lg hover:bg-pink-600"
+              <button type="submit" class="bg-[#FF1493] text-white px-6 py-3 rounded-full text-lg hover:bg-[#FF69B4]"
                 >送信する</button
               >
             </div>
