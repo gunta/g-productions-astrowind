@@ -1,10 +1,11 @@
 ---
 // Import Tailwind CSS
 import '../../styles/global.css';
-import { Picture } from 'astro:assets';
+import { Picture, Image } from 'astro:assets';
 import heroImage from './hero.png';
 import aboutImage from './about.png';
 import persona1Image from './persona1.png';
+import syncSvg from './sync5.svg';
 ---
 
 <!doctype html>
@@ -39,7 +40,9 @@ import persona1Image from './persona1.png';
       <div class="absolute inset-0 bg-black opacity-30"></div>
       <div class="container mx-auto px-6 relative z-10 text-center">
         <h1 class="text-8xl font-bold mb-8 leading-tight">音楽を創る。<br />身体が奏でる。</h1>
-        <p class="text-4xl mb-16">BeatMove - フィットネスの概念を塗り替える、<br />新時代のエンターテインメント。</p>
+        <p class="text-4xl mb-16">
+          BeatMove - 世界初、フィットネスの概念を塗り替える、<br />新時代のエンターテインメント。
+        </p>
         <a
           href="#contact"
           class="bg-pink-500 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-600 transition duration-300"
@@ -68,9 +71,8 @@ import persona1Image from './persona1.png';
           <a href="https://www.b-monster.jp/" target="_blank" rel="noopener noreferrer">b-monster</a>や<a
             href="https://feelcycle.com/"
             target="_blank"
-            rel="noopener noreferrer">Feelcycle</a
-          >（各約20万人の利用者数）が切り拓いた道を更に前進させ、<br
-          />BeatMoveは運動を通じて、あなた自身のサウンドスケープを生み出します。
+            rel="noopener noreferrer">FEELCYCLE</a
+          >が切り拓いた道を更に前進させ、<br />BeatMoveは運動を通じて、あなた自身のサウンドスケープを生み出します。
         </p>
         <p class="text-3xl mb-16">
           創造の喜びが、あなたと周りの世界を変える。<br />その可能性を、我々は追求し続けます。
@@ -94,7 +96,7 @@ import persona1Image from './persona1.png';
 
         <!-- SVG image -->
         <div class="mb-12">
-          <img src="sync1.svg" alt="Beat Sync Magic" class="mx-auto max-w-full h-auto" />
+          <Image src={syncSvg} alt="Beat Sync Magic" class="mx-auto max-w-full h-auto" />
         </div>
 
         <p class="text-3xl mb-8">心拍がビートを刻む。汗が音符を描く。</p>
@@ -122,7 +124,7 @@ import persona1Image from './persona1.png';
             <div class="container mx-auto px-6 relative z-10 text-center">
               <h3 class="text-6xl font-bold mb-8">感動を生み出す身体</h3>
               <p class="text-2xl mb-8">
-                日々のトレーニングに、創造の歓びを。BeatMoveは、運���と音楽制作の融合により、全く新しいフィットネス体験を実現します。
+                日々のトレーニングに、創造の歓びを。BeatMoveは、運と音楽制作の融合により、全く新しいフィットネス体験を実現します。
               </p>
               <p class="text-2xl mb-12">
                 心拍とシンクロするビートが、身体と音楽の一体感を生み出します。専門知識不要の直感的操作で、あなただけの音楽が誕生。単なる運動から、創造的な自己表現の時間へ。
@@ -143,7 +145,7 @@ import persona1Image from './persona1.png';
                 フィットネス業界に新たな風を。BeatMoveは、最先端技術と独自コンセプトにより、他にはない体験提供します。
               </p>
               <p class="text-xl mb-6">
-                法人向けライセンスプログラムで、簡単導入。顧客満足度とリピート率の向上を実現し���進化するフィットネス市場の先駆者となる機会を提供します。
+                法人向けライセンスプログラムで、簡単導入。顧客満足度とリピート率の向上を実現し進化するフィットネス市場の先駆者となる機会を提供します。
               </p>
               <div class="mt-8">
                 <a href="#contact" class="bg-pink-500 text-white px-8 py-4 rounded-full text-xl hover:bg-pink-600"
@@ -190,7 +192,7 @@ import persona1Image from './persona1.png';
         </p>
         <p class="text-xl mb-6">
           「Ableton
-          Move」は、シンセサイザー、サンプラー、エフェクター、シーケンサーといった機能を網羅したオール・イン・ワンの音楽制作デバイスです。横幅313.5mm、重量970グラムと軽量・コンパクトで、最大4時間使用できるバッテリーを搭載。USB-Cポートによ���高速なデータ転送と充電が可能です。
+          Move」は、シンセサイザー、サンプラー、エフェクター、シーケンサーといった機能を網羅したオール・イン・ワンの音楽制作デバイスです。横幅313.5mm、重量970グラムと軽量・コンパクトで、最大4時間使用できるバッテリーを搭載。USB-Cポートによ高速なデータ転送と充電が可能です。
         </p>
         <p class="text-xl mb-6">
           ステレオ・スピーカーやサンプリング用マイクも内蔵しており、どこでも簡単に高品質な音楽制作がえます。世界中のプロが愛用する「Ableton
