@@ -3,6 +3,8 @@
 import '../../styles/global.css';
 import { Picture } from 'astro:assets';
 import heroImage from './hero.png';
+import aboutImage from './about.png';
+import persona1Image from './persona1.png';
 ---
 
 <!doctype html>
@@ -25,46 +27,79 @@ import heroImage from './hero.png';
     </header>
 
     <!-- ヒーローセクション -->
-    <section class="relative h-screen">
+    <section class="relative h-screen flex items-center justify-center">
       <Picture
         src={heroImage}
         formats={['jpg']}
         alt="BeatMove Hero Image"
-        widths={[400, 800, 1200]}
+        widths={[1024, 1920, 2560]}
+        sizes="100vw"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black opacity-30"></div>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <h1 class="text-8xl font-bold mb-8 leading-tight">音楽を創る。<br />身体が奏でる。</h1>
+        <p class="text-4xl mb-16">BeatMove - フィットネスの概念を塗り替える、<br />新時代のエンターテインメント。</p>
+        <a
+          href="#contact"
+          class="bg-pink-500 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-600 transition duration-300"
+          >体験予約</a
+        >
+      </div>
+    </section>
+
+    <!-- ビジョンセクション（創造の鼓動） -->
+    <section id="vision" class="relative h-screen flex items-center justify-center">
+      <Picture
+        src={aboutImage}
+        formats={['jpg']}
+        alt="BeatMove Vision Background"
+        widths={[1024, 1920, 2560]}
         sizes="100vw"
         class="absolute inset-0 w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-black opacity-50"></div>
-      <div class="container mx-auto px-6 py-40 relative z-10 text-center">
-        <h1 class="text-6xl font-bold mb-4">音楽を創る。身体が奏でる。</h1>
-        <p class="text-2xl mb-8">BeatMove - フィットネスの概念を塗り替える、新時代のエンターテインメント。</p>
-        <a href="#contact" class="bg-pink-500 text-white px-8 py-4 rounded-full text-xl hover:bg-pink-600">体験予約</a>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <h2 class="text-7xl font-bold mb-12">創造の鼓動</h2>
+        <p class="text-3xl mb-8">
+          消費から創造へ。BeatMoveは、運動と音楽制作の融合により、<br />新たな自己表現の扉を開きます。
+        </p>
+        <p class="text-3xl mb-8">
+          <a href="https://www.b-monster.jp/" target="_blank" rel="noopener noreferrer">b-monster</a>や<a
+            href="https://feelcycle.com/"
+            target="_blank"
+            rel="noopener noreferrer">Feelcycle</a
+          >（各約20万人の利用者数）が切り拓いた道を更に前進させ、<br
+          />BeatMoveは運動を通じて、あなた自身のサウンドスケープを生み出します。
+        </p>
+        <p class="text-3xl mb-16">
+          創造の喜びが、あなたと周りの世界を変える。<br />その可能性を、我々は追求し続けます。
+        </p>
       </div>
     </section>
 
-    <!-- ビジョンセクション（旧ストーリー） -->
-    <section id="vision" class="py-20">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-5xl font-bold mb-12">創造の鼓動</h2>
-        <p class="text-xl mb-6">
-          消費から創造へ。BeatMoveは、運動と音楽制作の融合により、新たな自己表現の扉を開きます。
-        </p>
-        <p class="text-xl mb-6">
-          b-monsterやFeelcycleが切り拓いた道を更に前進させ、BeatMoveは運動を通じて、あなた自身のサウンドスケープを生み出します。
-        </p>
-        <p class="text-xl mb-12">創造の喜びが、あなたと周りの世界を変える。その可能性を、私たちは追求し続けます。</p>
-        <img src="vision.jpg" alt="BeatMoveのビジョン" class="mx-auto rounded-lg shadow-lg w-2/3" />
-      </div>
-    </section>
+    <!-- 革新セクション（フィットネスの革命） -->
+    <section id="revolution" class="relative min-h-screen flex flex-col items-center justify-center py-20">
+      <Picture
+        src={persona1Image}
+        formats={['jpg']}
+        alt="BeatMove Revolution Background"
+        widths={[1024, 1920, 2560]}
+        sizes="100vw"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <h2 class="text-7xl font-bold mb-12">フィットネスの革命</h2>
 
-    <!-- 革新セクション（旧体験） -->
-    <section id="revolution" class="py-20 bg-gray-800">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-5xl font-bold mb-12">フィットネスの革命</h2>
-        <p class="text-xl mb-6">心拍がビートを刻む。汗が音符を描く。</p>
-        <p class="text-xl mb-6">あなたの動きが、世界にない音楽を生み出す。</p>
-        <p class="text-xl mb-12">BeatMoveで、フィットネスを芸術に昇華させる。</p>
-        <img src="revolution.jpg" alt="BeatMoveの革新" class="mx-auto rounded-lg shadow-lg w-2/3" />
+        <!-- SVG image -->
+        <div class="mb-12">
+          <img src="sync1.svg" alt="Beat Sync Magic" class="mx-auto max-w-full h-auto" />
+        </div>
+
+        <p class="text-3xl mb-8">心拍がビートを刻む。汗が音符を描く。</p>
+        <p class="text-3xl mb-8">あなたの動きが、世界にない音楽を生み出す。</p>
+        <p class="text-3xl mb-16">BeatMoveで、フィットネスを芸術に昇華させる。</p>
       </div>
     </section>
 
@@ -74,23 +109,29 @@ import heroImage from './hero.png';
         <h2 class="text-5xl font-bold mb-12 text-center">BeatMove - 三つの革新</h2>
         <div class="space-y-32">
           <!-- 一般ユーザー向け -->
-          <div class="md:flex md:items-center md:space-x-12">
-            <div class="md:w-1/2">
-              <img src="persona1.jpg" alt="新たな自分との出会い" class="rounded-lg shadow-lg" />
-            </div>
-            <div class="md:w-1/2 mt-8 md:mt-0">
-              <h3 class="text-4xl font-bold mb-6">感動を生み出す身体</h3>
-              <p class="text-xl mb-6">
-                日々のトレーニングに、創造の歓びを。BeatMoveは、運動と音楽制作の融合により、全く新しいフィットネス体験を実現します。
+          <div class="relative h-screen flex items-center justify-center">
+            <Picture
+              src={persona1Image}
+              formats={['jpg']}
+              alt="New Self Discovery Background"
+              widths={[1024, 1920, 2560]}
+              sizes="100vw"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+              <h3 class="text-6xl font-bold mb-8">感動を生み出す身体</h3>
+              <p class="text-2xl mb-8">
+                日々のトレーニングに、創造の歓びを。BeatMoveは、運���と音楽制作の融合により、全く新しいフィットネス体験を実現します。
               </p>
-              <p class="text-xl mb-6">
+              <p class="text-2xl mb-12">
                 心拍とシンクロするビートが、身体と音楽の一体感を生み出します。専門知識不要の直感的操作で、あなただけの音楽が誕生。単なる運動から、創造的な自己表現の時間へ。
               </p>
-              <div class="mt-8">
-                <a href="#contact" class="bg-pink-500 text-white px-8 py-4 rounded-full text-xl hover:bg-pink-600"
-                  >体験予約</a
-                >
-              </div>
+              <a
+                href="#contact"
+                class="bg-pink-500 text-white px-12 py-6 rounded-full text-2xl hover:bg-pink-600 transition duration-300"
+                >体験予約</a
+              >
             </div>
           </div>
 
@@ -99,10 +140,10 @@ import heroImage from './hero.png';
             <div class="md:w-1/2 order-2 md:order-1">
               <h3 class="text-4xl font-bold mb-6">ジムに革新をもたらす</h3>
               <p class="text-xl mb-6">
-                フィットネス業界に新たな風を。BeatMoveは、最先端技術と独自コンセプトにより、他にはない体験���提供します。
+                フィットネス業界に新たな風を。BeatMoveは、最先端技術と独自コンセプトにより、他にはない体験提供します。
               </p>
               <p class="text-xl mb-6">
-                法人向けライセンスプログラムで、簡単導入。顧客満足度とリピート率の向上を実現し、進化するフィットネス市場の先駆者となる機会を提供します。
+                法人向けライセンスプログラムで、簡単導入。顧客満足度とリピート率の向上を実現し���進化するフィットネス市場の先駆者となる機会を提供します。
               </p>
               <div class="mt-8">
                 <a href="#contact" class="bg-pink-500 text-white px-8 py-4 rounded-full text-xl hover:bg-pink-600"
@@ -115,7 +156,7 @@ import heroImage from './hero.png';
             </div>
           </div>
 
-          <!-- フランチャイズパートナー向け -->
+          <!-- フランチイズパートナー向け -->
           <div class="md:flex md:items-center md:space-x-12 mt-32">
             <div class="md:w-1/2">
               <img src="persona3.jpg" alt="未来を創るパートナー" class="rounded-lg shadow-lg" />
@@ -149,7 +190,7 @@ import heroImage from './hero.png';
         </p>
         <p class="text-xl mb-6">
           「Ableton
-          Move」は、シンセサイザー、サンプラー、エフェクター、シーケンサーといった機能を網羅したオール・イン・ワンの音楽制作デバイスです。横幅313.5mm、重量970グラムと軽量・コンパクトで、最大4時間使用できるバッテリーを搭載。USB-Cポートにより高速なデータ転送と充電が可能です。
+          Move」は、シンセサイザー、サンプラー、エフェクター、シーケンサーといった機能を網羅したオール・イン・ワンの音楽制作デバイスです。横幅313.5mm、重量970グラムと軽量・コンパクトで、最大4時間使用できるバッテリーを搭載。USB-Cポートによ���高速なデータ転送と充電が可能です。
         </p>
         <p class="text-xl mb-6">
           ステレオ・スピーカーやサンプリング用マイクも内蔵しており、どこでも簡単に高品質な音楽制作がえます。世界中のプロが愛用する「Ableton
@@ -165,13 +206,13 @@ import heroImage from './hero.png';
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-5xl font-bold mb-12">特許出願中の技術で新しい体験を</h2>
         <p class="text-xl mb-6">
-          現在、以下の技術について特許を出願中です。これらの技術により、今までにない新しい���ィットネス験を提供します。
+          現在、以下の技術について特許を出願中です。これらの技術により、今までにない新しいィットネス験を提供します。
         </p>
         <div class="md:flex md:space-x-6 mt-12">
           <div class="md:w-1/2 mb-8 md:mb-0">
             <div class="bg-gray-700 p-6 rounded-lg">
               <h3 class="text-2xl font-bold mb-4">運動しながらの音楽制作システム</h3>
-              <p>運動中に音楽を作成できる独自のシステム。ユーザーの心拍数と音楽のBPMがシンクロします。</p>
+              <p>運動中に音楽を作成でる独自のシステム。ユーザーの心拍数と音楽のBPMがシンクロします。</p>
             </div>
           </div>
           <div class="md:w-1/2">
