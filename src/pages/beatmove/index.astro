@@ -227,7 +227,7 @@ import tourImage12 from './tour-image-12.jpg';
                 新たなビジネスフロンティアを求めて。BeatMoveは、運動と音楽制作を融合させた革新的なスタジオ型ジムのコンセプトを提供します。
               </p>
               <p class="text-2xl mb-12">
-                特許出願中の独自システムで、未開拓の市場を共に切り拓く。創造性とフィットネスの融合で、業界のパ���オニアとなるチャンス。
+                特許出願中の独自システムで、未開拓の市場を共に切り拓く。創造性とフィットネスの融合で、業界のパオニアとなるチャンス。
               </p>
               <a
                 href="#contact"
@@ -241,7 +241,7 @@ import tourImage12 from './tour-image-12.jpg';
     </section>
 
     <!-- Ableton Moveセクション -->
-    <section class="py-20 relative h-screen flex items-center justify-center">
+    <section class="py-20 relative">
       <Picture
         src={tourImage12}
         formats={['jpg']}
@@ -265,14 +265,21 @@ import tourImage12 from './tour-image-12.jpg';
           ステレオ・スピーカーやサンプリング用マイクも内蔵しており、どこでも簡単に高品質な音楽制作が行えます。世界中のプロが愛用する「Ableton
           Live」の機能を、パソコンなしで手のひらに収めました。
         </p>
-        <div class="mt-12 relative" style="padding-bottom: 56.25%;">
+      </div>
+    </section>
+
+    <!-- Ableton Move ビデオセクション -->
+    <section class="py-20 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-12 text-center">Ableton Moveを体験する</h2>
+        <div class="max-w-7xl mx-auto relative" style="padding-bottom: 56.25%;">
           <div
             id="videoOverlay"
             class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 cursor-pointer"
           >
             <button
               id="playButton"
-              class="bg-pink-500 text-white px-6 py-3 rounded-full text-xl hover:bg-pink-600 transition duration-300"
+              class="bg-pink-500 text-white px-8 py-4 rounded-full text-2xl hover:bg-pink-600 transition duration-300"
             >
               動画を再生
             </button>
@@ -298,6 +305,13 @@ import tourImage12 from './tour-image-12.jpg';
           playButton.addEventListener('click', () => {
             video.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
             overlay.style.display = 'none';
+
+            // Request fullscreen
+            if (video.requestFullscreen) {
+              video.requestFullscreen().catch((err) => {
+                console.error(`Error attempting to enable fullscreen: ${err.message}`);
+              });
+            }
           });
         }
       });
