@@ -32,125 +32,52 @@ import experienceImage from './experience.png';
         }
       }
       .header-bg {
-        background: linear-gradient(
-          90deg,
-          rgba(6, 182, 212, 0.3),
-          /* cyan */ rgba(59, 130, 246, 0.3),
-          /* blue */ rgba(236, 72, 153, 0.3) /* pink */
-        );
+        background: linear-gradient(90deg, rgba(6, 182, 212, 0.3), rgba(59, 130, 246, 0.3), rgba(236, 72, 153, 0.3));
         background-size: 200% 200%;
         animation: gradientBG 15s ease infinite;
       }
-      .glass-effect {
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        background-color: rgba(255, 255, 255, 0.1);
+      .parallax {
+        @apply relative overflow-hidden;
       }
-      /* Add this to your existing styles */
-      body {
-        margin: 0;
-        padding: 0;
+      .parallax::before {
+        content: '';
+        @apply absolute inset-0 bg-fixed bg-center bg-no-repeat bg-cover -z-10;
+        transform: translateZ(0);
+        will-change: transform;
       }
-
-      #pageOverlay {
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0) 0%,
-          rgba(59, 130, 246, 0.3) 50%,
-          rgba(236, 72, 153, 0.5) 100%
-        );
-        mix-blend-mode: overlay;
+      .parallax-content {
+        @apply relative z-10;
       }
-      .vibrant-gradient {
-        background: linear-gradient(45deg, #ff0066, #ff4500, #ffd700, #00ced1);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
       }
-      .vibrant-bg {
-        background: linear-gradient(
-          45deg,
-          rgba(255, 0, 102, 0.8),
-          rgba(255, 69, 0, 0.8),
-          rgba(255, 215, 0, 0.8),
-          rgba(0, 206, 209, 0.8)
-        );
-      }
-      .logo-gradient {
-        background: linear-gradient(45deg, #ff1493, #8b008b);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .title-gradient {
-        background: linear-gradient(45deg, #ff0066, #ff4500);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .vibrant-pink {
-        color: #ff1493; /* DeepPink */
-      }
-      .hover-vibrant-pink:hover {
-        color: #ff1493; /* DeepPink */
-      }
-      .violet-pink-gradient {
-        background: linear-gradient(45deg, #8b5cf6, #ec4899);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        mix-blend-mode: overlay;
+      .floating {
+        animation: float 6s ease-in-out infinite;
       }
 
-      .yellow-red-orange-gradient {
-        background: linear-gradient(45deg, #fcd34d, #ef4444, #f97316);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        mix-blend-mode: overlay;
+      #hero-section::before {
+        background-image: url('/src/pages/beatmove/hero.png');
       }
 
-      .text-gradient {
-        mix-blend-mode: overlay;
-      }
-
-      :root {
-        --primary-color: #ff1493; /* Deep Pink */
-        --secondary-color: #00ced1; /* Dark Turquoise */
-        --accent-color: #ffd700; /* Gold */
-        --text-color: #ffffff; /* White */
-        --bg-color: #1a202c; /* Dark Blue Gray */
-      }
-
-      .primary-gradient {
-        background: linear-gradient(45deg, var(--primary-color), #ff69b4);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .secondary-gradient {
-        background: linear-gradient(45deg, var(--secondary-color), #20b2aa);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .accent-text {
-        color: var(--accent-color);
+      #vision-section::before {
+        background-image: url('/src/pages/beatmove/about.png');
       }
     </style>
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   </head>
   <body class="bg-gray-900 text-white font-sans leading-relaxed">
-    <!-- Add this right after the opening <body> tag -->
     <div
       id="pageOverlay"
       class="fixed inset-0 z-40 pointer-events-none transition-opacity duration-300 ease-in-out opacity-0 mix-blend-overlay"
     >
     </div>
 
-    <!-- ヘッダー -->
+    <!-- Header (unchanged) -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out">
       <div class="header-bg glass-effect">
         <div class="container mx-auto px-6 py-4">
@@ -166,57 +93,51 @@ import experienceImage from './experience.png';
       </div>
     </header>
 
-    <!-- ヒーローセクション -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-      <Picture
-        src={heroImage}
-        formats={['jpg']}
-        alt="BeatMove Hero Image"
-        widths={[1024, 1920, 2560]}
-        sizes="100vw"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
+    <!-- Hero Section -->
+    <section id="hero-section" class="parallax relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 bg-black opacity-30"></div>
-      <div class="container mx-auto px-6 relative z-10 text-center">
-        <h1 class="text-8xl font-bold mb-16 leading-tight">
-          <span class="text-white">音楽を</span><span class="primary-gradient">創る</span><span class="text-white"
-            >。</span
-          ><br /><br />
-          <span class="text-white">身体が</span><span class="secondary-gradient">奏でる</span><span class="text-white"
-            >。</span
-          >
+      <div class="parallax-content container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-8xl font-bold mb-16 leading-tight floating">
+          <span class="text-white">音楽を</span><span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">創る</span
+          ><span class="text-white">。</span><br /><br />
+          <span class="text-white">身体が</span><span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">奏でる</span
+          ><span class="text-white">。</span>
         </h1>
-        <p class="text-4xl mb-24 text-shadow-lg leading-relaxed">
+        <p
+          class="text-4xl mb-24 text-shadow-lg leading-relaxed transform transition-all duration-500 opacity-0 scale-95"
+          id="hero-text"
+        >
           BeatMove - 世界初、フィットネスの概念を塗り替える、<br />
-          <span class="font-bold accent-text">新時代のエンターテインメント</span>
+          <span class="font-bold text-yellow-400">新時代のエンターテインメント</span>
         </p>
         <a
           href="#contact"
-          class="bg-primary-color text-white px-16 py-8 rounded-full text-3xl hover:bg-opacity-90 transition duration-300"
+          class="bg-pink-600 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-700 transition duration-300 transform hover:scale-105"
           >体験予約</a
         >
       </div>
     </section>
 
-    <!-- ビジョンセクション（創造の鼓動） -->
-    <section id="vision" class="relative min-h-screen flex items-center justify-center py-32">
-      <Picture
-        src={aboutImage}
-        formats={['jpg']}
-        alt="BeatMove Vision Background"
-        widths={[1024, 1920, 2560]}
-        sizes="100vw"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
+    <!-- Vision Section -->
+    <section id="vision-section" class="parallax relative min-h-screen flex items-center justify-center py-32">
       <div class="absolute inset-0 bg-black opacity-50"></div>
-      <div class="container mx-auto px-6 relative z-10 text-center">
-        <h2 class="text-7xl font-bold mb-20 primary-gradient">創造の鼓動</h2>
-        <p class="text-3xl mb-16 leading-relaxed">
-          <span class="font-bold accent-text">消費から創造へ。</span><br /><br />
+      <div class="parallax-content container mx-auto px-6 text-center relative z-10">
+        <h2
+          class="text-7xl font-bold mb-20 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 transform transition-all duration-500 opacity-0 scale-95"
+          id="vision-title"
+        >
+          創造の鼓動
+        </h2>
+        <p class="text-3xl mb-16 leading-relaxed transform transition-all duration-500 opacity-0" id="vision-text">
+          <span class="font-bold text-yellow-400">消費から創造へ。</span><br /><br />
           BeatMoveは、運動と音楽制作の融合により、<br />
-          <span class="font-bold secondary-gradient">新たな自己表現の扉</span>を開きます。
+          <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500"
+            >新たな自己表現の扉</span
+          >を開きます。
         </p>
-        <p class="text-3xl mb-16 leading-relaxed">
+        <p class="text-3xl mb-16 leading-relaxed transform transition-all duration-500 opacity-0" id="vision-text">
           <a
             href="https://www.b-monster.jp/"
             target="_blank"
@@ -231,7 +152,7 @@ import experienceImage from './experience.png';
           BeatMoveは運動を通じて、<br />
           <span class="font-bold">あなた自身のサウンドスケープ</span>を生み出します。
         </p>
-        <p class="text-3xl mb-24 leading-relaxed">
+        <p class="text-3xl mb-24 leading-relaxed transform transition-all duration-500 opacity-0" id="vision-text">
           <span class="font-bold">創造の喜び</span>が、あなたと周りの世界を変える。<br /><br />
           その可能性を、我々は追求し続けます。
         </p>
@@ -605,38 +526,67 @@ import experienceImage from './experience.png';
       document.addEventListener('DOMContentLoaded', () => {
         const header = document.querySelector('header');
         const pageOverlay = document.getElementById('pageOverlay');
-        if (header && pageOverlay) {
-          let lastScrollY = window.scrollY;
-          let ticking = false;
+        const parallaxSections = document.querySelectorAll('.parallax');
+        let lastScrollY = window.scrollY;
 
-          const updateHeaderAndOverlay = () => {
+        // Intersection Observer for fade-in and scale-in animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0', 'scale-95');
+                entry.target.classList.add('opacity-100', 'scale-100');
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll('#hero-text, #vision-title, #vision-text').forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Parallax effect
+        function updateParallax() {
+          parallaxSections.forEach((section) => {
+            const distance = window.pageYOffset - section.offsetTop;
+            const parallaxBg = section.querySelector('.parallax::before');
+            if (parallaxBg) {
+              parallaxBg.style.transform = `translateY(${distance * 0.5}px)`;
+            }
+          });
+        }
+
+        window.addEventListener('scroll', () => {
+          window.requestAnimationFrame(updateParallax);
+
+          // Header and overlay logic
+          if (header && pageOverlay) {
             if (lastScrollY < window.scrollY) {
               header.style.transform = 'translateY(-100%)';
             } else {
               header.style.transform = 'translateY(0)';
             }
 
-            // Update overlay opacity based on scroll position
             const scrollPercentage = Math.min(
               window.scrollY / (document.documentElement.scrollHeight - window.innerHeight),
               1
             );
-            pageOverlay.style.opacity = (scrollPercentage * 0.7).toFixed(2); // Adjust max opacity
+            pageOverlay.style.opacity = (scrollPercentage * 0.7).toFixed(2);
 
             lastScrollY = window.scrollY;
-            ticking = false;
-          };
+          }
+        });
 
-          window.addEventListener('scroll', () => {
-            if (!ticking) {
-              window.requestAnimationFrame(() => {
-                updateHeaderAndOverlay();
-                ticking = false;
-              });
-              ticking = true;
-            }
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth',
+            });
           });
-        }
+        });
       });
     </script>
   </body>
