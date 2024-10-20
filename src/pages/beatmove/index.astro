@@ -261,18 +261,15 @@ import experienceImage from './experience.png';
                 BeatMoveは、運動と音楽制作の融合により、<br />
                 <span class="font-bold">全く新しいフィットネス体験</span>を実現します。
               </p>
-              <p class="text-3xl mb-24 leading-relaxed">
-                <span class="font-bold text-yellow-500">心拍とシンクロするビート</span>が、<br />
-                身体と音楽の一体感を生み出します。<br /><br />
-                専門知識不要の直感的操作で、<br />
-                <span class="font-bold">あなただけの音楽</span>が誕生。<br /><br />
+              <p class="text-3xl mb-12 leading-relaxed">
                 単なる運動から、<span class="font-bold text-pink-400">創造的な自己表現の時間</span>へ。
               </p>
               <a
                 href="#contact"
-                class="bg-pink-600 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-700 transition duration-300 transform hover:scale-105"
-                >体験予約</a
+                class="bg-pink-600 text-white px-8 py-4 rounded-full text-xl hover:bg-pink-700 transition duration-300 transform hover:scale-105"
               >
+                事前登録
+              </a>
             </div>
           </div>
 
@@ -303,20 +300,15 @@ import experienceImage from './experience.png';
                 >により、<br />
                 <span class="font-bold text-cyan-500">他にはない体験</span>を提供します。
               </p>
-              <p class="text-3xl mb-24 leading-relaxed">
-                <span class="font-bold">法人向けライセンスプログラム</span>で、<br />
-                簡単導入。<br /><br />
-                <span class="font-bold text-pink-400">顧客満足度</span>と<span class="font-bold text-pink-400"
-                  >リピート率</span
-                >の向上を実現し、<br />
-                進化するフィットネス市場の<br />
+              <p class="text-3xl mb-12 leading-relaxed">
                 <span class="font-bold text-yellow-500">先駆者</span>となる機会を提供します。
               </p>
               <a
                 href="#contact"
-                class="bg-cyan-600 text-white px-16 py-8 rounded-full text-3xl hover:bg-cyan-700 transition duration-300 transform hover:scale-105"
-                >詳細資料請求</a
+                class="bg-cyan-600 text-white px-8 py-4 rounded-full text-xl hover:bg-cyan-700 transition duration-300 transform hover:scale-105"
               >
+                ビジネス提案
+              </a>
             </div>
           </div>
 
@@ -347,17 +339,15 @@ import experienceImage from './experience.png';
                 <span class="font-bold text-cyan-500">革新的なスタジオ型ジム</span>の<br />
                 コンセプトを提供します。
               </p>
-              <p class="text-3xl mb-24 leading-relaxed">
-                <span class="font-bold text-pink-400">特許出願中</span>の独自システムで、<br />
-                <span class="font-bold">未開拓の市場</span>を共に切り拓く。<br /><br />
-                <span class="font-bold">創造性</span>と<span class="font-bold">フィットネス</span>の融合で、<br />
+              <p class="text-3xl mb-12 leading-relaxed">
                 業界の<span class="font-bold text-yellow-500">パイオニア</span>となるチャンス。
               </p>
               <a
                 href="#contact"
-                class="bg-yellow-600 text-white px-16 py-8 rounded-full text-3xl hover:bg-yellow-700 transition duration-300 transform hover:scale-105"
-                >パートナー申込</a
+                class="bg-yellow-600 text-white px-8 py-4 rounded-full text-xl hover:bg-yellow-700 transition duration-300 transform hover:scale-105"
               >
+                パートナーシップ相談
+              </a>
             </div>
           </div>
         </div>
@@ -542,41 +532,50 @@ import experienceImage from './experience.png';
           <iconify-icon icon="mdi:email-fast-outline" class="mr-4"></iconify-icon>
           お問い合わせ・事前登録
         </h2>
-        <p class="text-xl mb-12">以下のフォームより、お気軽におい合わせください。</p>
-        <!-- 問い合わせフォーム -->
-        <div class="max-w-lg mx-auto">
-          <form action="#" method="post" class="space-y-6">
-            <div>
-              <label for="name" class="block mb-2 text-lg flex items-center">
-                <iconify-icon icon="mdi:account" class="mr-2"></iconify-icon>お名前
-              </label>
-              <input type="text" id="name" name="name" class="w-full p-3 bg-gray-800 rounded-lg" required />
+        <p class="text-xl mb-12">以下のボタンから、お気軽にお問い合わせください。</p>
+        <div class="flex flex-col items-center space-y-8">
+          <a
+            href="mailto:beatmove@gproductions.co.jp?subject=事前登録"
+            class="bg-pink-600 text-white px-8 py-4 rounded-full text-xl hover:bg-pink-700 transition duration-300 transform hover:scale-105"
+          >
+            事前登録
+          </a>
+          <div class="relative">
+            <select
+              id="inquiry-type"
+              class="bg-gray-700 text-white px-8 py-4 rounded-full text-xl appearance-none pr-12"
+            >
+              <option value="">ビジネス問い合わせ</option>
+              <option value="ジム経営者">ジム経営者</option>
+              <option value="フランチャイズパートナー">フランチャイズパートナー</option>
+              <option value="その他ビジネス">その他ビジネス</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
+              <iconify-icon icon="mdi:chevron-down"></iconify-icon>
             </div>
-            <div>
-              <label for="email" class="block mb-2 text-lg flex items-center">
-                <iconify-icon icon="mdi:email-outline" class="mr-2"></iconify-icon>メールアドレス
-              </label>
-              <input type="email" id="email" name="email" class="w-full p-3 bg-gray-800 rounded-lg" required />
-            </div>
-            <div>
-              <label for="message" class="block mb-2 text-lg flex items-center">
-                <iconify-icon icon="mdi:message-text-outline" class="mr-2"></iconify-icon>お問い合わせ内容
-              </label>
-              <textarea id="message" name="message" rows="5" class="w-full p-3 bg-gray-800 rounded-lg" required
-              ></textarea>
-            </div>
-            <div class="text-center">
-              <button
-                type="submit"
-                class="bg-primary-color text-white px-6 py-3 rounded-full text-lg hover:bg-opacity-90 flex items-center justify-center mx-auto"
-              >
-                <iconify-icon icon="mdi:send" class="mr-2"></iconify-icon>送信する
-              </button>
-            </div>
-          </form>
+          </div>
+          <a
+            id="business-inquiry"
+            href="mailto:beatmove@gproductions.co.jp"
+            class="bg-cyan-600 text-white px-8 py-4 rounded-full text-xl hover:bg-cyan-700 transition duration-300 transform hover:scale-105"
+          >
+            ビジネス問い合わせを送信
+          </a>
         </div>
       </div>
     </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const inquiryType = document.getElementById('inquiry-type') as HTMLSelectElement;
+        const businessInquiry = document.getElementById('business-inquiry') as HTMLAnchorElement;
+
+        inquiryType.addEventListener('change', () => {
+          const selectedOption = inquiryType.value;
+          businessInquiry.href = `mailto:beatmove@gproductions.co.jp?subject=ビジネス問い合わせ: ${selectedOption}`;
+        });
+      });
+    </script>
 
     <!-- Footer (updated with icons) -->
     <footer class="bg-gray-800 py-16">
