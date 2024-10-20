@@ -77,7 +77,7 @@ import experienceImage from './experience.png';
     >
     </div>
 
-    <!-- Header (unchanged) -->
+    <!-- Header (updated) -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out">
       <div class="header-bg glass-effect">
         <div class="container mx-auto px-6 py-4">
@@ -86,7 +86,10 @@ import experienceImage from './experience.png';
             <nav class="space-x-4">
               <a href="#vision" class="text-white hover:text-pink-300 transition duration-300">ビジョン</a>
               <a href="#revolution" class="text-white hover:text-cyan-300 transition duration-300">革新</a>
-              <a href="#contact" class="text-white hover:text-yellow-300 transition duration-300">お問い合わせ</a>
+              <a href="#user" class="text-white hover:text-yellow-300 transition duration-300">ユーザー</a>
+              <a href="#gym" class="text-white hover:text-green-300 transition duration-300">ジム経営</a>
+              <a href="#franchise" class="text-white hover:text-purple-300 transition duration-300">FC</a>
+              <a href="#contact" class="text-white hover:text-red-300 transition duration-300">お問い合わせ</a>
             </nav>
           </div>
         </div>
@@ -201,11 +204,13 @@ import experienceImage from './experience.png';
     <section class="py-40">
       <div class="container mx-auto px-6">
         <h2 class="text-7xl font-bold mb-32 text-center">
-          BeatMove - <span class="primary-gradient">三つの革新</span>
+          BeatMove - <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500"
+            >三つの革新</span
+          >
         </h2>
         <div class="space-y-56">
           <!-- 一般ユーザー向け -->
-          <div class="relative min-h-screen flex items-center justify-center py-32">
+          <div id="user" class="relative min-h-screen flex items-center justify-center py-32">
             <Picture
               src={persona2Image}
               formats={['jpg']}
@@ -216,9 +221,14 @@ import experienceImage from './experience.png';
             />
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="container mx-auto px-6 relative z-10 text-center">
-              <h3 class="text-6xl font-bold mb-20">感動を生み出す身体</h3>
+              <h3 class="text-6xl font-bold mb-8 text-white">一般ユーザーの皆様へ</h3>
+              <h4
+                class="text-5xl font-bold mb-20 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500"
+              >
+                感動を生み出す身体
+              </h4>
               <p class="text-3xl mb-16 leading-relaxed">
-                日々のトレーニングに、<span class="font-bold vibrant-pink">創造の歓び</span>を。<br /><br />
+                日々のトレーニングに、<span class="font-bold text-pink-400">創造の歓び</span>を。<br /><br />
                 BeatMoveは、運動と音楽制作の融合により、<br />
                 <span class="font-bold">全く新しいフィットネス体験</span>を実現します。
               </p>
@@ -227,18 +237,18 @@ import experienceImage from './experience.png';
                 身体と音楽の一体感を生み出します。<br /><br />
                 専門知識不要の直感的操作で、<br />
                 <span class="font-bold">あなただけの音楽</span>が誕生。<br /><br />
-                単なる運動から、<span class="font-bold vibrant-pink">創造的な自己表現の時間</span>へ。
+                単なる運動から、<span class="font-bold text-pink-400">創造的な自己表現の時間</span>へ。
               </p>
               <a
                 href="#contact"
-                class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
+                class="bg-pink-600 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-700 transition duration-300 transform hover:scale-105"
                 >体験予約</a
               >
             </div>
           </div>
 
           <!-- ジム経営者向け -->
-          <div class="relative min-h-screen flex items-center justify-center py-32">
+          <div id="gym" class="relative min-h-screen flex items-center justify-center py-32">
             <Picture
               src={persona3Image}
               formats={['jpg']}
@@ -249,9 +259,14 @@ import experienceImage from './experience.png';
             />
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="container mx-auto px-6 relative z-10 text-center">
-              <h3 class="text-6xl font-bold mb-20">ジムに革新をもたらす</h3>
+              <h3 class="text-6xl font-bold mb-8 text-white">ジム経営者の皆様へ</h3>
+              <h4
+                class="text-5xl font-bold mb-20 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500"
+              >
+                ジムに革新をもたらす
+              </h4>
               <p class="text-3xl mb-16 leading-relaxed">
-                フィットネス業界に<span class="font-bold vibrant-pink">新たな風</span>を。<br /><br />
+                フィットネス業界に<span class="font-bold text-pink-400">新たな風</span>を。<br /><br />
                 BeatMoveは、<span class="font-bold">最先端技術</span>と<span class="font-bold">独自コンセプト</span
                 >により、<br />
                 <span class="font-bold text-cyan-500">他にはない体験</span>を提供します。
@@ -259,7 +274,7 @@ import experienceImage from './experience.png';
               <p class="text-3xl mb-24 leading-relaxed">
                 <span class="font-bold">法人向けライセンスプログラム</span>で、<br />
                 簡単導入。<br /><br />
-                <span class="font-bold vibrant-pink">顧客満足度</span>と<span class="font-bold vibrant-pink"
+                <span class="font-bold text-pink-400">顧客満足度</span>と<span class="font-bold text-pink-400"
                   >リピート率</span
                 >の向上を実現し、<br />
                 進化するフィットネス市場の<br />
@@ -267,14 +282,14 @@ import experienceImage from './experience.png';
               </p>
               <a
                 href="#contact"
-                class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
+                class="bg-cyan-600 text-white px-16 py-8 rounded-full text-3xl hover:bg-cyan-700 transition duration-300 transform hover:scale-105"
                 >詳細資料請求</a
               >
             </div>
           </div>
 
           <!-- フランチャイズパートナー向け -->
-          <div class="relative min-h-screen flex items-center justify-center py-32">
+          <div id="franchise" class="relative min-h-screen flex items-center justify-center py-32">
             <Picture
               src={persona4Image}
               formats={['jpg']}
@@ -285,22 +300,27 @@ import experienceImage from './experience.png';
             />
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="container mx-auto px-6 relative z-10 text-center">
-              <h3 class="text-6xl font-bold mb-20">未来のフィットネスを共に</h3>
+              <h3 class="text-6xl font-bold mb-8 text-white">フランチャイズパートナー候補の皆様へ</h3>
+              <h4
+                class="text-5xl font-bold mb-20 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500"
+              >
+                未来のフィットネスを共に
+              </h4>
               <p class="text-3xl mb-16 leading-relaxed">
-                <span class="font-bold vibrant-pink">新たなビジネスフロンティア</span>を求めて。<br /><br />
+                <span class="font-bold text-pink-400">新たなビジネスフロンティア</span>を求めて。<br /><br />
                 BeatMoveは、<span class="font-bold">運動と音楽制作を融合</span>させた<br />
                 <span class="font-bold text-cyan-500">革新的なスタジオ型ジム</span>の<br />
                 コンセプトを提供します。
               </p>
               <p class="text-3xl mb-24 leading-relaxed">
-                <span class="font-bold vibrant-pink">特許出願中</span>の独自システムで、<br />
+                <span class="font-bold text-pink-400">特許出願中</span>の独自システムで、<br />
                 <span class="font-bold">未開拓の市場</span>を共に切り拓く。<br /><br />
                 <span class="font-bold">創造性</span>と<span class="font-bold">フィットネス</span>の融合で、<br />
                 業界の<span class="font-bold text-yellow-500">パイオニア</span>となるチャンス。
               </p>
               <a
                 href="#contact"
-                class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
+                class="bg-yellow-600 text-white px-16 py-8 rounded-full text-3xl hover:bg-yellow-700 transition duration-300 transform hover:scale-105"
                 >パートナー申込</a
               >
             </div>
@@ -469,7 +489,7 @@ import experienceImage from './experience.png';
           <a
             href="#contact"
             class="bg-pink-500 text-white px-16 py-8 rounded-full text-3xl hover:bg-pink-600 transition duration-300"
-            >体験予約はこちら</a
+            >体験予約こちら</a
           >
         </div>
       </div>
