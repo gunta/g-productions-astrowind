@@ -113,6 +113,32 @@ import experienceImage from './experience.png';
       .text-gradient {
         mix-blend-mode: overlay;
       }
+
+      :root {
+        --primary-color: #ff1493; /* Deep Pink */
+        --secondary-color: #00ced1; /* Dark Turquoise */
+        --accent-color: #ffd700; /* Gold */
+        --text-color: #ffffff; /* White */
+        --bg-color: #1a202c; /* Dark Blue Gray */
+      }
+
+      .primary-gradient {
+        background: linear-gradient(45deg, var(--primary-color), #ff69b4);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .secondary-gradient {
+        background: linear-gradient(45deg, var(--secondary-color), #20b2aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .accent-text {
+        color: var(--accent-color);
+      }
     </style>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   </head>
@@ -129,11 +155,11 @@ import experienceImage from './experience.png';
       <div class="header-bg glass-effect">
         <div class="container mx-auto px-6 py-4">
           <div class="flex justify-between items-center">
-            <div class="text-2xl font-bold logo-gradient">BeatMove</div>
+            <div class="text-2xl font-bold primary-gradient">BeatMove</div>
             <nav class="space-x-4">
-              <a href="#vision" class="text-white hover-vibrant-pink transition duration-300">ビジョン</a>
-              <a href="#revolution" class="text-white hover:text-[#00CED1] transition duration-300">革新</a>
-              <a href="#contact" class="text-white hover:text-[#FFD700] transition duration-300">お問い合わせ</a>
+              <a href="#vision" class="text-white hover:text-pink-300 transition duration-300">ビジョン</a>
+              <a href="#revolution" class="text-white hover:text-cyan-300 transition duration-300">革新</a>
+              <a href="#contact" class="text-white hover:text-yellow-300 transition duration-300">お問い合わせ</a>
             </nav>
           </div>
         </div>
@@ -153,19 +179,20 @@ import experienceImage from './experience.png';
       <div class="absolute inset-0 bg-black opacity-30"></div>
       <div class="container mx-auto px-6 relative z-10 text-center">
         <h1 class="text-8xl font-bold mb-16 leading-tight">
-          <span class="text-white">音楽を</span><span class="violet-pink-gradient text-gradient">創る</span><span
-            class="text-white">。</span
+          <span class="text-white">音楽を</span><span class="primary-gradient">創る</span><span class="text-white"
+            >。</span
           ><br /><br />
-          <span class="text-white">身体が</span><span class="yellow-red-orange-gradient text-gradient">奏でる</span
-          ><span class="text-white">。</span>
+          <span class="text-white">身体が</span><span class="secondary-gradient">奏でる</span><span class="text-white"
+            >。</span
+          >
         </h1>
         <p class="text-4xl mb-24 text-shadow-lg leading-relaxed">
           BeatMove - 世界初、フィットネスの概念を塗り替える、<br />
-          <span class="font-bold text-white">新時代のエンターテインメント</span>
+          <span class="font-bold accent-text">新時代のエンターテインメント</span>
         </p>
         <a
           href="#contact"
-          class="bg-[#FF1493] text-white px-16 py-8 rounded-full text-3xl hover:bg-[#FF69B4] transition duration-300"
+          class="bg-primary-color text-white px-16 py-8 rounded-full text-3xl hover:bg-opacity-90 transition duration-300"
           >体験予約</a
         >
       </div>
@@ -183,15 +210,11 @@ import experienceImage from './experience.png';
       />
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="container mx-auto px-6 relative z-10 text-center">
-        <h2 class="text-7xl font-bold mb-20">創造の鼓動</h2>
+        <h2 class="text-7xl font-bold mb-20 primary-gradient">創造の鼓動</h2>
         <p class="text-3xl mb-16 leading-relaxed">
-          <span class="font-bold text-white text-7xl italic relative">
-            <span class="absolute -left-8 -top-8 text-9xl text-pink-500 opacity-30">"</span>
-            消費から創造へ。
-            <span class="absolute -right-8 -bottom-8 text-9xl text-pink-500 opacity-30">"</span>
-          </span><br /><br />
+          <span class="font-bold accent-text">消費から創造へ。</span><br /><br />
           BeatMoveは、運動と音楽制作の融合により、<br />
-          <span class="font-bold">新たな自己表現の扉</span>を開きます。
+          <span class="font-bold secondary-gradient">新たな自己表現の扉</span>を開きます。
         </p>
         <p class="text-3xl mb-16 leading-relaxed">
           <a
@@ -257,7 +280,7 @@ import experienceImage from './experience.png';
     <section class="py-40">
       <div class="container mx-auto px-6">
         <h2 class="text-7xl font-bold mb-32 text-center">
-          BeatMove - <span class="title-gradient">三つの革新</span>
+          BeatMove - <span class="primary-gradient">三つの革新</span>
         </h2>
         <div class="space-y-56">
           <!-- 一般ユーザー向け -->
@@ -470,7 +493,7 @@ import experienceImage from './experience.png';
             <div
               class="bg-gray-900 bg-opacity-90 p-12 rounded-lg shadow-2xl transform hover:scale-105 transition duration-300"
             >
-              <iconify-icon icon="mdi:music-note-bluetooth" width="80" height="80" class="vibrant-pink mb-8"
+              <iconify-icon icon="mdi:music-note-bluetooth" width="80" height="80" class="text-primary-color mb-8"
               ></iconify-icon>
               <h3 class="text-4xl font-bold mb-8">運動同期音楽生成コンセプト</h3>
               <p class="text-2xl leading-relaxed">
@@ -483,7 +506,8 @@ import experienceImage from './experience.png';
             <div
               class="bg-gray-900 bg-opacity-90 p-12 rounded-lg shadow-2xl transform hover:scale-105 transition duration-300"
             >
-              <iconify-icon icon="mdi:playlist-music" width="80" height="80" class="vibrant-pink mb-8"></iconify-icon>
+              <iconify-icon icon="mdi:playlist-music" width="80" height="80" class="text-primary-color mb-8"
+              ></iconify-icon>
               <h3 class="text-4xl font-bold mb-8">プロフェッショナル楽曲更新システム</h3>
               <p class="text-2xl leading-relaxed">
                 毎月、プロの音楽家が制作する<br />32種類の最新ベース楽曲を提供。<br />
@@ -552,8 +576,9 @@ import experienceImage from './experience.png';
               ></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="bg-[#FF1493] text-white px-6 py-3 rounded-full text-lg hover:bg-[#FF69B4]"
-                >送信する</button
+              <button
+                type="submit"
+                class="bg-primary-color text-white px-6 py-3 rounded-full text-lg hover:bg-opacity-90">送信する</button
               >
             </div>
           </form>
