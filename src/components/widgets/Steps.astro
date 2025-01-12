@@ -5,11 +5,20 @@ import Headline from '~/components/ui/Headline.astro';
 import Image from '~/components/common/Image.astro';
 import type { Steps as Props } from '~/types';
 
+// 型定義を拡張
+interface TimelineItem {
+  title: string;
+  description?: string;
+  icon?: string;
+  classes?: Record<string, string>;
+  link?: string; // link プロパティを追加
+}
+
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
-  items = [],
+  items = [] as TimelineItem[], // 型を明示的に指定
   image = await Astro.slots.render('image'),
   isReversed = false,
 
