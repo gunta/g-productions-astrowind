@@ -47,7 +47,7 @@ const metadata = {
   <Hero
     id="home"
     title="G Productions, LLC"
-    tagline="Your Global AI Innovation Partner"
+    tagline="Crafting AI-Powered Futures, Globally"
     image={{
       src: '~/assets/images/hero-1.png', // Global/tech-focused hero image
       alt: 'G Productions, LLC - Global AI Innovation',
@@ -68,169 +68,207 @@ const metadata = {
     ]}
   >
     <Fragment slot="subtitle">
-      We build the future, globally. Powered by AI.<br />
-      <span class="font-semibold">G Productions, LLC (USA)</span> leverages cutting-edge technology and creative solutions
-      to drive worldwide impact and accelerate your success.
+      We're not just another tech company. We're architects of possibility.<br />
+      <span class="font-semibold">G Productions, LLC</span> combines human-centered design with AI innovation to solve complex
+      challenges across borders. Where technology meets creativity, that's where we thrive.
     </Fragment>
   </Hero>
 
   <!-- Services Section (#services) -->
   <Features2
     id="services"
-    title="Our Global AI & Technology Solutions"
-    subtitle="Empowering businesses worldwide with innovative, tailored services"
+    title="Our AI & Innovation Studio"
+    subtitle="We blend advanced technology with creative vision to deliver transformative solutions"
     columns={4}
     defaultIcon="tabler:rocket"
     items={[
       {
         title: 'AI Solutions & Consulting',
         description: `<ul>
-          <li>Bespoke AI Agent Development</li>
-          <li>AI Workflow Design & Automation</li>
-          <li>Strategic AI Implementation Consulting</li>
-          <li>AI-Powered Content & Design Generation</li>
-          <li>Unlock efficiency and competitive advantage.</li>
+          <li><strong>Tailored AI Agents:</strong> Custom assistants that intuitively understand your business context</li>
+          <li><strong>Workflow Reimagination:</strong> Rethinking processes through an AI-first lens</li>
+          <li><strong>Strategic Integration:</strong> Weaving AI into your business DNA, not just bolting it on</li>
+          <li><strong>Generative Systems:</strong> Unlocking creative potential through AI-powered content engines</li>
+          <li><strong>ROI Focus:</strong> Delivering measurable value and competitive advantage</li>
         </ul>`,
         icon: 'tabler:brain',
       },
       {
-        title: 'Custom Software Development',
+        title: 'Custom Software Engineering',
         description: `<ul>
-          <li>Full-Stack Web & Application Development</li>
-          <li>Scalable SaaS Product Engineering</li>
-          <li>Advanced Chatbot & Conversational AI</li>
-          <li>Modern Tech Stack (React, Node, Python, Cloudflare)</li>
-          <li>Robust, reliable, and future-proof solutions.</li>
+          <li><strong>Full-Stack Excellence:</strong> Crafting beautiful, functional digital experiences</li>
+          <li><strong>SaaS Architecture:</strong> Building scalable platforms that grow with your business</li>
+          <li><strong>Conversational AI:</strong> Creating natural, helpful digital interactions</li>
+          <li><strong>Edge-Deployed Solutions:</strong> Leveraging Cloudflare and modern infrastructure</li>
+          <li><strong>Future-Ready Code:</strong> Engineering for adaptability and long-term evolution</li>
         </ul>`,
         icon: 'tabler:code',
       },
       {
         title: 'Global Business Services',
         description: `<ul>
-          <li>Expert Translation & Localization (JP<>EN+)</li>
-          <li>Professional Interpretation Services</li>
-          <li>Cross-Border Market Entry Strategy</li>
-          <li>Inbound/Outbound Business Consulting</li>
-          <li>Navigate global markets with confidence.</li>
+          <li><strong>Cross-Cultural Translation:</strong> Nuanced JP↔EN communication that captures intent</li>
+          <li><strong>Technical & Legal Expertise:</strong> Industry-specific terminology and context</li>
+          <li><strong>Market Entry Strategy:</strong> Navigate international waters with experienced guides</li>
+          <li><strong>Cultural Consulting:</strong> Beyond words—understanding the unspoken rules</li>
+          <li><strong>Global/Local Balance:</strong> Maintaining brand identity across diverse markets</li>
         </ul>`,
         icon: 'tabler:world-share',
       },
       {
-        title: 'Hybrid Event Design (Gathrly)',
+        title: 'Creative Technology Events',
         description: `<ul>
-          <li>Innovative Hybrid & Virtual Event Concepts</li>
-          <li>AI-Powered Event Planning & Logistics</li>
-          <li>Engaging Experiences for Global Audiences</li>
-          <li>Technology Integration & Support</li>
-          <li>Leveraging insights from Gathr.ly.</li>
+          <li><strong>Hybrid Experiences:</strong> Blending physical and digital for maximum impact</li>
+          <li><strong>AI-Enhanced Events:</strong> Using technology to create memorable moments</li>
+          <li><strong>Global Audience Design:</strong> Connecting diverse participants across time zones</li>
+          <li><strong>Tech Community Building:</strong> Creating spaces for collaboration and growth</li>
+          <li><strong>Gathr.ly Methodology:</strong> Our proven approach to meaningful gatherings</li>
         </ul>`,
         icon: 'tabler:calendar-event',
       },
-      // Optional: Creative Services
-      // {
-      //   title: 'Creative Services',
-      //   description: `<ul>
-      //     <li>Music Production & Distribution</li>
-      //     <li>Event Production (Gathrly Concept)</li>
-      //     <li>Video Production & Editing</li>
-      //   </ul>`,
-      //   icon: 'tabler:creative-commons',
-      // },
     ]}
   />
 
   <!-- Why Choose Us Section (#why-us) -->
-  <Stats
+  <Content
     id="why-us"
     title="Why Partner with G Productions?"
-    subtitle="Your strategic advantage in a global, AI-driven world."
-    stats={[
-      { title: 'Global Perspective', amount: 'AI & Tech' },
-      { title: 'AI-First Approach', amount: 'Innovation' },
-      { title: 'Dual Expertise', amount: 'US & Japan' },
-      { title: 'Proven Results', amount: 'Portfolio' },
-    ]}
-  />
+    columns={2}
+    image={{
+      src: '~/assets/images/i543726b09799.jpg',
+      alt: 'G Productions Advantage',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">Our Unique Approach</h3>
+
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">Human-Centered Technology</h4>
+          <p class="mt-1">
+            We believe technology should serve humans, not the other way around. Every solution we design starts with
+            understanding the people who will use it—their needs, challenges, and aspirations. This philosophy ensures
+            our AI and software solutions feel intuitive and genuinely helpful rather than frustrating or alienating.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">Cross-Cultural Intelligence</h4>
+          <p class="mt-1">
+            With deep expertise in both Western and Japanese business cultures, we bring a rare dual perspective to
+            global projects. We don't just translate words—we translate concepts, intentions, and experiences across
+            cultural contexts, ensuring nothing gets lost in translation as you expand internationally.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">Creative AI Advantage</h4>
+          <p class="mt-1">
+            While others see AI as merely a technical tool, we recognize it as a creative medium. Our team combines
+            technical excellence with creative vision to imagine possibilities others miss. This creative-technical
+            fusion allows us to craft AI solutions that surprise and delight while delivering measurable business
+            outcomes.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400">Globally Connected, Locally Attuned</h4>
+          <p class="mt-1">
+            Through our interconnected structure—with G Productions, LLC in the US and <a
+              href="/ja/#company"
+              class="text-blue-600 dark:text-blue-400 hover:underline font-medium">G Productions Japan 合同会社</a
+            > in Tokyo—we offer seamless global service with authentic local presence. This unique arrangement provides you
+            with both international perspective and deep local market understanding.
+          </p>
+        </div>
+      </div>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-blue-900/30"></div>
+    </Fragment>
+  </Content>
 
   <!-- Portfolio / Case Studies Section (#portfolio) -->
   <Features
     id="portfolio"
-    title="Innovating Across Borders: Our Work"
-    subtitle="Selected projects showcasing our global capabilities and technological expertise"
+    title="Our Work: Innovation with Purpose"
+    subtitle="Projects that demonstrate our commitment to solving meaningful challenges through technology"
     items={[
-      // Example Case Study Item 1
       {
-        title: 'AI Code Agents Festival (Hybrid Event Production)',
+        title: 'AI Code Agents Festival',
         description:
-          'Successfully produced a large-scale hybrid tech conference connecting a global audience (200+ in-person, 20k+ online), demonstrating expertise in complex event logistics and community engagement.',
-        icon: 'tabler:calendar-event', // Or 'tabler:robot'
+          "We didn't just organize a tech conference—we created a community movement. This hybrid event connected 200+ in-person attendees with 20,000+ online participants, featuring live coding demonstrations, expert panels, and interactive AI workshops that showcased the human potential of AI technology.",
+        icon: 'tabler:robot',
         callToAction: {
-          text: 'View Event Details',
+          text: 'Explore the Event',
           href: 'https://events.code-agents.com/2025-winter/',
           target: '_blank',
           variant: 'link',
         },
       },
-      // Example Case Study Item 2
       {
-        title: 'Multinational Tech Localization (Global Services)',
+        title: 'Cross-Cultural Product Launch',
         description:
-          'Executed end-to-end localization for a major software product launch in Japan, including technical translation, cultural consulting, and QA, ensuring seamless market entry.',
+          'When a leading US software company needed to enter the Japanese market, we provided more than translation—we orchestrated a complete cultural adaptation. Our team redesigned UI/UX elements, localized marketing messages for cultural resonance, and provided technical glossaries that captured nuanced terminology across languages.',
         icon: 'tabler:language',
       },
-      // Example Case Study Item 3
       {
-        title: 'E-commerce AI Agent (AI Solutions)',
+        title: 'Retail Revolution AI Agent',
         description:
-          'Developed and deployed a sophisticated AI agent for a US retailer, automating 60%+ of customer support queries and increasing conversion rates through personalized recommendations.',
-        icon: 'tabler:robot',
+          "For a specialty retailer facing customer service challenges, we developed an AI agent that doesn't just answer questions—it creates genuine connections. The system understands context, remembers customer preferences, and communicates with authentic brand personality, resulting in 60% automation and a 23% increase in customer satisfaction.",
+        icon: 'tabler:shopping-cart',
       },
-      // Example Case Study Item 4
       {
-        title: 'Cross-Platform SaaS Application (Software Dev)',
+        title: 'Healthcare Analytics Platform',
         description:
-          'Engineered a scalable SaaS platform for a B2B client, featuring a modern web interface and mobile companion apps, deployed globally on Cloudflare infrastructure.',
-        icon: 'tabler:cloud-code',
+          'We engineered a HIPAA-compliant SaaS platform that transforms how healthcare providers understand patient data. Using privacy-preserving AI models and intuitive visualizations, the solution helps clinicians identify patterns and make more informed decisions, reducing diagnostic time by 35% in pilot deployments.',
+        icon: 'tabler:heart-rate-monitor',
       },
-      // Add more portfolio items here
     ]}
   />
 
   <!-- Global Presence / About Section (#about) -->
   <Content
     id="about"
-    title="Global Reach, Integrated Expertise"
+    title="Our Story: Bridging Worlds Through Technology"
     isReversed
     image={{
-      src: '~/assets/images/office-02.jpeg', // Global team/office image
+      src: '~/assets/images/office-02.jpeg',
       alt: 'G Productions, LLC - Global Operations',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
-        Our Foundation (G Productions, LLC)
-      </h3>
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">The Genesis</h3>
       <p class="mb-4 text-lg">
-        Founded in Wyoming, USA, G Productions, LLC is the global engine driving our innovation. We operate as a dynamic
-        AI studio, committed to merging advanced technology with creative excellence to solve complex challenges across
-        international markets. Our AI-first methodology ensures we deliver future-ready solutions.
+        G Productions was born from a simple yet profound realization: technology's greatest potential lies in
+        connecting people across geographical, cultural, and conceptual divides. Founded in Wyoming by Günther Brunner,
+        our journey began with a vision to create an innovation studio that defies traditional boundaries between
+        disciplines, merging technical expertise with creative sensibility.
       </p>
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">The Power of Synergy</h3>
+
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">Our Global-Local Philosophy</h3>
       <p class="mb-4 text-lg">
-        Our integrated structure is our strength. G Productions, LLC (USA) spearheads global strategy and technology,
-        while our dedicated Japanese entity, <a
-          href="/ja/#company"
-          class="text-blue-600 dark:text-blue-400 hover:underline font-medium">G Productions Japan 合同会社</a
-        >, provides deep local market understanding and execution. This seamless collaboration delivers unparalleled
-        value – global innovation tailored with local precision.
+        We've intentionally designed our company structure to mirror our core philosophy: globally connected, locally
+        authentic. G Productions, LLC develops our broader technology vision and AI innovation approach, while our
+        sister entity, <a href="/ja/#company" class="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+          >G Productions Japan 合同会社</a
+        >, brings deep cultural understanding to our work in Asia. This unique arrangement allows us to think globally
+        while acting locally in ways that truly resonate.
       </p>
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">Leadership & Vision</h3>
+
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">The Team Behind the Magic</h3>
       <p class="text-lg">
-        Led by founder Günther Brunner, our core US team collaborates with a curated network of global specialists. We
-        are passionate about building bridges – connecting technologies, markets, and creative ideas to empower our
-        clients worldwide.
+        We're proud of our diverse team that spans continents, disciplines, and perspectives. Led by founder Günther
+        Brunner, our collective includes AI engineers, designers, business strategists, linguists, and creative
+        technologists. We deliberately cultivate this diversity because we believe the most interesting solutions emerge
+        at the intersection of different ways of thinking.
       </p>
-      <!-- Add Careers link/info if applicable -->
+
+      <blockquote class="text-lg italic border-l-4 border-blue-500 pl-4 my-4">
+        "We're building a company that uses technology not just to solve problems, but to expand what's possible for
+        people and businesses across cultures. That's the future we want to create."
+        <footer class="text-right mt-2">— Günther Brunner, Founder</footer>
+      </blockquote>
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-gray-50 dark:bg-gray-800/50"></div>
@@ -243,36 +281,36 @@ const metadata = {
   <!-- Contact Section (#contact) -->
   <Features2
     id="contact"
-    title="Connect with Our Global Team"
-    tagline="Reach out to G Productions, LLC (USA)"
+    title="Let's Create Something Extraordinary Together"
+    tagline="We'd love to hear about your challenges and ideas"
     columns={2}
     items={[
       {
-        title: 'USA Headquarters (Global Inquiries)',
+        title: 'Get in Touch',
         description: `<strong class="text-lg">G Productions, LLC</strong><br />
         30 N Gould St Ste N<br />
         Sheridan, WY 82801 USA<br />
         <br />
-        <strong>Phone:</strong> <a href="tel:+13072919547" class="hover:underline">+1 (307) 291-9547</a><br />
-        <strong>Email:</strong> <a href="mailto:contact@g-productions.studio" class="hover:underline">contact@g-productions.studio</a><br /><br />
+        <strong>Call us:</strong> <a href="tel:+13072919547" class="hover:underline text-blue-600 dark:text-blue-400">+1 (307) 291-9547</a><br />
+        <strong>Email us:</strong> <a href="mailto:contact@g-productions.studio" class="hover:underline text-blue-600 dark:text-blue-400">contact@g-productions.studio</a><br /><br />
+        <p class="text-sm italic">Whether you have a specific project in mind or simply want to explore possibilities, we're eager to start a conversation. Our team responds to all inquiries within 24 hours.</p>
         <hr class="my-2 border-gray-300 dark:border-gray-600"/>
-        For inquiries specific to the Japanese market, please contact our <a href="/ja#contact" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Japan Office (日本)</a>.`,
-        icon: 'tabler:building-skyscraper',
+        <p class="mt-2">For inquiries specific to the Japanese market, please contact our <a href="/ja#contact" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Japan Office (日本)</a>.</p>`,
+        icon: 'tabler:mail',
       },
       {
-        title: 'Office Location',
+        title: 'Visit Our Headquarters',
         description:
           '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167703411779!2d-106.9549504!3d44.797770799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a66677f%3A0x8f85bd068d1afb8a!2s30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sjp!4v1718789512794!5m2!1sen!2sjp" width="100%" height="300px" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         icon: 'tabler:map-pin',
       },
-      // Consider adding a Contact Form component here if desired
     ]}
   />
 
   <!-- Final CTA -->
   <CallToAction
-    title="Ready to Innovate on a Global Scale?"
-    subtitle="Let's explore how our AI expertise and technology solutions can propel your international business forward."
+    title="Your Vision, Our Expertise"
+    subtitle="Every breakthrough begins with a conversation. Let's discover what we can achieve together."
     actions={[
       {
         variant: 'primary',
@@ -281,5 +319,15 @@ const metadata = {
         icon: 'tabler:send',
       },
     ]}
-  />
+  >
+    <Fragment slot="content">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-lg mb-4">
+          The future belongs to those who can imagine it, shape it, and bring it to life. Our team is ready to help you
+          navigate the intersection of technology, creativity, and human experience.
+        </p>
+        <p class="italic">"The best way to predict the future is to create it."</p>
+      </div>
+    </Fragment>
+  </CallToAction>
 </Layout>
