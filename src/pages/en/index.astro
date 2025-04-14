@@ -25,6 +25,7 @@ const metadata = {
       links={[
         { text: 'Home', href: '/en#home' },
         { text: 'Services', href: '/en#services' },
+        { text: 'Company Services', href: '/en#company-services' },
         { text: 'Why Us?', href: '/en#why-us' },
         { text: 'Portfolio', href: '/en#portfolio' },
         { text: 'About', href: '/en#about' },
@@ -46,7 +47,7 @@ const metadata = {
   <!-- Hero Section (#home) -->
   <Hero
     id="home"
-    title="G Productions, LLC"
+    title="G Productions"
     tagline="Crafting AI-Powered Futures, Globally"
     image={{
       src: '~/assets/images/hero-1.png', // Global/tech-focused hero image
@@ -267,7 +268,7 @@ const metadata = {
       <blockquote class="text-lg italic border-l-4 border-blue-500 pl-4 my-4">
         "We're building a company that uses technology not just to solve problems, but to expand what's possible for
         people and businesses across cultures. That's the future we want to create."
-        <footer class="text-right mt-2">— Günther Brunner, Founder</footer>
+        <footer class="text-right mt-2">— Günther Brunner, CEO & Founder</footer>
       </blockquote>
     </Fragment>
     <Fragment slot="bg">
@@ -275,8 +276,109 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Optional: Client Logos/Testimonials Section (#clients) -->
-  <!-- Add a Brands or Testimonials widget here if needed, e.g., <Brands logos={[...]} title="Trusted By Global Leaders"/> -->
+  <!-- Company Services Section -->
+  <Features2
+    id="company-services"
+    title="Company Services"
+    subtitle="Our suite of specialized services combining AI innovation with human creativity"
+    columns={2}
+    items={[
+      {
+        title: 'Gathrly - Hybrid Event Design',
+        description: `<div class="space-y-4">
+          <p>Drawing from our experience organizing events of various scales, we understand the unique challenges each size presents. 
+          Event production requires both human creativity and AI-powered efficiency.</p>
+          
+          <p class="font-semibold">Gathrly is our hybrid event design service that maximizes the strengths of both approaches.</p>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
+            <div>
+              <h4 class="font-bold flex items-center gap-2"><span>👥</span> Human-Driven Components</h4>
+              <ul class="list-disc list-inside ml-4">
+                <li>Crafting the core value proposition</li>
+                <li>Understanding and expressing brand identity</li>
+                <li>Personalized consulting and quality control</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold flex items-center gap-2"><span>🤖</span> AI-Enhanced Elements</h4>
+              <ul class="list-disc list-inside ml-4">
+                <li>Generating design variations</li>
+                <li>Automating ticketing and entry management</li>
+                <li>Visualizing progress and optimizing resources</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
+            <h4 class="font-bold mb-2">Currently accepting trial participants for events of all sizes!</h4>
+            <div class="mt-2">
+              Learn more at:
+              <a href="https://gathr.ly" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                gathr.ly <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>`,
+        icon: 'tabler:calendar-event',
+      },
+      {
+        title: 'AI Code Agents - Developer Productivity',
+        description: `<div class="space-y-4">
+          <p>Our development support service balances increased productivity with quality assurance through advanced AI integration.</p>
+          
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
+            <ul class="list-disc list-inside ml-4">
+              <li>Understanding developer intent to support code generation</li>
+              <li>Recommending implementations based on best practices</li>
+              <li>Enhancing code review efficiency and quality</li>
+              <li>Generating documentation to improve maintainability</li>
+            </ul>
+          </div>
+
+          <p>AI Code Agents maximizes developer creativity and productivity, allowing them to focus on higher-value tasks while maintaining code quality.</p>
+
+          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
+            <div class="mt-2">
+              Learn more at:
+              <a href="https://code-agents.com" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                code-agents.com <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>`,
+        icon: 'tabler:code',
+      },
+      {
+        title: 'MCPVerified - Model Control Protocol Guide',
+        description: `<div class="space-y-4">
+          <p>MCPVerified is your trusted guide to the Model Control Protocol ecosystem, providing opinionated, carefully curated recommendations backed by real-world experience.</p>
+          
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
+            <h4 class="font-bold mb-2">Core Values</h4>
+            <ul class="list-disc list-inside ml-4">
+              <li><strong>TypeScript First:</strong> The right balance of type safety and developer experience</li>
+              <li><strong>Security First:</strong> Carefully vetted services and best practices</li>
+              <li><strong>Performance Matters:</strong> Built with performance in mind from the beginning</li>
+              <li><strong>Developer Experience:</strong> Prioritizing DX while maintaining production quality</li>
+            </ul>
+          </div>
+
+          <p>MCPVerified cuts through the noise to provide clear, direct guidance on building successful MCP applications, prioritizing modular serverless architectures, official packages, security-first approaches, and excellent developer experience.</p>
+
+          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
+            <div class="mt-2">
+              Learn more at:
+              <a href="https://mcpverified.com/introduction" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                mcpverified.com <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>`,
+        icon: 'tabler:school',
+      },
+    ]}
+  />
 
   <!-- Contact Section (#contact) -->
   <Features2

@@ -24,6 +24,7 @@ const metadata = {
       links={[
         { text: 'ホーム', href: '/ja#home' },
         { text: 'サービス', href: '/ja#services' },
+        { text: '自社サービス', href: '/ja#jigyou' },
         { text: '選ばれる理由', href: '/ja#why-us' },
         { text: '導入事例', href: '/ja#jirei' },
         { text: '会社概要', href: '/ja#company' },
@@ -194,7 +195,7 @@ const metadata = {
   </Content>
 
   <!-- Case Studies / Client Voice Section (#jirei) -->
-  <Steps
+  <!-- <Steps
     id="jirei"
     title="導入事例・お客様の声"
     items={[
@@ -222,7 +223,7 @@ const metadata = {
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
-  />
+  /> -->
 
   <!-- Company Information Section (#company) -->
   <Content
@@ -298,7 +299,7 @@ const metadata = {
   </Content>
 
   <Steps
-    id="works"
+    id="jirei"
     title="翻訳実績"
     items={[
       {
@@ -619,6 +620,110 @@ const metadata = {
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- 自社サービス Section -->
+  <Features2
+    id="jigyou"
+    title="自社サービス"
+    subtitle="AIと人間の創造性を融合した独自のサービス"
+    columns={2}
+    items={[
+      {
+        title: 'Gathrly - イベントデザインサービス',
+        description: `<div class="space-y-4">
+          <p>様々な規模のイベント主催経験から、「規模によって異なる課題」を熟知しています。
+          イベント主催には、人間の創造性が必要な部分と、AIで効率化できる部分があります。</p>
+          
+          <p class="font-semibold">Gathrlyは、それぞれの長所を最大限に活かした ハイブリッドなイベントデザインサービスです。</p>
+
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
+            <div>
+              <h4 class="font-bold flex items-center gap-2"><span>👥</span> 人間が担当すること</h4>
+              <ul class="list-disc list-inside ml-4">
+                <li>イベントの本質的な価値の設計</li>
+                <li>ブランドの世界観の理解と表現</li>
+                <li>きめ細やかなコンサルティング</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold flex items-center gap-2"><span>🤖</span> AIが支援すること</h4>
+              <ul class="list-disc list-inside ml-4">
+                <li>デザインのバリエーション生成</li>
+                <li>チケット販売・入場管理の自動化</li>
+                <li>進行状況の可視化</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
+            <h4 class="font-bold mb-2">現在、各規模のトライアル参加者を募集中！</h4>
+            <div class="mt-2">
+              詳細はこちら：
+              <a href="https://gathr.ly" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                gathr.ly <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>`,
+        icon: 'tabler:calendar-event',
+      },
+      {
+        title: 'AI Code Agents - AIコーディング支援',
+        description: `<div class="space-y-4">
+          <p>システム開発における生産性向上とクオリティ確保を両立する、AI活用の開発支援サービスです。</p>
+          
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
+            <ul class="list-disc list-inside ml-4">
+              <li>開発者の意図を理解し、コード生成をサポート</li>
+              <li>ベストプラクティスに基づいた実装提案</li>
+              <li>コードレビューの効率化と品質向上</li>
+              <li>ドキュメント生成と保守性の向上</li>
+            </ul>
+          </div>
+
+          <p>AI Code Agentsは、開発者の創造性と生産性を最大化し、より価値の高い業務に集中できる環境を提供します。</p>
+
+          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
+            <div class="mt-2">
+              詳細はこちら：
+              <a href="https://code-agents.com" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                code-agents.com <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>`,
+        icon: 'tabler:code',
+      },
+      {
+        title: 'MCPVerified - モデルコントロールプロトコルガイド',
+        description: `<div class="space-y-4">
+          <p>MCPVerifiedは、モデルコントロールプロトコル（MCP）エコシステムにおける信頼性の高いガイドです。実際の経験に基づく独自の視点から、厳選された推奨事項を提供しています。</p>
+          
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
+            <h4 class="font-bold mb-2">核となる価値観</h4>
+            <ul class="list-disc list-inside ml-4">
+              <li><strong>TypeScriptファースト:</strong> 型安全性と開発者体験のバランスが取れた選択肢</li>
+              <li><strong>セキュリティ重視:</strong> 徹底的に検証されたサービスとベストプラクティス</li>
+              <li><strong>パフォーマンス最優先:</strong> 設計段階からパフォーマンスを考慮</li>
+              <li><strong>優れた開発者体験:</strong> 本番品質を維持しながらDXを向上</li>
+            </ul>
+          </div>
+
+          <p>MCPVerifiedは、モジュール化されたサーバーレスアーキテクチャ、信頼性の高い公式パッケージ、セキュリティ重視のアプローチなど、MCPアプリケーション構築に関する明確なガイダンスを提供します。</p>
+
+          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
+            <div class="mt-2">
+              詳細はこちら：
+              <a href="https://mcpverified.com/ja/introduction" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
+                mcpverified.com <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>`,
+        icon: 'tabler:school',
+      },
+    ]}
   />
 
   <!-- Access Section (#access) -->
