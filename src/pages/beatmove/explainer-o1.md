@@ -290,7 +290,7 @@ Y軸＝ユーザー数/収益
 
 **技術要素**：  
 - モバイルアプリ（iOS/Android）React Nativeベース  
-- サーバー：AWS/GCPでスケーラブル構成、Python(FastAPI)  
+- サーバー：Cloudflareでスケーラブル構成
 - AIモデル：PyTorch/TensorFlowでカスタム音楽生成モデル、データ分析基盤（BigQuery）  
 - インテグレーション：Ableton Move用API、ウェアラブルデバイスAPI連携
 

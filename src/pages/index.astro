@@ -1,0 +1,40 @@
+---
+// src/pages/index.astro - Root Language Redirector
+
+// Check for existing language cookie
+const langCookie = Astro.cookies.get('lang');
+
+if (langCookie?.value === 'ja' || langCookie?.value === 'en') {
+  // If a valid cookie exists, redirect immediately
+  // 307 preserves the request method (e.g., POST), 302 might change it to GET
+  return Astro.redirect(`/${langCookie.value}/`, 307);
+}
+
+// If no valid cookie, check Accept-Language header
+const languages = Astro.request.headers.get('accept-language');
+let preferredLang = 'en'; // Default to English
+
+if (languages) {
+  // Simple check: prefer 'ja' if it appears anywhere in the header
+  // Ignores quality values (q=) for simplicity
+  const acceptedLangs = languages.toLowerCase();
+  if (acceptedLangs.startsWith('ja') || acceptedLangs.includes(',ja')) {
+    preferredLang = 'ja';
+  }
+}
+
+// Set the language cookie for future visits (expires in 1 year)
+Astro.cookies.set('lang', preferredLang, {
+  path: '/',
+  maxAge: 31536000, // 60 * 60 * 24 * 365
+  httpOnly: true,
+  sameSite: 'lax', // Recommended for CSRF protection
+  // secure: import.meta.env.PROD, // Set Secure flag only in production (HTTPS)
+});
+
+// Redirect to the determined language path
+// console.log(`Redirecting to /${preferredLang}/`); // Optional: for server-side debugging
+return Astro.redirect(`/${preferredLang}`, 307);
+---
+
+<!-- Root Redirector: No visible content -->
