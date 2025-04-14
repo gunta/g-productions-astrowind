@@ -9,7 +9,7 @@ import Steps from '~/components/widgets/Steps.astro'; // For portfolio/case stud
 import Features from '~/components/widgets/Features.astro'; // Using Features (or Features2) for portfolio
 // import { getPermalink } from '~/utils/permalinks';
 
-// Metadata for English site
+// Metadata for USA company
 const metadata = {
   title: 'G Productions: Global AI Innovation Studio',
   description:
@@ -21,12 +21,6 @@ const metadata = {
   <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
-      Header
-      links
-      for
-      EN
-      site
-      anchors
       links={[
         { text: 'Home', href: '/en#home' },
         { text: 'Services', href: '/en#services' },
@@ -37,7 +31,7 @@ const metadata = {
       actions={[
         {
           // Link to the Japanese site
-          text: '日本語サイト',
+          text: 'Japan Company',
           href: '/ja',
           target: '_self',
         },
@@ -53,7 +47,7 @@ const metadata = {
     title="G Productions, LLC"
     tagline="Global AI Innovation Studio"
     image={{
-      src: '~/assets/images/hero-en.png', // Consider a global/tech-focused hero image
+      src: '~/assets/images/hero-1.png', // Global/tech-focused hero image
       alt: 'G Productions, LLC - Global AI Innovation',
     }}
     actions={[
@@ -167,17 +161,6 @@ const metadata = {
       },
       // Add more portfolio items here, focusing on global impact, tech innovation, App Store apps
     ]}
-    Consider
-    using
-    isReversed,
-    image,
-    or
-    different
-    layout
-    options
-    of
-    Features
-    Features2
   />
 
   <!-- Global Presence / About Section (#about) -->
@@ -186,7 +169,7 @@ const metadata = {
     title="Global Reach, Local Expertise"
     isReversed
     image={{
-      src: '~/assets/images/about-en.jpg', // Consider a global team/office image
+      src: '~/assets/images/office-02.jpeg', // Global team/office image
       alt: 'G Productions, LLC Team',
     }}
   >
