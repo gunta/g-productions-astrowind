@@ -6,10 +6,12 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Logo from '~/components/Logo.astro';
+import LogoJapan from '~/components/LogoJapan.astro';
 // import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Gプロダクションズジャパン合同会社 - AIと技術顧問でビジネスを加速',
+  title: 'G Productions Japan',
   description:
     'Gプロダクションズジャパンは、AIソリューションと技術顧問サービスで日本のビジネス課題を解決する技術パートナーです。デジタルトランスフォーメーションを支援します。',
 };
@@ -20,24 +22,26 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'ホーム', href: '/ja/#home' },
-        { text: 'サービス', href: '/ja/#services' },
-        { text: '選ばれる理由', href: '/ja/#why-us' },
-        { text: '導入事例', href: '/ja/#jirei' },
-        { text: '会社概要', href: '/ja/#company' },
-        { text: 'アクセス', href: '/ja/#access' },
-        { text: 'お問い合わせ', href: '/ja/#contact' },
+        { text: 'ホーム', href: '/ja#home' },
+        { text: 'サービス', href: '/ja#services' },
+        { text: '選ばれる理由', href: '/ja#why-us' },
+        { text: '導入事例', href: '/ja#jirei' },
+        { text: '会社概要', href: '/ja#company' },
+        { text: 'アクセス', href: '/ja#access' },
+        { text: 'お問い合わせ', href: '/ja#contact' },
       ]}
       actions={[
         {
           text: 'English Site',
-          href: '/en/',
+          href: '/en',
           target: '_self',
         },
       ]}
       isSticky
       showToggleTheme
-    />
+    >
+      <LogoJapan slot="logo" />
+    </Header>
   </Fragment>
 
   <Hero
@@ -52,13 +56,13 @@ const metadata = {
       {
         variant: 'primary',
         text: 'サービス詳細へ',
-        href: '/ja/#services',
+        href: '/ja#services',
         target: '_self',
       },
       {
         variant: 'secondary',
         text: '無料相談はこちら',
-        href: '/ja/#contact',
+        href: '/ja#contact',
         target: '_self',
       },
     ]}
