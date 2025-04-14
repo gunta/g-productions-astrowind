@@ -8,6 +8,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Logo from '~/components/Logo.astro';
 import LogoJapan from '~/components/LogoJapan.astro';
+import { Icon } from 'astro-icon/components';
 // import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -87,56 +88,131 @@ const metadata = {
     items={[
       {
         title: '技術顧問 (Technical Advisory)',
-        description: `<ul>
-          <li>経営層向け：事業戦略とテクノロジーの融合支援</li>
-          <li>DX推進：現場主導のデジタル変革ロードマップ策定</li>
-          <li>AI戦略立案：業種・業態に合わせた具体的導入計画</li>
-          <li>技術負債解消：レガシーシステムの段階的刷新</li>
-          <li>伴走型支援：月次定例での継続的な技術支援</li>
+        description: `<ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-lightbulb"></i></span>
+            <span>経営層向け：事業戦略とテクノロジーの融合支援</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-digital-tachograph"></i></span>
+            <span>DX推進：現場主導のデジタル変革ロードマップ策定</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-robot"></i></span>
+            <span>AI戦略立案：業種・業態に合わせた具体的導入計画</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-code-branch"></i></span>
+            <span>技術負債解消：レガシーシステムの段階的刷新</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-hands-helping"></i></span>
+            <span>伴走型支援：月次定例での継続的な技術支援</span>
+          </li>
         </ul>`,
         icon: 'tabler:users-group',
       },
       {
         title: 'AIソリューション開発',
-        description: `<ul>
-          <li>業務特化型AIアシスタント：日本語に最適化</li>
-          <li>RPA×AI：定型業務の高度自動化</li>
-          <li>日本語データ分析：テキストマイニング・感情分析</li>
-          <li>AI画像認識：検品・検査工程の自動化</li>
-          <li>生成AI活用：マーケティング・コンテンツ制作の効率化</li>
+        description: `<ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-indigo-600 dark:text-indigo-400 inline-block mr-2 mt-1"><i class="fas fa-comments"></i></span>
+            <span>業務特化型AIアシスタント：日本語に最適化</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-indigo-600 dark:text-indigo-400 inline-block mr-2 mt-1"><i class="fas fa-cogs"></i></span>
+            <span>RPA×AI：定型業務の高度自動化</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-indigo-600 dark:text-indigo-400 inline-block mr-2 mt-1"><i class="fas fa-chart-pie"></i></span>
+            <span>日本語データ分析：テキストマイニング・感情分析</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-indigo-600 dark:text-indigo-400 inline-block mr-2 mt-1"><i class="fas fa-camera"></i></span>
+            <span>AI画像認識：検品・検査工程の自動化</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-indigo-600 dark:text-indigo-400 inline-block mr-2 mt-1"><i class="fas fa-paint-brush"></i></span>
+            <span>生成AI活用：マーケティング・コンテンツ制作の効率化</span>
+          </li>
         </ul>`,
         icon: 'tabler:robot',
       },
       {
         title: 'カスタム開発',
-        description: `<ul>
-          <li>日本品質：高信頼性・保守性を重視した開発</li>
-          <li>基幹システム連携：既存資産を活かすDX推進</li>
-          <li>業務アプリ：現場の使いやすさにこだわった設計</li>
-          <li>SaaS開発：サブスクリプションモデルの構築支援</li>
-          <li>セキュリティ重視：日本の基準に準拠した実装</li>
+        description: `<ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><i class="fas fa-check-circle"></i></span>
+            <span>日本品質：高信頼性・保守性を重視した開発</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><i class="fas fa-link"></i></span>
+            <span>基幹システム連携：既存資産を活かすDX推進</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><i class="fas fa-tablet-alt"></i></span>
+            <span>業務アプリ：現場の使いやすさにこだわった設計</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><i class="fas fa-cloud"></i></span>
+            <span>SaaS開発：サブスクリプションモデルの構築支援</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><i class="fas fa-shield-alt"></i></span>
+            <span>セキュリティ重視：日本の基準に準拠した実装</span>
+          </li>
         </ul>`,
         icon: 'tabler:code',
       },
       {
         title: '翻訳・ローカライゼーション',
-        description: `<ul>
-          <li>正確性重視の専門分野翻訳（技術・法務・医療）</li>
-          <li>「伝わる」ローカライズ：文化的背景を考慮</li>
-          <li>AI活用による大量文書の効率的翻訳</li>
-          <li>インバウンド対応：多言語情報発信支援</li>
-          <li>アウトバウンド支援：海外展開に必要な文書作成</li>
+        description: `<ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><i class="fas fa-file-alt"></i></span>
+            <span>正確性重視の専門分野翻訳（技術・法務・医療）</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><i class="fas fa-bullhorn"></i></span>
+            <span>「伝わる」ローカライズ：文化的背景を考慮</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><i class="fas fa-robot"></i></span>
+            <span>AI活用による大量文書の効率的翻訳</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><i class="fas fa-globe-asia"></i></span>
+            <span>インバウンド対応：多言語情報発信支援</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><i class="fas fa-plane-departure"></i></span>
+            <span>アウトバウンド支援：海外展開に必要な文書作成</span>
+          </li>
         </ul>`,
         icon: 'tabler:language',
       },
       {
         title: 'イベント・クリエイティブ支援',
-        description: `<ul>
-          <li>ハイブリッドイベント企画・運営（実績200名+）</li>
-          <li>AIカンファレンス・セミナー実施支援</li>
-          <li>日米連携イベント：グローバル視点の活用</li>
-          <li>音楽・テクノロジー融合イベント制作</li>
-          <li>デジタルマーケティング：戦略立案から実施まで</li>
+        description: `<ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><i class="fas fa-users"></i></span>
+            <span>ハイブリッドイベント企画・運営（実績200名+）</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><i class="fas fa-microchip"></i></span>
+            <span>AIカンファレンス・セミナー実施支援</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><i class="fas fa-flag-usa"></i></span>
+            <span>日米連携イベント：グローバル視点の活用</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><i class="fas fa-music"></i></span>
+            <span>音楽・テクノロジー融合イベント制作</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><i class="fas fa-bullseye"></i></span>
+            <span>デジタルマーケティング：戦略立案から実施まで</span>
+          </li>
         </ul>`,
         icon: 'tabler:calendar',
       },
@@ -153,37 +229,53 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">選ばれる5つの強み</h2>
-      <p class="text-lg font-semibold mb-4">日本市場への深いコミットメント</p>
-      <ul class="list-disc list-inside space-y-3">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 flex items-center">
+        <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
+          ><Icon name="tabler:medal" class="w-6 h-6" /></span
+        >
+        選ばれる5つの強み
+      </h2>
+      <p class="text-lg font-semibold mb-4 flex items-center">
+        <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
+          ><Icon name="tabler:map-pin" class="w-5 h-5" /></span
+        >
+        日本市場への深いコミットメント
+      </p>
+      <ul class="list-none list-inside space-y-3">
         <li class="mb-2">
-          <strong class="text-blue-600 dark:text-blue-400">日本法人としての責任と安心:</strong>
-          <p class="ml-5 mt-1">
-            合同会社として登記された日本法人だからこそ提供できる、長期的な信頼関係と安定したサポート体制。契約・請求・サポートはすべて日本語で対応。
-          </p>
-        </li>
-        <li class="mb-2">
-          <strong class="text-blue-600 dark:text-blue-400">現場主義の技術支援:</strong>
-          <p class="ml-5 mt-1">
+          <strong class="text-blue-600 dark:text-blue-400 flex items-center">
+            <span class="inline-block mr-2"><Icon name="tabler:users" class="w-5 h-5" /></span>
+            現場主義の技術支援:
+          </strong>
+          <p class="ml-5 mt-1 pl-4 border-l-2 border-blue-200 dark:border-blue-700">
             目黒区の拠点から、お客様の現場に足を運び、実際の業務フローや課題を理解した上での提案・支援を実施。リモートだけでは見えない「現場の声」を大切にします。
           </p>
         </li>
         <li class="mb-2">
-          <strong class="text-blue-600 dark:text-blue-400">日米連携の独自価値:</strong>
-          <p class="ml-5 mt-1">
+          <strong class="text-blue-600 dark:text-blue-400 flex items-center">
+            <span class="inline-block mr-2"><Icon name="tabler:world" class="w-5 h-5" /></span>
+            日米連携の独自価値:
+          </strong>
+          <p class="ml-5 mt-1 pl-4 border-l-2 border-blue-200 dark:border-blue-700">
             米国 <a href="/en/#about" class="text-blue-600 dark:text-blue-400 hover:underline">G Productions, LLC</a> と連携し、シリコンバレー発の最新AI技術と日本市場の深い理解を融合。両国のベストプラクティスを活かした独自のソリューションを提供します。
           </p>
         </li>
         <li class="mb-2">
-          <strong class="text-blue-600 dark:text-blue-400">実績に基づく信頼性:</strong>
-          <p class="ml-5 mt-1">
+          <strong class="text-blue-600 dark:text-blue-400 flex items-center">
+            <span class="inline-block mr-2"><Icon name="tabler:chart-line" class="w-5 h-5" /></span>
+            実績に基づく信頼性:
+          </strong>
+          <p class="ml-5 mt-1 pl-4 border-l-2 border-blue-200 dark:border-blue-700">
             「AI Code
             Agents祭り」をはじめとする大規模イベント運営、200社以上の翻訳・ローカライゼーション実績など、多彩な経験と専門性を集結。
           </p>
         </li>
         <li class="mb-2">
-          <strong class="text-blue-600 dark:text-blue-400">長期的パートナーシップ:</strong>
-          <p class="ml-5 mt-1">
+          <strong class="text-blue-600 dark:text-blue-400 flex items-center">
+            <span class="inline-block mr-2"></span>
+            長期的パートナーシップ:
+          </strong>
+          <p class="ml-5 mt-1 pl-4 border-l-2 border-blue-200 dark:border-blue-700">
             単発プロジェクトではなく、月次の定例ミーティングなど継続的な関係構築を重視。お客様のビジネス成長に合わせて、技術面から長期的に支援します。
           </p>
         </li>
@@ -235,62 +327,155 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">会社概要</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4 flex items-center">
+        <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
+          ><Icon name="tabler:building" class="w-6 h-6" /></span
+        >
+        会社概要
+      </h2>
 
       <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">会社情報 (G Productions Japan 合同会社)</h3>
-        <ul class="space-y-1">
-          <li><strong>商号:</strong> G Productions Japan 合同会社 (ジープロダクションズジャパン ゴウドウガイシャ)</li>
-          <li>
-            <strong>所在地:</strong>
-            <a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank" class="hover:underline"
-              >〒153-0042 東京都目黒区青葉台4丁目4番12号 THE N3</a
+        <h3 class="text-xl font-semibold mb-2 flex items-center">
+          <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
+            ><Icon name="tabler:info-circle" class="w-5 h-5" /></span
+          >
+          会社情報 (G Productions Japan 合同会社)
+        </h3>
+        <ul class="space-y-1 ml-6">
+          <li class="flex">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+              ><Icon name="tabler:signature" class="w-4 h-4" /></span
+            ><strong>商号:</strong> G Productions Japan 合同会社 (ジープロダクションズジャパン ゴウドウガイシャ)
+          </li>
+          <li class="flex">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+              ><Icon name="tabler:map-pin" class="w-4 h-4" /></span
+            >
+            <span
+              ><strong>所在地:</strong>
+              <a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank" class="hover:underline"
+                >〒153-0042 東京都目黒区青葉台4丁目4番12号 THE N3</a
+              ></span
             >
           </li>
-          <li><strong>設立年月日:</strong> 2025年4月1日</li>
-          <li><strong>代表:</strong> Günther Brunner (グンタ ブルンナー)</li>
-          <li><strong>法人番号:</strong> 1000000000000</li>
-          <li>
-            <strong>事業目的:</strong>
-            <ul class="list-disc list-inside ml-4 mt-1 space-y-1 text-sm">
-              <li>人工知能（AI）関連技術及びソリューションの研究開発、設計、実装、販売</li>
-              <li>企業のデジタルトランスフォーメーション（DX）支援、技術顧問</li>
-              <li>コンピュータソフトウェア及びITシステムの企画、設計、開発</li>
-              <li>インターネットを利用した情報提供サービス、ウェブサイト、SaaSの開発・運営</li>
-              <li>翻訳、通訳、ローカライゼーション及び多言語コンテンツ制作</li>
-              <li>各種イベントの企画、制作、運営</li>
-            </ul>
+          <li class="flex">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+              ><Icon name="tabler:calendar" class="w-4 h-4" /></span
+            ><strong>設立年月日:</strong> 2025年4月1日
           </li>
-          <li class="mt-2">
-            <strong>グローバル連携:</strong>
-            <a href="/en/#about" class="text-blue-600 dark:text-blue-400 hover:underline">G Productions, LLC (米国)</a> との連携により、最先端のテクノロジーと国際的な視点を日本市場に提供します。
+          <li class="flex">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+              ><Icon name="tabler:user" class="w-4 h-4" /></span
+            ><strong>代表:</strong> Günther Brunner (グンタ ブルンナー)
+          </li>
+          <li class="flex">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+              ><Icon name="tabler:id" class="w-4 h-4" /></span
+            ><strong>法人番号:</strong> 1000000000000
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center mt-1"
+              ><Icon name="tabler:list-check" class="w-4 h-4" /></span
+            >
+            <div>
+              <strong>事業目的:</strong>
+              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+                ><i class="fas fa-signature"></i></span
+              ><strong>商号:</strong> G Productions Japan 合同会社 (ジープロダクションズジャパン ゴウドウガイシャ)
+            </div>
+            <li class="flex">
+              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+                ><i class="fas fa-map-marker-alt"></i></span
+              >
+              <span
+                ><strong>所在地:</strong>
+                <a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank" class="hover:underline"
+                  >〒153-0042 東京都目黒区青葉台4丁目4番12号 THE N3</a
+                ></span
+              >
+            </li>
+            <li class="flex">
+              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+                ><i class="fas fa-calendar-alt"></i></span
+              ><strong>設立年月日:</strong> 2025年4月1日
+            </li>
+            <li class="flex">
+              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+                ><i class="fas fa-user-tie"></i></span
+              ><strong>代表:</strong> Günther Brunner (グンタ ブルンナー)
+            </li>
+            <li class="flex">
+              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center"
+                ><i class="fas fa-id-card"></i></span
+              ><strong>法人番号:</strong> 1000000000000
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center mt-1"
+                ><i class="fas fa-tasks"></i></span
+              >
+              <div>
+                <strong>事業目的:</strong>
+                <ul class="list-disc list-inside ml-4 mt-1 space-y-1 text-sm">
+                  <li>人工知能（AI）関連技術及びソリューションの研究開発、設計、実装、販売</li>
+                  <li>企業のデジタルトランスフォーメーション（DX）支援、技術顧問</li>
+                  <li>コンピュータソフトウェア及びITシステムの企画、設計、開発</li>
+                  <li>インターネットを利用した情報提供サービス、ウェブサイト、SaaSの開発・運営</li>
+                  <li>翻訳、通訳、ローカライゼーション及び多言語コンテンツ制作</li>
+                  <li>各種イベントの企画、制作、運営</li>
+                </ul>
+              </div>
+            </li>
+            <li class="flex items-start mt-2">
+              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-5 text-center mt-1"
+                ><i class="fas fa-handshake"></i></span
+              >
+              <div>
+                <strong>グローバル連携:</strong>
+                <a href="/en/#about" class="text-blue-600 dark:text-blue-400 hover:underline"
+                  >G Productions, LLC (米国)</a
+                > との連携により、最先端のテクノロジーと国際的な視点を日本市場に提供します。
+              </div>
+            </li>
           </li>
         </ul>
-      </div>
 
-      <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">代表挨拶</h3>
-        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg italic">
-          <p>
-            「テクノロジーは人を幸せにするためにある」という理念のもと、G Productions Japan 合同会社を設立いたしました。
-            <br /><br />
-            私たちは単なるテクノロジー企業ではありません。日本企業が抱える社会課題—人材不足、業務効率化、国際競争力の向上—に対して、
-            最先端のAI技術と丁寧な「人の手」を組み合わせたソリューションを提供する「道具鍛冶」であり、日本の未来づくりに貢献するパートナーです。
-            <br /><br />
-            私自身が長年にわたり日本文化に親しみ、日本企業との協業経験を重ねる中で、技術だけではなく「人と人のつながり」「現場の声」「長期的な信頼関係」の大切さを学びました。
-            この日本での経験と、米国発のイノベーション精神を融合させ、お客様と共に歩む技術パートナーとして、末永くお付き合いいただければ幸いです。
-            <br /><br />
-            <span class="text-right block">Founder & CEO Günther Brunner</span>
-          </p>
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-2 flex items-center">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
+              ><Icon name="tabler:message-circle" class="w-5 h-5" /></span
+            >
+            代表挨拶
+          </h3>
+          <div
+            class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg italic border-l-4 border-blue-400 dark:border-blue-600"
+          >
+            <p>
+              「テクノロジーは人を幸せにするためにある」という理念のもと、G Productions Japan
+              合同会社を設立いたしました。
+              <br /><br />
+              私たちは単なるテクノロジー企業ではありません。日本企業が抱える社会課題—人材不足、業務効率化、国際競争力の向上—に対して、
+              最先端のAI技術と丁寧な「人の手」を組み合わせたソリューションを提供する「道具鍛冶」であり、日本の未来づくりに貢献するパートナーです。
+              <br /><br />
+              私自身が長年にわたり日本文化に親しみ、日本企業との協業経験を重ねる中で、技術だけではなく「人と人のつながり」「現場の声」「長期的な信頼関係」の大切さを学びました。
+              この日本での経験と、米国発のイノベーション精神を融合させ、お客様と共に歩む技術パートナーとして、末永くお付き合いいただければ幸いです。
+              <br /><br />
+              <span class="text-right block">Founder & CEO Günther Brunner</span>
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">チーム・顧問</h3>
-        <p class="mb-3">
-          私たちのチームは、AIエンジニア、デザイナー、ビジネスコンサルタント、翻訳者など多様な専門性を持つメンバーで構成されています。また、各業界の専門家を顧問として迎え、幅広い知見を集結させています。
-        </p>
-        <!-- TODO: <p>[ここに主要メンバーや顧問の情報を記載。写真などもあると良い]</p> -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-2 flex items-center">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
+              ><Icon name="tabler:users" class="w-5 h-5" /></span
+            >
+            チーム・顧問
+          </h3>
+          <p class="mb-3">
+            私たちのチームは、AIエンジニア、デザイナー、ビジネスコンサルタント、翻訳者など多様な専門性を持つメンバーで構成されています。また、各業界の専門家を顧問として迎え、幅広い知見を集結させています。
+          </p>
+          <!-- TODO: <p>[ここに主要メンバーや顧問の情報を記載。写真などもあると良い]</p> -->
+        </div>
       </div>
     </Fragment>
     <Fragment slot="bg">
@@ -632,33 +817,65 @@ const metadata = {
       {
         title: 'Gathrly - イベントデザインサービス',
         description: `<div class="space-y-4">
-          <p>様々な規模のイベント主催経験から、「規模によって異なる課題」を熟知しています。
-          イベント主催には、人間の創造性が必要な部分と、AIで効率化できる部分があります。</p>
+          <p class="border-l-4 border-pink-300 dark:border-pink-600 pl-3 py-1 bg-pink-50 dark:bg-pink-900/20 rounded-r">
+            様々な規模のイベント主催経験から、「規模によって異なる課題」を熟知しています。
+            イベント主催には、人間の創造性が必要な部分と、AIで効率化できる部分があります。
+          </p>
           
-          <p class="font-semibold">Gathrlyは、それぞれの長所を最大限に活かした ハイブリッドなイベントデザインサービスです。</p>
+          <p class="font-semibold text-center py-2 bg-gradient-to-r from-pink-100 to-blue-100 dark:from-pink-900/30 dark:to-blue-900/30 rounded-lg">
+            <span class="text-pink-600 dark:text-pink-400 mr-2"><i class="fas fa-star"></i></span>
+            Gathrlyは、それぞれの長所を最大限に活かした ハイブリッドなイベントデザインサービスです
+            <span class="text-blue-600 dark:text-blue-400 ml-2"><i class="fas fa-star"></i></span>
+          </p>
 
           <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
             <div>
-              <h4 class="font-bold flex items-center gap-2"><span>👥</span> 人間が担当すること</h4>
-              <ul class="list-disc list-inside ml-4">
-                <li>イベントの本質的な価値の設計</li>
-                <li>ブランドの世界観の理解と表現</li>
-                <li>きめ細やかなコンサルティング</li>
+              <h4 class="font-bold flex items-center gap-2 mb-2 text-pink-700 dark:text-pink-300">
+                <span class="text-pink-600 dark:text-pink-400"><i class="fas fa-user-friends"></i></span> 人間が担当すること
+              </h4>
+              <ul class="ml-4 space-y-1">
+                <li class="flex items-start">
+                  <span class="text-pink-500 dark:text-pink-400 inline-block mr-2 mt-1"><i class="fas fa-gem"></i></span>
+                  <span>イベントの本質的な価値の設計</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-pink-500 dark:text-pink-400 inline-block mr-2 mt-1"><i class="fas fa-palette"></i></span>
+                  <span>ブランドの世界観の理解と表現</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-pink-500 dark:text-pink-400 inline-block mr-2 mt-1"><i class="fas fa-comments"></i></span>
+                  <span>きめ細やかなコンサルティング</span>
+                </li>
               </ul>
             </div>
             <div>
-              <h4 class="font-bold flex items-center gap-2"><span>🤖</span> AIが支援すること</h4>
-              <ul class="list-disc list-inside ml-4">
-                <li>デザインのバリエーション生成</li>
-                <li>チケット販売・入場管理の自動化</li>
-                <li>進行状況の可視化</li>
+              <h4 class="font-bold flex items-center gap-2 mb-2 text-blue-700 dark:text-blue-300">
+                <span class="text-blue-600 dark:text-blue-400"><i class="fas fa-robot"></i></span> AIが支援すること
+              </h4>
+              <ul class="ml-4 space-y-1">
+                <li class="flex items-start">
+                  <span class="text-blue-500 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-bezier-curve"></i></span>
+                  <span>デザインのバリエーション生成</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-ticket-alt"></i></span>
+                  <span>チケット販売・入場管理の自動化</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-500 dark:text-blue-400 inline-block mr-2 mt-1"><i class="fas fa-chart-line"></i></span>
+                  <span>進行状況の可視化</span>
+                </li>
               </ul>
             </div>
           </div>
 
           <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
-            <h4 class="font-bold mb-2">現在、各規模のトライアル参加者を募集中！</h4>
+            <h4 class="font-bold mb-2 flex items-center text-lg">
+              <span class="text-blue-600 dark:text-blue-400 mr-2"><i class="fas fa-bullhorn"></i></span>
+              現在、各規模のトライアル参加者を募集中！
+            </h4>
             <div class="mt-2">
+              <span class="text-blue-600 dark:text-blue-400 mr-2"><i class="fas fa-link"></i></span>
               詳細はこちら：
               <a href="https://gathr.ly" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
                 gathr.ly <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -671,21 +888,39 @@ const metadata = {
       {
         title: 'AI Code Agents - AIコーディング支援',
         description: `<div class="space-y-4">
-          <p>システム開発における生産性向上とクオリティ確保を両立する、AI活用の開発支援サービスです。</p>
+          <p class="border-l-4 border-green-300 dark:border-green-600 pl-3 py-1 bg-green-50 dark:bg-green-900/20 rounded-r">
+            システム開発における生産性向上とクオリティ確保を両立する、AI活用の開発支援サービスです。
+          </p>
           
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
-            <ul class="list-disc list-inside ml-4">
-              <li>開発者の意図を理解し、コード生成をサポート</li>
-              <li>ベストプラクティスに基づいた実装提案</li>
-              <li>コードレビューの効率化と品質向上</li>
-              <li>ドキュメント生成と保守性の向上</li>
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-2">
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><i class="fas fa-brain"></i></span>
+                <span>開発者の意図を理解し、コード生成をサポート</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><i class="fas fa-bookmark"></i></span>
+                <span>ベストプラクティスに基づいた実装提案</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><i class="fas fa-search"></i></span>
+                <span>コードレビューの効率化と品質向上</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><i class="fas fa-file-alt"></i></span>
+                <span>ドキュメント生成と保守性の向上</span>
+              </li>
             </ul>
           </div>
 
-          <p>AI Code Agentsは、開発者の創造性と生産性を最大化し、より価値の高い業務に集中できる環境を提供します。</p>
+          <p class="text-center py-2 bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900/30 dark:to-teal-900/30 rounded-lg">
+            <span class="text-teal-600 dark:text-teal-400 mr-2"><i class="fas fa-rocket"></i></span>
+            AI Code Agentsは、開発者の創造性と生産性を最大化し、より価値の高い業務に集中できる環境を提供します。
+          </p>
 
           <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
             <div class="mt-2">
+              <span class="text-blue-600 dark:text-blue-400 mr-2"><i class="fas fa-link"></i></span>
               詳細はこちら：
               <a href="https://code-agents.com" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
                 code-agents.com <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -698,22 +933,42 @@ const metadata = {
       {
         title: 'MCPVerified - モデルコントロールプロトコルガイド',
         description: `<div class="space-y-4">
-          <p>MCPVerifiedは、モデルコントロールプロトコル（MCP）エコシステムにおける信頼性の高いガイドです。実際の経験に基づく独自の視点から、厳選された推奨事項を提供しています。</p>
+          <p class="border-l-4 border-cyan-300 dark:border-cyan-600 pl-3 py-1 bg-cyan-50 dark:bg-cyan-900/20 rounded-r">
+            MCPVerifiedは、モデルコントロールプロトコル（MCP）エコシステムにおける信頼性の高いガイドです。実際の経験に基づく独自の視点から、厳選された推奨事項を提供しています。
+          </p>
           
           <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
-            <h4 class="font-bold mb-2">核となる価値観</h4>
-            <ul class="list-disc list-inside ml-4">
-              <li><strong>TypeScriptファースト:</strong> 型安全性と開発者体験のバランスが取れた選択肢</li>
-              <li><strong>セキュリティ重視:</strong> 徹底的に検証されたサービスとベストプラクティス</li>
-              <li><strong>パフォーマンス最優先:</strong> 設計段階からパフォーマンスを考慮</li>
-              <li><strong>優れた開発者体験:</strong> 本番品質を維持しながらDXを向上</li>
+            <h4 class="font-bold mb-2 flex items-center text-cyan-700 dark:text-cyan-300">
+              <span class="text-cyan-600 dark:text-cyan-400 mr-2"><i class="fas fa-gem"></i></span>
+              核となる価値観
+            </h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><i class="fab fa-typescript"></i></span>
+                <span><strong>TypeScriptファースト:</strong> 型安全性と開発者体験のバランスが取れた選択肢</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><i class="fas fa-shield-alt"></i></span>
+                <span><strong>セキュリティ重視:</strong> 徹底的に検証されたサービスとベストプラクティス</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><i class="fas fa-tachometer-alt"></i></span>
+                <span><strong>パフォーマンス最優先:</strong> 設計段階からパフォーマンスを考慮</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><i class="fas fa-laptop-code"></i></span>
+                <span><strong>優れた開発者体験:</strong> 本番品質を維持しながらDXを向上</span>
+              </li>
             </ul>
           </div>
 
-          <p>MCPVerifiedは、モジュール化されたサーバーレスアーキテクチャ、信頼性の高い公式パッケージ、セキュリティ重視のアプローチなど、MCPアプリケーション構築に関する明確なガイダンスを提供します。</p>
+          <p class="text-center py-2 bg-gradient-to-r from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-lg">
+            MCPVerifiedは、モジュール化されたサーバーレスアーキテクチャ、信頼性の高い公式パッケージ、セキュリティ重視のアプローチなど、MCPアプリケーション構築に関する明確なガイダンスを提供します。
+          </p>
 
           <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
             <div class="mt-2">
+              <span class="text-blue-600 dark:text-blue-400 mr-2"><i class="fas fa-link"></i></span>
               詳細はこちら：
               <a href="https://mcpverified.com/ja/introduction" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
                 mcpverified.com <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -736,17 +991,54 @@ const metadata = {
     items={[
       {
         title: '所在地・交通案内',
-        description: `<strong>住所</strong> <br />
-<a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank" class="hover:underline">〒153-0042<br />東京都目黒区青葉台4丁目4番12号 THE N3</a><br />
-<br />
-<strong>アクセス方法</strong> <br />
-・<a href="https://maps.app.goo.gl/MGr8F7YBspSKTkgD9" target="_blank" class="hover:underline">京王井の頭線「神泉」駅 徒歩7分</a><br />
-・<a href="https://maps.app.goo.gl/Ah8PRaTfMi2UiGbt7" target="_blank" class="hover:underline">田園都市線「池尻大橋」駅 徒歩9分</a><br />
-・<a href="https://maps.app.goo.gl/gC1Tt2m7Ncpv7WaV7" target="_blank" class="hover:underline">京王井の頭線「渋谷」駅 徒歩11分</a><br />
-・<a href="https://maps.app.goo.gl/urRUxS5cVmM6yyHq8" target="_blank" class="hover:underline">東急バス「大坂上」停留所 徒歩1分</a><br />
-<br />
-<strong>その他</strong> <br />
-・<a href="https://maps.app.goo.gl/dZ2Wzp4p89AGDuUFA" target="_blank" class="hover:underline">LUUPポート至近</a>`,
+        description: `
+        <div class="space-y-3">
+          <div class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 text-xl mt-1"><Icon name="tabler:building" class="w-5 h-5" /></span>
+            <div>
+              <strong>住所</strong> <br />
+              <a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank" class="hover:underline">〒153-0042<br />東京都目黒区青葉台4丁目4番12号 THE N3</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 text-xl mt-1"><Icon name="tabler:train" class="w-5 h-5" /></span>
+            <div>
+              <strong>アクセス方法</strong> <br />
+              <ul class="space-y-1 ml-1">
+                <li class="flex items-center">
+                  <span class="text-green-600 dark:text-green-400 text-sm mr-1"><Icon name="tabler:train" class="w-4 h-4" /></span>
+                  <a href="https://maps.app.goo.gl/MGr8F7YBspSKTkgD9" target="_blank" class="hover:underline">京王井の頭線「神泉」駅 徒歩7分</a>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-600 dark:text-green-400 text-sm mr-1"><Icon name="tabler:train" class="w-4 h-4" /></span>
+                  <a href="https://maps.app.goo.gl/Ah8PRaTfMi2UiGbt7" target="_blank" class="hover:underline">田園都市線「池尻大橋」駅 徒歩9分</a>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-600 dark:text-green-400 text-sm mr-1"><Icon name="tabler:train" class="w-4 h-4" /></span>
+                  <a href="https://maps.app.goo.gl/gC1Tt2m7Ncpv7WaV7" target="_blank" class="hover:underline">京王井の頭線「渋谷」駅 徒歩11分</a>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-blue-600 dark:text-blue-400 text-sm mr-1"><Icon name="tabler:bus" class="w-4 h-4" /></span>
+                  <a href="https://maps.app.goo.gl/urRUxS5cVmM6yyHq8" target="_blank" class="hover:underline">東急バス「大坂上」停留所 徒歩1分</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 text-xl mt-1"><Icon name="tabler:info-circle" class="w-5 h-5" /></span>
+            <div>
+              <strong>その他</strong> <br />
+              <ul class="space-y-1 ml-1">
+                <li class="flex items-center">
+                  <span class="text-purple-600 dark:text-purple-400 text-sm mr-1"><Icon name="tabler:scooter" class="w-4 h-4" /></span>
+                  <a href="https://maps.app.goo.gl/dZ2Wzp4p89AGDuUFA" target="_blank" class="hover:underline">LUUPポート至近</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>`,
         icon: 'tabler:map-pin', // Use map pin icon
       },
       {
@@ -788,32 +1080,46 @@ const metadata = {
         </p>
 
         <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-4 md:space-y-0 mt-4">
-          <div class="text-center">
-            <h4 class="font-semibold text-blue-600 dark:text-blue-400">初回相談は無料</h4>
+          <div class="text-center bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg w-full md:w-auto">
+            <h4 class="font-semibold text-blue-600 dark:text-blue-400 flex items-center justify-center">
+              <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:coin" class="w-5 h-5" /></span>
+              初回相談は無料
+            </h4>
             <p class="text-sm mt-1">お客様の課題をしっかりとヒアリングし、最適なソリューションをご提案します。</p>
           </div>
 
-          <div class="text-center">
-            <h4 class="font-semibold text-blue-600 dark:text-blue-400">迅速な対応</h4>
+          <div class="text-center bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg w-full md:w-auto">
+            <h4 class="font-semibold text-blue-600 dark:text-blue-400 flex items-center justify-center">
+              <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:bolt" class="w-5 h-5" /></span>
+              迅速な対応
+            </h4>
             <p class="text-sm mt-1">お問い合わせから24時間以内に担当者より返信いたします。</p>
           </div>
 
-          <div class="text-center">
-            <h4 class="font-semibold text-blue-600 dark:text-blue-400">丁寧なフォローアップ</h4>
+          <div class="text-center bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg w-full md:w-auto">
+            <h4 class="font-semibold text-blue-600 dark:text-blue-400 flex items-center justify-center">
+              <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:users" class="w-5 h-5" /></span>
+              丁寧なフォローアップ
+            </h4>
             <p class="text-sm mt-1">プロジェクト完了後も、継続的なサポートを提供します。</p>
           </div>
         </div>
 
-        <div class="mt-6 text-center">
-          <p class="font-semibold mb-1">お問い合わせ先</p>
-          <p class="mb-1">
+        <div class="mt-6 text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+          <p class="font-semibold mb-3 text-blue-600 dark:text-blue-300">お問い合わせ先</p>
+          <p class="mb-2 flex items-center justify-center">
+            <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:mail" class="w-5 h-5" /></span>
             <strong>メール:</strong>
-            <a href="mailto:contact@g-productions.studio" class="text-blue-600 dark:text-blue-400 hover:underline"
+            <a href="mailto:contact@g-productions.studio" class="text-blue-600 dark:text-blue-400 hover:underline ml-1"
               >contact@g-productions.studio</a
             >
           </p>
           <!-- <p class="mb-1"><strong>電話:</strong> [電話番号を記載]</p> -->
-          <p class="mb-1"><strong>所在地:</strong> 〒153-0042 東京都目黒区青葉台4-4-12 THE N3</p>
+          <p class="mb-1 flex items-center justify-center">
+            <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:map-pin" class="w-5 h-5" /></span>
+            <strong>所在地:</strong>
+            <span class="ml-1">〒153-0042 東京都目黒区青葉台4-4-12 THE N3</span>
+          </p>
         </div>
       </div>
 
