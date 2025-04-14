@@ -7,13 +7,14 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro'; // For portfolio/case studies
 import Features from '~/components/widgets/Features.astro'; // Using Features (or Features2) for portfolio
+import Stats from '~/components/widgets/Stats.astro'; // Import Stats for Why Choose Us
 // import { getPermalink } from '~/utils/permalinks';
 
 // Metadata for USA company
 const metadata = {
-  title: 'G Productions: Global AI Innovation Studio',
+  title: 'G Productions: Global AI Innovation Studio | AI, Software & Global Services',
   description:
-    'G Productions is a global AI innovation studio delivering cutting-edge AI solutions, software development, and global services worldwide.',
+    'G Productions, LLC (USA) is a premier AI innovation studio delivering cutting-edge AI solutions, bespoke software development, and expert global services worldwide. Drive your business forward.',
 };
 ---
 
@@ -24,6 +25,7 @@ const metadata = {
       links={[
         { text: 'Home', href: '/en#home' },
         { text: 'Services', href: '/en#services' },
+        { text: 'Why Us?', href: '/en#why-us' },
         { text: 'Portfolio', href: '/en#portfolio' },
         { text: 'About', href: '/en#about' },
         { text: 'Contact', href: '/en#contact' },
@@ -31,7 +33,7 @@ const metadata = {
       actions={[
         {
           // Link to the Japanese site
-          text: 'Japan Company',
+          text: 'Japan (日本)',
           href: '/ja',
           target: '_self',
         },
@@ -45,7 +47,7 @@ const metadata = {
   <Hero
     id="home"
     title="G Productions, LLC"
-    tagline="Global AI Innovation Studio"
+    tagline="Your Global AI Innovation Partner"
     image={{
       src: '~/assets/images/hero-1.png', // Global/tech-focused hero image
       alt: 'G Productions, LLC - Global AI Innovation',
@@ -53,21 +55,22 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Explore Our Solutions',
+        text: 'Explore Solutions',
         href: '/en#services',
         target: '_self',
       },
       {
         variant: 'secondary',
-        text: 'Contact Us',
+        text: 'Get In Touch',
         href: '/en#contact',
         target: '_self',
       },
     ]}
   >
     <Fragment slot="subtitle">
-      Building the Future, Globally. Powered by AI.<br />
-      <span class="font-semibold">G Productions, LLC (USA)</span> leverages cutting-edge technology for worldwide impact.
+      We build the future, globally. Powered by AI.<br />
+      <span class="font-semibold">G Productions, LLC (USA)</span> leverages cutting-edge technology and creative solutions
+      to drive worldwide impact and accelerate your success.
     </Fragment>
   </Hero>
 
@@ -75,42 +78,53 @@ const metadata = {
   <Features2
     id="services"
     title="Our Global AI & Technology Solutions"
-    subtitle="Driving innovation and efficiency across borders"
-    columns={3}
-    defaultIcon="tabler:point-filled"
+    subtitle="Empowering businesses worldwide with innovative, tailored services"
+    columns={4}
+    defaultIcon="tabler:rocket"
     items={[
       {
-        title: 'AI Solutions',
+        title: 'AI Solutions & Consulting',
         description: `<ul>
-          <li>AI Agent Development</li>
+          <li>Bespoke AI Agent Development</li>
           <li>AI Workflow Design & Automation</li>
-          <li>AI Consulting & Strategy</li>
-          <li>AI Content/Design Generation</li>
-          <li>Focus on innovation and efficiency gains.</li>
+          <li>Strategic AI Implementation Consulting</li>
+          <li>AI-Powered Content & Design Generation</li>
+          <li>Unlock efficiency and competitive advantage.</li>
         </ul>`,
         icon: 'tabler:brain',
       },
       {
-        title: 'Software Development',
+        title: 'Custom Software Development',
         description: `<ul>
-          <li>Web & App Development (Full-Stack)</li>
-          <li>SaaS Product Development</li>
-          <li>Custom Chatbot Solutions</li>
-          <li>Modern Tech Stack (React, Node, TypeScript, etc.)</li>
-          <li>Scalable Cloud Architectures (Cloudflare)</li>
+          <li>Full-Stack Web & Application Development</li>
+          <li>Scalable SaaS Product Engineering</li>
+          <li>Advanced Chatbot & Conversational AI</li>
+          <li>Modern Tech Stack (React, Node, Python, Cloudflare)</li>
+          <li>Robust, reliable, and future-proof solutions.</li>
         </ul>`,
         icon: 'tabler:code',
       },
       {
-        title: 'Global Services',
+        title: 'Global Business Services',
         description: `<ul>
-          <li>Translation & Localization (JP<>EN Focus)</li>
-          <li>Interpretation Services</li>
-          <li>Inbound/Cross-Border Consulting</li>
-          <li>Global Market Entry Support</li>
-          <li>Leveraging extensive language pair expertise.</li>
+          <li>Expert Translation & Localization (JP<>EN+)</li>
+          <li>Professional Interpretation Services</li>
+          <li>Cross-Border Market Entry Strategy</li>
+          <li>Inbound/Outbound Business Consulting</li>
+          <li>Navigate global markets with confidence.</li>
         </ul>`,
-        icon: 'tabler:world',
+        icon: 'tabler:world-share',
+      },
+      {
+        title: 'Hybrid Event Design (Gathrly)',
+        description: `<ul>
+          <li>Innovative Hybrid & Virtual Event Concepts</li>
+          <li>AI-Powered Event Planning & Logistics</li>
+          <li>Engaging Experiences for Global Audiences</li>
+          <li>Technology Integration & Support</li>
+          <li>Leveraging insights from Gathr.ly.</li>
+        </ul>`,
+        icon: 'tabler:calendar-event',
       },
       // Optional: Creative Services
       // {
@@ -125,21 +139,33 @@ const metadata = {
     ]}
   />
 
+  <!-- Why Choose Us Section (#why-us) -->
+  <Stats
+    id="why-us"
+    title="Why Partner with G Productions?"
+    subtitle="Your strategic advantage in a global, AI-driven world."
+    stats={[
+      { title: 'Global Perspective', amount: 'AI & Tech' },
+      { title: 'AI-First Approach', amount: 'Innovation' },
+      { title: 'Dual Expertise', amount: 'US & Japan' },
+      { title: 'Proven Results', amount: 'Portfolio' },
+    ]}
+  />
+
   <!-- Portfolio / Case Studies Section (#portfolio) -->
   <Features
     id="portfolio"
-    title="Innovating Across Borders"
-    subtitle="Showcasing our global projects and technological expertise"
+    title="Innovating Across Borders: Our Work"
+    subtitle="Selected projects showcasing our global capabilities and technological expertise"
     items={[
       // Example Case Study Item 1
       {
-        title: 'AI Code Agents Festival (Event Production)',
+        title: 'AI Code Agents Festival (Hybrid Event Production)',
         description:
-          'Organized a major hybrid tech event attracting 200+ offline attendees and 20,000 online viewers, demonstrating event production capabilities combined with AI community focus.',
+          'Successfully produced a large-scale hybrid tech conference connecting a global audience (200+ in-person, 20k+ online), demonstrating expertise in complex event logistics and community engagement.',
         icon: 'tabler:calendar-event', // Or 'tabler:robot'
-        // Add link property if Steps/Features component supports it, or use CallToAction
         callToAction: {
-          text: 'View Event',
+          text: 'View Event Details',
           href: 'https://events.code-agents.com/2025-winter/',
           target: '_blank',
           variant: 'link',
@@ -147,55 +173,62 @@ const metadata = {
       },
       // Example Case Study Item 2
       {
-        title: 'Global Localization Project (Translation/Consulting)',
+        title: 'Multinational Tech Localization (Global Services)',
         description:
-          'Managed large-scale technical documentation translation and localization for a multinational tech client entering the Japanese market, ensuring accuracy and cultural relevance.',
+          'Executed end-to-end localization for a major software product launch in Japan, including technical translation, cultural consulting, and QA, ensuring seamless market entry.',
         icon: 'tabler:language',
       },
       // Example Case Study Item 3
       {
-        title: 'Custom AI Agent for E-commerce (AI Solutions)',
+        title: 'E-commerce AI Agent (AI Solutions)',
         description:
-          'Developed a bespoke AI agent to automate customer support inquiries and personalize product recommendations for a US-based online retailer, significantly improving response times and conversion rates.',
+          'Developed and deployed a sophisticated AI agent for a US retailer, automating 60%+ of customer support queries and increasing conversion rates through personalized recommendations.',
         icon: 'tabler:robot',
       },
-      // Add more portfolio items here, focusing on global impact, tech innovation, App Store apps
+      // Example Case Study Item 4
+      {
+        title: 'Cross-Platform SaaS Application (Software Dev)',
+        description:
+          'Engineered a scalable SaaS platform for a B2B client, featuring a modern web interface and mobile companion apps, deployed globally on Cloudflare infrastructure.',
+        icon: 'tabler:cloud-code',
+      },
+      // Add more portfolio items here
     ]}
   />
 
   <!-- Global Presence / About Section (#about) -->
   <Content
     id="about"
-    title="Global Reach, Local Expertise"
+    title="Global Reach, Integrated Expertise"
     isReversed
     image={{
       src: '~/assets/images/office-02.jpeg', // Global team/office image
-      alt: 'G Productions, LLC Team',
+      alt: 'G Productions, LLC - Global Operations',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-xl font-semibold mb-2">Our Story & Approach (G Productions, LLC)</h3>
-      <p class="mb-4">
-        G Productions, LLC was founded in Wyoming, USA, with a vision to bridge technology and creativity across
-        borders. We operate as a global AI innovation studio, driven by an AI-first methodology and a passion for
-        crafting impactful solutions. Our mission is to empower businesses worldwide through cutting-edge technology and
-        strategic global insights.
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">
+        Our Foundation (G Productions, LLC)
+      </h3>
+      <p class="mb-4 text-lg">
+        Founded in Wyoming, USA, G Productions, LLC is the global engine driving our innovation. We operate as a dynamic
+        AI studio, committed to merging advanced technology with creative excellence to solve complex challenges across
+        international markets. Our AI-first methodology ensures we deliver future-ready solutions.
       </p>
-      <h3 class="text-xl font-semibold mb-2">Dual Structure Strength</h3>
-      <p class="mb-4">
-        Our unique structure, combining the US-based G Productions, LLC and our dedicated Japanese entity, <a
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">The Power of Synergy</h3>
+      <p class="mb-4 text-lg">
+        Our integrated structure is our strength. G Productions, LLC (USA) spearheads global strategy and technology,
+        while our dedicated Japanese entity, <a
           href="/ja/#company"
-          class="text-blue-600 dark:text-blue-400 hover:underline">G Productions Japan 合同会社</a
-        >, allows us to offer both global perspective and dedicated local market expertise. This synergy ensures our
-        clients benefit from world-class technology adapted to specific regional needs.
+          class="text-blue-600 dark:text-blue-400 hover:underline font-medium">G Productions Japan 合同会社</a
+        >, provides deep local market understanding and execution. This seamless collaboration delivers unparalleled
+        value – global innovation tailored with local precision.
       </p>
-      <h3 class="text-xl font-semibold mb-2">The Team</h3>
-      <p>
-        Led by Günther Brunner, our core team collaborates with a network of global experts. We leverage our
-        international presence (USA) and dedicated Japanese operations (<a
-          href="/ja/#company"
-          class="text-blue-600 dark:text-blue-400 hover:underline">Japan GK</a
-        >) to deliver unparalleled service.
+      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2">Leadership & Vision</h3>
+      <p class="text-lg">
+        Led by founder Günther Brunner, our core US team collaborates with a curated network of global specialists. We
+        are passionate about building bridges – connecting technologies, markets, and creative ideas to empower our
+        clients worldwide.
       </p>
       <!-- Add Careers link/info if applicable -->
     </Fragment>
@@ -205,46 +238,47 @@ const metadata = {
   </Content>
 
   <!-- Optional: Client Logos/Testimonials Section (#clients) -->
-  <!-- Add a Brands or Testimonials widget here if needed -->
+  <!-- Add a Brands or Testimonials widget here if needed, e.g., <Brands logos={[...]} title="Trusted By Global Leaders"/> -->
 
   <!-- Contact Section (#contact) -->
   <Features2
     id="contact"
-    title="Contact Us"
-    tagline="Get in Touch with G Productions, LLC (USA)"
+    title="Connect with Our Global Team"
+    tagline="Reach out to G Productions, LLC (USA)"
     columns={2}
     items={[
       {
-        title: 'USA Headquarters (G Productions, LLC)',
-        description: `<strong>G Productions, LLC</strong><br />
+        title: 'USA Headquarters (Global Inquiries)',
+        description: `<strong class="text-lg">G Productions, LLC</strong><br />
         30 N Gould St Ste N<br />
         Sheridan, WY 82801 USA<br />
         <br />
-        <a href="tel:+13072919547" class="hover:underline">+1 (307) 291-9547</a><br />
-        <a href="mailto:contact@g-productions.studio" class="hover:underline">contact@g-productions.studio</a><br /><br />
-        For Japan inquiries, please contact our <a href="/ja/#contact" class="text-blue-600 dark:text-blue-400 hover:underline">Japan Office</a>.`,
+        <strong>Phone:</strong> <a href="tel:+13072919547" class="hover:underline">+1 (307) 291-9547</a><br />
+        <strong>Email:</strong> <a href="mailto:contact@g-productions.studio" class="hover:underline">contact@g-productions.studio</a><br /><br />
+        <hr class="my-2 border-gray-300 dark:border-gray-600"/>
+        For inquiries specific to the Japanese market, please contact our <a href="/ja#contact" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Japan Office (日本)</a>.`,
         icon: 'tabler:building-skyscraper',
       },
       {
-        title: 'Location Map',
+        title: 'Office Location',
         description:
           '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167703411779!2d-106.9549504!3d44.797770799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a66677f%3A0x8f85bd068d1afb8a!2s30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sjp!4v1718789512794!5m2!1sen!2sjp" width="100%" height="300px" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         icon: 'tabler:map-pin',
       },
-      // Consider adding a Contact Form widget here
+      // Consider adding a Contact Form component here if desired
     ]}
   />
 
-  <!-- Final CTA (Optional) -->
+  <!-- Final CTA -->
   <CallToAction
-    title="Ready to innovate globally?"
-    subtitle="Let's discuss how our AI and technology solutions can elevate your business."
+    title="Ready to Innovate on a Global Scale?"
+    subtitle="Let's explore how our AI expertise and technology solutions can propel your international business forward."
     actions={[
       {
         variant: 'primary',
-        text: 'Contact Us Now',
+        text: 'Start the Conversation',
         href: 'mailto:contact@g-productions.studio',
-        icon: 'tabler:mail',
+        icon: 'tabler:send',
       },
     ]}
   />

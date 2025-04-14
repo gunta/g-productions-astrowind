@@ -1,0 +1,689 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+// import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'G Productions, LLC',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'ホーム', href: '#' },
+        { text: '事業概要', href: '#about' },
+        { text: 'サービス', href: '#services' },
+        { text: '実績', href: '#works' },
+        { text: 'アクセス', href: '#access' },
+      ]}
+      actions={[
+        {
+          text: 'お問い合わせ',
+          href: 'mailto:contact@g-productions.studio',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <Hero
+    id="hero"
+    title="G Productions"
+    tagline="AI x Creativity"
+    image={{
+      src: '~/assets/images/hero-1.png',
+      alt: 'G Productions',
+    }}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: 'mailto:contact@g-productions.studio',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      AI×人間×クリエイティビティで、ビジネスの限界を超える。<br />
+      <span class="font-semibold">G Productions, LLC</span>- 革新的ソリューションで、お客様の成功を加速します。
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    image={{
+      src: '~/assets/images/f434805fd2c8.jpg',
+      alt: 'G Productions, LLC事業内容',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">事業概要</h2>
+      <p>
+        G
+        Productionsは、AIを活用した革新的なソリューションを提供するクリエイティブスタジオです。ソフトウェア開発、デザイン、音楽制作、グローバル対応、メディア制作など、幅広い分野で最先端のテクノロジーと豊富な経験を融合し、お客様のビジネスに変革をもたらします。
+      </p>
+      <br />
+      <p>
+        AIを前提とした開発アプローチにより、効率的かつ高品質なソリューションを提供。ウェブサイト、アプリケーション、チャットボットなど、あらゆるニーズに対応し、AIワークフロー設計、AIデザイン生成、AIコンテンツ制作など、革新的なサービスで競争力強化を支援します。
+      </p>
+      <br />
+      <p>
+        G
+        Productionsは、お客様との緊密な連携を通じて、ビジネスの成長と変革を推進するパートナーです。AIを活用した革新的なソリューションで、お客様の成功を支えます。
+      </p>
+      <br />
+      <p>
+        <strong>G Productions, LLC (USA)</strong> はソフトウェア開発やグローバルサービスを中心に展開し、 今後設立予定の <strong
+          >G Productions Japan合同会社</strong
+        > では日本国内でのコンサルティングやサポート事業をはじめ、 日本の顧客やパートナーとの密接な連携を担う予定です。海外の先端技術と日本市場ならではのニーズを統合し、
+        皆様に信頼されるビジネスパートナーとして、さらなる価値創造を目指します。
+      </p>
+      <br />
+      <p><strong>G Productions, LLC</strong></p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features2
+    id="services"
+    title="サービス"
+    subtitle="未来を切り拓く、AI × 人間 × クリエイティビティの融合"
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'AIエージェント & RPA開発',
+        description: `<ul>
+          <li>次世代型AIエージェントの企画・設計</li>
+          <li>業務自動化RPAソリューションの開発</li>
+          <li>マルチモーダルAIアシスタントの実装</li>
+          <li>自律型AIワークフローの構築</li>
+        </ul>`,
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'AIソリューション',
+        description: `<ul>
+          <li>AIを活用したソフトウェア開発</li>
+          <li>AIワークフロー設計</li>
+          <li>AIデザイン生成</li>
+          <li>AIコンテンツ制作</li>
+          <li>AIコンサルティング</li>
+        </ul>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: 'ソフトウェア開発',
+        description: `<ul>
+      <li>ウェブサイト開発</li>
+      <li>フルスタック開発</li>
+      <li>チャットボット開発</li>
+      <li>ランディングページ制作</li>
+      <li>ウェブ・ネイティブアプリ開発</li>
+      <li>テスト自動化</li>
+    </ul>`,
+        icon: 'tabler:code',
+      },
+      {
+        title: 'デザイン',
+        description: `<ul>
+      <li>コンテンツ制作</li>
+      <li>ブランド開発</li>
+      <li>デザインディレクション</li>
+      <li>UI/UXデザイン</li>
+      <li>プロダクトデザイン</li>
+      <li>プロトタイプ制作</li>
+    </ul>`,
+        icon: 'tabler:palette',
+      },
+      {
+        title: '音楽制作と配信',
+        description: `<ul>
+          <li>音楽コンテンツ制作</li>
+          <li>音楽レーベル運営</li>
+          <li>デジタル配信</li>
+        </ul>`,
+        icon: 'tabler:music',
+      },
+      {
+        title: 'イベント制作',
+        description: `<ul>
+          <li>イベント制作</li>
+          <li>運営コンサルティング</li>
+          <li>ロケーション手配</li>
+          <li>機材提供</li>
+          <li>総合プロダクション</li>
+        </ul>`,
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'グローバル対応',
+        description: `<ul>
+          <li>翻訳</li>
+          <li>通訳</li>
+          <li>ローカライゼーション</li>
+          <li>インバウンドコンサルティング</li>
+          <li>グローバルマーケティング</li>
+        </ul>`,
+        icon: 'tabler:globe',
+      },
+      {
+        title: '映像制作',
+        description: `<ul>
+          <li>動画制作</li>
+          <li>動画編集</li>
+          <li>字幕制作</li>
+        </ul>`,
+        icon: 'tabler:video',
+      },
+      {
+        title: 'メディア出演',
+        description: `<ul>
+          <li>CM出演</li>
+          <li>TV出演</li>
+          <li>映画出演</li>
+        </ul>`,
+        icon: 'tabler:radio',
+      },
+      {
+        title: 'サービス開発',
+        description: `<ul>
+            <li>B2Bサービス開発・運営</li>
+            <li>B2Cサービス開発・運営</li>
+            <li>SaaS製品開発</li>
+            <li>OSSプロジェクトサポート</li>
+            <li>サービス運営</li>
+          </ul>`,
+        icon: 'tabler:server',
+      },
+    ]}
+  />
+
+  <Steps
+    id="works"
+    title="翻訳実績"
+    items={[
+      {
+        title: '令和6年分 宇都宮市調整給付金支給通知書',
+        description: '栃木県 宇都宮市',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '令和５年 ゴミ分別マニュアル',
+        description: '埼玉県 鴻巣市',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '令和６年分 源泉徴収に係る定額減税のための申告書',
+        description: '国税庁',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '令和６年分 年末調整に係る定額減税のための申告書',
+        description: '国税庁',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '「伝統沖縄空手古武術指導を通じた青少年の育成」プロジェクトに係る終了時合同評価確認書',
+        description: '那覇市文化協会 ／ 国際協力機構JICA',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '外国籍府民のための安心・安全情報',
+        description: '京都府内市町村等国際化推進担当課・地域国際化協会',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'アーレスティグローバル年頭挨拶',
+        description: '株式会社アーレスティ',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '宮古島を例に環境保全と観光開発',
+        description: 'JICA ／ 特定非営利活動法人 おきなわ環境クラブ',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'エクアドル国の融資契約書',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'チリ地震支援に関する事業計画',
+        description: '特定非営利活動法人ジャパン・プラットフォーム',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'グアテマラ慢性栄養不良の削減プログラムの調査分析',
+        description: '大学国際関係研究室',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '決算説明会資料',
+        description: '株式会社ニッスイ',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '乗用車向けコンフォートタイヤ「ADVAN dB」説明書',
+        description: '横浜ゴム株式会社',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '業務委託契約書',
+        description: 'アルゼンチンタンゴ 教室 タンゴレッスン 東京 港区 ラ・クンパルシータ',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '地域医療連携室について',
+        description: '沖縄県立 南部医療センター・こども医療センター',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'ビーフカレー編DVDのナレーション・テロップ',
+        description: 'S&B食品株式会社',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '八重山保健所管内の母子保健に関する観察',
+        description: '沖縄県 八重山保健所',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '会社案内ウェブサイト',
+        description: '株式会社H.I.S.',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '京都市外国人観光客実態調査',
+        description: '京都市 産業観光局観光部観光振興課',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '外国人来所者アンケート',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '妊婦健診保険指導チェックリスト',
+        description: '那覇市立病院',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'B Vocalファンクラブ・ジャパン開設',
+        description: 'オフィス サワイ(沢井事務所)',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '世界大学野球選手権大会における科学的支援プロジェクト提案',
+        description: '国立スポーツ科学センター',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '初午祭について',
+        description: '一般社団法人 京都府北部地域連携都市圏振興社',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '「コーリングカード・ネオ」ウェブサイト',
+        description: 'NTTコミュニケーションズ株式会社',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'パスカルクランプモデルTYC取扱説明書',
+        description: 'パスカル株式会社',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '医療機器メーカー「ZERO SYSTEM」PVナレーション・テロップ',
+        description: '株式会社ジェイ･エム･エス',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '日本を訪れる外国人の消費動向調査',
+        description: '国土交通省',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'メキシコ調査票分析',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '受刑者移送関連文書',
+        description: '法務省',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '化粧品小石丸シルク製品の海外ネーミング案チェック',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '宣誓書',
+        description: '株式会社エンネットワーク',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '履歴事項全部証明書',
+        description: '株式会社エンネットワーク',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'サッカーに関する注意事項',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '水上スポーツ機器ホームページ',
+        description: 'ヤマハ発動機株式会社',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'アラームツール台詞',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'ISDB-T標準海外開発',
+        description: '総務省',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '地上デジタル放送への円滑な移行のための環境整備・支援',
+        description: '総務省',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '新たな海上公園への取り組み',
+        description: '東京都生活文化スポーツ局',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: 'メキシコ湾岸水質モニタリング',
+        description: '独立行政法人国際協力機構JICA',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '少林寺拳法ガイドブック',
+        description: '一般社団法人SHORINJI KEMPO UNITY',
+        icon: 'tabler:language-hiragana',
+      },
+      {
+        title: '琵琶湖の水質モニタリング調査',
+        description: '琵琶湖環境科学研究センター',
+        icon: 'tabler:language-hiragana',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- <Steps
+    id="works"
+    title="文字起こし実績"
+    items={[
+      {
+        title: 'エルサルバドル国「Anastasio y los del monte・Paz para vos」のMC及び歌詞',
+        description: '非公開',
+        icon: 'tabler:language-hiragana',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  /> -->
+
+  <Steps
+    id="works"
+    title="通訳実績"
+    items={[
+      {
+        title: '東京地裁執行官による強制執行催告時通訳',
+        description: '東京地方裁判所執行官室 ／ 株式会社マイハート',
+        icon: 'tabler:message-language',
+      },
+      {
+        title: '血糖自己測定装置法規制調査・現地アポイント代行',
+        description: '富士経済株式会社',
+        icon: 'tabler:message-language',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="works"
+    title="メディア出演"
+    items={[
+      {
+        title: '「Jリーグ」CM・代表出演',
+        description: '日本プロサッカーリーグ',
+        icon: 'tabler:ad',
+      },
+      {
+        title: '松本清張『ゼロの焦点』映画・アメリカ軍将兵出演',
+        description: '東宝株式会社',
+        icon: 'tabler:movie',
+      },
+      {
+        title: '「奇跡体験！アンビリバボー」・再現VTR多数回出演',
+        description: 'フジテレビ',
+        icon: 'tabler:device-tv',
+      },
+      {
+        title: '『人生が変わる1分間の深イイ話』・再現VTR多数回出演',
+        description: '日本テレビ',
+        icon: 'tabler:device-tv',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="works"
+    title="イベント主催"
+    items={[
+      {
+        title: 'ELECTRIC OASIS',
+        description: 'EBISU CityCamp, 100名以上の参加者',
+        icon: 'tabler:music',
+        link: 'https://www.electricoasis.tokyo/',
+      },
+      {
+        title: 'AI Code Agents祭り',
+        description: '渋谷スクランブルスクエア, オフライン200名の参加者、YouTubeで1万5000名以上の視聴者数',
+        icon: 'tabler:robot',
+        link: 'https://events.code-agents.com/2025-winter/',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+  <Steps
+    id="works"
+    title="パートナーシップ"
+    items={[
+      {
+        title: '物語運輸 株式会社',
+        description: `パートナー企業として、伝統文化のデジタル発信を支援。AI技術とグローバルな視点を活用し、日本の伝統工芸品や地域の魅力を世界へ発信するプロジェクトを共同推進。`,
+        icon: 'tabler:globe',
+        link: 'https://monoun.jp/',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="works"
+    title="投資リサーチ"
+    items={[
+      {
+        title: 'Coinpaper, Inc.',
+        description: '日本のテクノロジー企業への投資に関する調査・分析を提供。',
+        icon: 'tabler:news',
+        link: 'https://coinpaper.com',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- New Content for Gathrly -->
+  <Content
+    id="gathrly"
+    columns={2}
+    image={{
+      src: '~/assets/images/gathrly.png',
+      alt: 'Gathrly - ハイブリッドなイベントデザインサービス',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        New Service: <span class="text-accent dark:text-white highlight">Gathrly</span>
+      </h2>
+
+      <div class="space-y-6 text-gray-600 dark:text-gray-400">
+        <p class="text-lg">
+          様々な規模のイベント主催経験から、「規模によって異なる課題」を熟知しています。
+          イベント主催には、人間の創造性が必要な部分と、AIで効率化できる部分があります。
+        </p>
+
+        <p class="text-lg font-semibold">
+          Gathrlyは、それぞれの長所を最大限に活かした ハイブリッドなイベントデザインサービスです。
+        </p>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 space-y-4">
+          <div>
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+              <span class="text-2xl">👥</span> 人間が担当すること
+            </h3>
+            <ul class="list-none space-y-2 ml-8">
+              <li>• イベントの本質的な価値の設計</li>
+              <li>• ブランドの世界観の理解と表現</li>
+              <li>• きめ細やかなコンサルティング</li>
+              <li>• クオリティコントロール</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+              <span class="text-2xl">🤖</span> AIが支援すること
+            </h3>
+            <ul class="list-none space-y-2 ml-8">
+              <li>• デザインのバリエーション生成</li>
+              <li>• チケット販売・入場管理の自動化</li>
+              <li>• 様々な最適化</li>
+              <li>• 進行状況の可視化</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <p>
+            各規模特有の課題に、経験に基づいたソリューションを。
+            人間による細やかなサポートとAIの効率化で、規模に関係なく最高のイベント体験を実現します。
+          </p>
+
+          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-3">現在、各規模のトライアル参加者を募集中！</h3>
+            <ul class="list-none space-y-2">
+              <li>• まずは無料相談で、あなたのイベントならではの課題とソリューションを一緒に考えましょう</li>
+              <li>• 先着限定数での受付</li>
+            </ul>
+            <div class="mt-4 font-semibold">
+              詳細はこちら：
+              <a
+                href="https://gathr.ly"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+              >
+                gathr.ly
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <Features2
+    id="access"
+    title="Access | アクセス情報"
+    tagline="Office | オフィス所在地"
+    columns={2}
+    items={[
+      {
+        title: 'USA Headquarters',
+        description: `<strong>Address</strong> <br />
+        30 N Gould St Ste N<br />
+        Sheridan, WY 82801 USA<br />
+        <br />
+        +1 (307) 291-9547<br />
+        <br />
+<br />`,
+      },
+      {
+        title: 'Office Map',
+        description:
+          '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167703411779!2d-106.9549504!3d44.797770799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a66677f%3A0x8f85bd068d1afb8a!2s30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sjp!4v1718789512794!5m2!1sen!2sjp" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+      },
+
+      {
+        title: '所在地（東京オフィス）',
+        description: `<strong>住所</strong> <br />
+<a href="https://maps.app.goo.gl/cLwFPc1QNpkjnubV9" target="_blank">〒153-0042<br />東京都目黒区青葉台4丁目4番12号</a><br />
+<br />
+<strong>アクセス方法</strong> <br />
+・<a href="https://maps.app.goo.gl/MGr8F7YBspSKTkgD9" target="_blank">京王井の頭線「神泉」駅から徒歩7分</a><br />
+・<a href="https://maps.app.goo.gl/Ah8PRaTfMi2UiGbt7" target="_blank">田園都市線「池尻大橋」駅から徒歩9分</a><br />
+・<a href="https://maps.app.goo.gl/gC1Tt2m7Ncpv7WaV7" target="_blank">京王井の頭線「渋谷」駅から徒歩11分</a><br />
+・<a href="https://maps.app.goo.gl/urRUxS5cVmM6yyHq8" target="_blank">東急バス「大坂上」停留所から徒歩1分</a><br />
+<br />
+<strong>その他の交通情報</strong> <br />
+・<a href="https://maps.app.goo.gl/dZ2Wzp4p89AGDuUFA" target="_blank">LUUPポート利用可能</a>`,
+      },
+      {
+        title: 'オフィス地図',
+        description:
+          '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.939130188784!2d139.6871838896499!3d35.65387130193734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bc19eb8f00f%3A0x57ad9deb86b7683!2sTHE%20N3!5e0!3m2!1sen!2sus!4v1718330785155!5m2!1sen!2sus" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Hero
+    image={{
+      src: '~/assets/images/office-02.jpeg',
+      alt: 'オフィス',
+    }}
+  />
+
+  <CallToAction
+    title="未来を共に創造しませんか？"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'お問い合わせ',
+        href: 'mailto:contact@g-productions.studio',
+      },
+    ]}
+  />
+</Layout>
