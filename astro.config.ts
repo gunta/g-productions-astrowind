@@ -12,7 +12,7 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter.mjs';
+import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -76,7 +76,7 @@ export default defineConfig({
 
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
+    rehypePlugins: [],
   },
 
   vite: {
