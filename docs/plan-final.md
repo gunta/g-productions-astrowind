@@ -30,26 +30,24 @@ G Productions Japan 合同会社 (GK) will operate as the Japanese arm of G Prod
 *   **Company Name (商号):** G Productions Japan 合同会社
 *   **Entity Type:** 合同会社 (Godo Kaisha - GK)
 *   **Head Office Address (本店所在地):** [Your Japanese Office Address - e.g., 〒153-0042 東京都目黒区青葉台4-4-12 THE N3]
-*   **Capital (資本金):** Recommend 1,000,000 JPY for credibility (Minimum 1 JPY).
-*   **Representative Member (代表社員):** [Your Name] (Must have an address in Japan). Consider adding advisors or partners if applicable for credibility.
-*   **Fiscal Year:** January 1 - December 31 (Align with US entity for simplicity).
+*   **Representative Member (代表社員):** Günther Brunner (Must have an address in Japan). Consider adding advisors or partners if applicable for credibility.
 
 ### 4.2. Business Objectives (事業目的 - For Articles of Incorporation/登記)
 *(This list is comprehensive and should be reviewed with a legal professional during incorporation)*
-1.  コンピュータシステムの企画、開発、設計、製造、販売、賃貸、保守及びコンサルティング (Planning, development, design, manufacturing, sales, leasing, maintenance, and consulting of computer systems)
-2.  ソフトウェアの企画、開発、設計、製造、販売、賃貸、保守及びコンサルティング (Planning, development, design, manufacturing, sales, leasing, maintenance, and consulting of software)
-3.  人工知能（AI）に関する技術の研究開発、コンサルティング及びソリューション提供 (Research and development, consulting, and solution provision related to Artificial Intelligence (AI))
-4.  AIエージェント及びロボティック・プロセス・オートメーション（RPA）の開発及び導入支援 (Development and implementation support for AI agents and Robotic Process Automation (RPA))
-5.  ウェブサイト、モバイルアプリケーション及びSaaS（Software as a Service）の企画、開発、制作、運営及び保守 (Planning, development, production, operation, and maintenance of websites, mobile applications, and SaaS)
-6.  インターネットを利用した各種情報提供サービス及びコンサルティング業務 (Various information provision services and consulting services using the internet)
-7.  企業のデジタルトランスフォーメATION（DX）支援及びコンサルティング (Support and consulting for corporate Digital Transformation (DX))
-8.  技術顧問及び技術指導業務 (Technical advisory and technical guidance services)
-9.  デザイン（UI/UX、プロダクト、ブランド開発を含む）の企画、制作及びコンサルティング (Planning, production, and consulting for design (including UI/UX, product, brand development))
-10. 翻訳、通訳及びローカライゼーション業務 (Translation, interpretation, and localization services)
-11. マーケティングリサーチ、広告宣伝及び経営コンサルティング業務 (Marketing research, advertising/promotion, and management consulting services)
-12. イベント、セミナー、講演会の企画、制作、運営及びコンサルティング (Planning, production, operation, and consulting for events, seminars, lectures)
-13. 音楽、映像等のコンテンツ企画、制作、配信及び販売 (Planning, production, distribution, and sales of content such as music and video)
-14. 前各号に附帯関連する一切の事業 (All business incidental or related to the preceding items)
+1.  コンピュータソフトウェア及びITシステムの企画、設計、開発、製造、販売、保守及び輸出入並びにこれらに関するコンサルティング業務 (Planning, design, development, production, sales, maintenance, and import/export of computer software and IT systems, as well as consulting services related to these activities)
+2.  人工知能（AI）関連技術及びソリューションの研究開発、設計、実装、販売、導入支援及びコンサルティング業務 (Research, development, design, implementation, sales, installation support, and consulting for artificial intelligence (AI) technologies and solutions)
+3.  インターネットを利用した情報提供サービス、ウェブサイト、モバイルアプリケーション及びクラウドサービス（SaaS等）の企画、開発、運営、保守及び販売 (Internet-based information services, websites, mobile applications, and cloud services (such as SaaS) planning, development, operation, maintenance, and sales)
+4.  企業のデジタルトランスフォーメーション（DX）支援、技術顧問、技術指導、システム導入支援及びこれらに関するコンサルティング業務 (Corporate digital transformation (DX) support, technical advisory, technical guidance, system implementation support, and consulting services related to these activities)
+5.  デザイン（UI/UX、プロダクト、ブランド開発を含む）の企画、制作、販売及びコンサルティング業務 (Planning, production, sales, and consulting for design including UI/UX, product, and brand development)
+6.  翻訳、通訳、ローカライゼーション及び多言語コンテンツ制作業務 (Translation, interpretation, localization, and multilingual content production services)
+7.  マーケティングリサーチ、市場調査、各種広告宣伝の企画及び制作並びに経営コンサルティング業務 (Marketing research, market surveys, planning and production of various advertisements, and management consulting services)
+8.  セミナー、研修、講演会、展示会及び各種イベントの企画、運営及びコンサルティング業務 (Planning, operation, and consulting for seminars, training programs, lectures, exhibitions, and various events)
+9.  電子出版物を含む各種コンテンツの企画、制作、配信、販売及び権利管理業務 (Planning, production, distribution, sales, and rights management of various content including electronic publications)
+10. コンピュータソフトウェア、モバイルアプリケーション及びゲームの企画、開発、制作、販売及び運営 (Planning, development, production, sales, and operation of computer software, mobile applications, and games)
+11. ベンチャー企業等への投資、経営支援及び育成事業 (Investment in, management support for, and incubation of venture companies)
+12. 各種商品及び情報システムの輸出入並びに販売業務 (Import, export, and sales of various products and information systems)
+13. 日本国内外の企業の市場参入支援、事業展開支援、設立・運営支援及び国際ビジネスコンサルティング業務 (Market entry support, business development support, establishment and operation support for domestic and international companies, and international business consulting services)
+14. 前各号に附帯関連する一切の事業 (All businesses incidental or related to the preceding items)
 
 ### 4.3. Registration Process Overview
 1.  Prepare Articles of Incorporation (定款). Electronic version recommended.
