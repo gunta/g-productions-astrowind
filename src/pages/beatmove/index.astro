@@ -41,7 +41,7 @@ import experienceImage from './experience.png';
       }
       .parallax::before {
         content: '';
-        @apply absolute inset-0 bg-fixed bg-center bg-no-repeat bg-cover -z-10;
+        @apply absolute bg-fixed bg-center bg-no-repeat bg-cover -z-10;
         transform: translateZ(0);
         will-change: transform;
       }
@@ -670,9 +670,13 @@ import experienceImage from './experience.png';
         // Parallax effect
         function updateParallax() {
           parallaxSections.forEach((section) => {
-            const distance = window.pageYOffset - section.offsetTop;
-            const parallaxBg = section.querySelector('.parallax::before');
+            // Cast section to HTMLElement to access offsetTop
+            const htmlSection = section as HTMLElement;
+            const distance = window.pageYOffset - htmlSection.offsetTop;
+            // Cast querySelector result to HTMLElement to access style
+            const parallaxBg = htmlSection.querySelector('.parallax::before') as HTMLElement | null;
             if (parallaxBg) {
+              // Correct template literal syntax
               parallaxBg.style.transform = `translateY(${distance * 0.5}px)`;
             }
           });
