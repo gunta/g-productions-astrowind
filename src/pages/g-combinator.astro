@@ -11,7 +11,8 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
-import GCombinatorLogo from '~/assets/images/GCombinatorLogoBlack.png';
+import GCombinatorLogoBlack from '~/assets/images/GCombinatorLogoBlack.png';
+import GCombinatorLogoWhite from '~/assets/images/GCombinatorLogoWhite.png';
 
 const metadata = {
   title: 'G Combinator - Cross-Border Startup Acceleration & Incorporation',
@@ -47,15 +48,27 @@ const metadata = {
   <!-- Logo Section -->
   <div class="mx-auto max-w-7xl px-6 py-8 sm:py-12">
     <div class="flex justify-center">
+      <!-- Light mode logo -->
       <Image
-        src={GCombinatorLogo}
+        src={GCombinatorLogoBlack}
         alt="G Combinator"
         width={1200}
         height={300}
         densities={[1, 2, 3]}
         quality={90}
         format="webp"
-        class="w-full max-w-2xl h-auto"
+        class="w-full max-w-2xl h-auto dark:hidden"
+      />
+      <!-- Dark mode logo -->
+      <Image
+        src={GCombinatorLogoWhite}
+        alt="G Combinator"
+        width={1200}
+        height={300}
+        densities={[1, 2, 3]}
+        quality={90}
+        format="webp"
+        class="w-full max-w-2xl h-auto hidden dark:block"
       />
     </div>
   </div>
