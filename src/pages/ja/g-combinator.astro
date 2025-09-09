@@ -1,0 +1,763 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import GCombinatorLogo from '~/assets/images/GCombinatorLogoBlack.png';
+
+const metadata = {
+  title: 'G Combinator - 日米クロスボーダー・スタートアップアクセラレーター',
+  description:
+    '日本から米国法人設立、米国から日本進出を完全サポート。法人設立、銀行口座開設、コンプライアンス、Y Combinator申請まで一括対応。',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'ホーム', href: '/ja' },
+        { text: 'G Combinator', href: '/ja/g-combinator' },
+        { text: 'サービス', href: '/ja#services' },
+        { text: 'ポートフォリオ', href: '#portfolio' },
+        { text: '会社概要', href: '/ja#about' },
+        { text: 'お問い合わせ', href: '/ja#contact' },
+      ]}
+      actions={[
+        {
+          text: '今すぐ申請',
+          href: 'mailto:g-combinator@g-productions.studio?subject=G%20Combinator申請',
+          target: '_blank',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Logo Section -->
+  <div class="mx-auto max-w-7xl px-6 py-8 sm:py-12">
+    <div class="flex justify-center">
+      <Image
+        src={GCombinatorLogo}
+        alt="G Combinator"
+        width={1200}
+        height={300}
+        densities={[1, 2, 3]}
+        quality={90}
+        format="webp"
+        class="w-full max-w-2xl h-auto"
+      />
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <Hero
+    tagline=""
+    title="世界で勝負する、第一歩から"
+    subtitle="日米間の起業を加速する、初のクロスボーダー・アクセラレーター。完全な日英翻訳サービス付き — メール、ドキュメント、Zoom会議、法的契約書、投資家ミーティング、全てのやり取りを母国語で。法人設立から資金調達まで、言語の壁を完全に取り除きます。"
+    actions={[
+      {
+        variant: 'primary',
+        text: '申請する',
+        href: 'mailto:g-combinator@g-productions.studio?subject=G%20Combinator申請',
+        icon: 'tabler:mail',
+      },
+      { text: 'ポートフォリオ', href: '#portfolio' },
+    ]}
+  />
+
+  <!-- Core Services -->
+  <Features
+    id="services"
+    tagline="サービス内容"
+    title="国境を越えた法人設立の完全サポート"
+    subtitle="法人設立からY Combinator申請まで、国際展開の複雑な手続きをワンストップで解決。全サービスに完全バイリンガルサポート付き。"
+    items={[
+      {
+        title: '完全翻訳サービス',
+        description:
+          '全てのコミュニケーションを日英完全翻訳：メール、Slackメッセージ、Zoom会議（同時通訳）、法的文書、投資家向けピッチ、契約書、技術文書、日常会話まで。専任翻訳者が24時間体制で完璧なコミュニケーションを実現。',
+        icon: 'tabler:language',
+      },
+      {
+        title: '日本→米国展開サポート',
+        description:
+          '日本の起業家のための完全な米国法人設立支援。Stripe AtlasやEvery.io経由でのデラウェア州C-CorpまたはLLC設立、EIN取得、米国銀行口座開設、登録代理人サービス、コンプライアンス管理まで、英語力不要で全てリモート対応。',
+        icon: 'tabler:world-upload',
+      },
+      {
+        title: '米国→日本進出支援',
+        description:
+          '戦略的な日本市場参入を実現。株式会社（KK）、合同会社（GK）、支店設立をサポート。Google、Amazon、Appleが採用する税務最適化スキーム、日本の法人銀行口座開設、ビザスポンサーシップ対応も含めた包括的支援。',
+        icon: 'tabler:world-download',
+      },
+      {
+        title: 'YC申請フルサポート',
+        description:
+          'Y Combinatorへの申請を徹底支援。申請戦略の立案、ピッチデックの改善、面接対策、進捗管理ダッシュボード、不採用時のフィードバック分析まで。成功パターンを徹底研究した独自ノウハウを提供。',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: '投資プログラム',
+        description:
+          '直接投資または厳選した投資家紹介。$20K〜$100Kの直接投資、またはあなたのビジネスに最適な専門投資家をネットワークから紹介。資金調達に成功した場合、5%の仲介手数料を頂きます。デューデリジェンス支援と条件交渉ガイダンスも提供。',
+        icon: 'tabler:cash',
+      },
+      {
+        title: '投資アドバイザリー＆リサーチ',
+        description:
+          '機関投資家向けクロスボーダー投資インテリジェンス。米国投資家向けの日本テック企業詳細調査、日本ファンド向けの米国投資機会分析を提供。市場参入戦略、競合分析、規制対応ナビゲーションを含む包括的サービス。',
+        icon: 'tabler:chart-dots',
+      },
+    ]}
+  />
+
+  <!-- How It Works -->
+  <Steps
+    title="グローバル展開への道筋"
+    items={[
+      {
+        title: 'Step 1: 初回連絡',
+        description:
+          'g-combinator@g-productions.studioへ実現したいことをメールで送信。正式な申請書は不要 - あなたのビジョンと現状を教えてください。72時間以内にZoomミーティングを設定します。',
+        icon: 'tabler:mail-forward',
+      },
+      {
+        title: 'Step 2: 戦略立案',
+        description:
+          'ビジネスモデルを分析し、最適な法人設立戦略を策定。法人形態の選択、税務最適化プランニング、タイムライン策定。全てZoomで議論し、完全な文書化を提供。',
+        icon: 'tabler:chess-queen',
+      },
+      {
+        title: 'Step 3: 法人設立',
+        description:
+          'パートナー（Stripe Atlas、Every.io、直接申請）を通じた完全な法人設立。全ての書類作成、州登録、初期コンプライアンス要件を代行。',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Step 4: 銀行口座・運営基盤',
+        description:
+          'Mercury、Brex、従来型銀行での法人口座開設。会計システム、決済処理、運営インフラを構築し、初日から事業開始可能な状態を実現。',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Step 5: 成長支援',
+        description:
+          '継続的なコンプライアンス管理、Y Combinator申請サポート（希望者のみ）、資金調達の紹介、スケール時の戦略的アドバイザリー。',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&w=1024',
+      alt: 'グローバルビジネス展開',
+    }}
+  />
+
+  <!-- Portfolio -->
+  <Features2
+    id="portfolio"
+    tagline="ポートフォリオ"
+    title="支援プロダクト"
+    subtitle="業界を変革する優れたプロダクトとプラットフォームに投資しています。"
+    items={[
+      {
+        title: 'Gathr.ly',
+        description: '次世代イベント管理・コミュニティ構築プラットフォーム。ハイブリッド環境での人々の繋がり方を革新。',
+        icon: 'tabler:users-group',
+        callToAction: {
+          text: 'サイトを見る',
+          href: 'https://gathr.ly/',
+          targetBlank: true,
+        },
+      },
+      {
+        title: 'PRiority',
+        description:
+          'インテリジェントなタスク優先順位付けシステム。機械学習による優先度管理で、チームが本当に重要なことに集中できる環境を提供。',
+        icon: 'tabler:list-check',
+        callToAction: {
+          text: 'サイトを見る',
+          href: 'https://priority.run',
+          targetBlank: true,
+        },
+      },
+      {
+        title: 'MCP Verified',
+        description:
+          'Model Context Protocolの信頼性・検証レイヤー。AIエージェントのインタラクションを安全かつ認証済みに。',
+        icon: 'tabler:shield-check',
+        callToAction: {
+          text: 'サイトを見る',
+          href: 'https://mcpverified.com/',
+          targetBlank: true,
+        },
+      },
+    ]}
+  />
+
+  <!-- Y Combinator Comprehensive Explanation -->
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="text-center text-base font-semibold leading-7 text-primary">なぜY Combinator？</h2>
+      <p class="mt-2 text-center text-4xl font-bold tracking-tight dark:text-white sm:text-5xl">
+        Y Combinatorとは何か、なぜ日本から応募すべきか
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
+        Y
+        Combinator（YC）は世界最高峰のスタートアップアクセラレーターです。Airbnb、Stripe、Dropbox、Reddit、Coinbaseなど、時価総額$1B以上の企業を250社以上輩出しています。日本のエンジニアとスタートアップにとって、これは世界への扉です。
+      </p>
+    </div>
+
+    <!-- YC Deal Terms -->
+    <div
+      class="mt-12 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 p-8 dark:from-blue-900/20 dark:to-indigo-900/20"
+    >
+      <h3 class="text-2xl font-bold dark:text-white">📊 YCの投資条件（The Deal）</h3>
+      <div class="mt-6 space-y-4">
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:currency-dollar" class="mt-1 h-6 w-6 flex-shrink-0 text-green-600" />
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">$500,000の投資</p>
+            <p class="text-gray-600 dark:text-gray-400">
+              • $125,000を7%の株式と引き換えに（ポストマネー評価額のSAFE）<br />
+              • $375,000を評価額上限なしのMFN（Most Favored Nation）SAFE<br />
+              これは約7,500万円の初期資金を意味します！
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:users-group" class="mt-1 h-6 w-6 flex-shrink-0 text-blue-600" />
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">5,000社以上のファウンダーネットワーク</p>
+            <p class="text-gray-600 dark:text-gray-400">
+              YC卒業生は互いに助け合う強固なコミュニティ。日本からは想像できないレベルの人脈とサポートが得られます。
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon name="tabler:rocket" class="mt-1 h-6 w-6 flex-shrink-0 text-purple-600" />
+          <div>
+            <p class="font-semibold text-gray-900 dark:text-white">3ヶ月の集中プログラム</p>
+            <p class="text-gray-600 dark:text-gray-400">
+              週次のグループオフィスアワー、個別メンタリング、Demo
+              Dayでの投資家への発表機会。シリコンバレーの10年分の学びを3ヶ月で習得。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Japanese Engineers Should Apply -->
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      <div class="rounded-xl bg-gradient-to-br from-orange-50 to-red-50 p-8 dark:from-orange-900/20 dark:to-red-900/20">
+        <h3 class="text-xl font-bold dark:text-white">🇯🇵 なぜ日本のエンジニアが有利なのか</h3>
+        <ul class="mt-4 space-y-3 text-gray-600 dark:text-gray-400">
+          <li class="flex items-start gap-2">
+            <Icon name="tabler:check" class="mt-1 h-5 w-5 flex-shrink-0 text-green-600" />
+            <span><strong>技術力の高さ：</strong>日本のエンジニアの緻密な実装力は世界トップクラス</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <Icon name="tabler:check" class="mt-1 h-5 w-5 flex-shrink-0 text-green-600" />
+            <span><strong>独自の市場知見：</strong>世界第3位の経済大国の市場を理解している強み</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <Icon name="tabler:check" class="mt-1 h-5 w-5 flex-shrink-0 text-green-600" />
+            <span><strong>品質へのこだわり：</strong>日本の「ものづくり」精神はソフトウェアでも評価される</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <Icon name="tabler:check" class="mt-1 h-5 w-5 flex-shrink-0 text-green-600" />
+            <span><strong>差別化要因：</strong>アジア市場への展開で米国スタートアップと差別化</span>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 p-8 dark:from-green-900/20 dark:to-emerald-900/20"
+      >
+        <h3 class="text-xl font-bold dark:text-white">📈 YC採用企業の実績</h3>
+        <ul class="mt-4 space-y-3 text-gray-600 dark:text-gray-400">
+          <li class="flex items-start gap-2">
+            <span class="font-mono text-lg font-bold text-green-600">$600B+</span>
+            <span>YC企業の合計時価総額（90兆円以上）</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-mono text-lg font-bold text-green-600">250+</span>
+            <span>ユニコーン企業（評価額10億ドル以上）</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-mono text-lg font-bold text-green-600">4,000+</span>
+            <span>これまでに支援した企業数</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-mono text-lg font-bold text-green-600">2-3%</span>
+            <span>採択率（厳選された企業のみ）</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Application Process -->
+    <div class="mt-12 rounded-xl bg-gray-50 p-8 dark:bg-gray-800">
+      <h3 class="text-2xl font-bold dark:text-white">🚀 G Combinatorの申請サポートプロセス</h3>
+      <div class="mt-6 space-y-6">
+        <div class="flex gap-4">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
+            1
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">事前準備（申請前）</h4>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">
+              デラウェア州法人設立を先に行うか、YC採用後に行うかを戦略的に判断。プロダクトの成熟度と資金調達計画に基づいて最適なタイミングを提案します。すでに日本法人がある場合は、フリップ（本社機能の米国移転）の計画も立案。
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
+            2
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">申請書作成</h4>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">
+              YCが重視するポイントを熟知した上で申請書を作成。「なぜ今なのか」「なぜあなたたちなのか」「どれくらい大きくなるか」を明確に。英語の表現だけでなく、シリコンバレーの文化に合わせたストーリーテリングを支援。
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-purple-600 text-white">
+            3
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">マーケティング用ランディングページ作成</h4>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">
+              米国市場向けの英語ランディングページと日本市場向けの日本語ランディングページを作成（各$2,000）。文化的な違いを考慮し、それぞれの市場に最適化されたメッセージング、デザイン、CTAを実装。YCが重視する「トラクション」を効果的に示すページ設計。
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
+            4
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">面接対策</h4>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">
+              10分間の面接で勝負が決まります。典型的な質問への回答準備、デモの見せ方、数字の伝え方を徹底練習。英語での受け答えだけでなく、自信を持って簡潔に答える訓練も提供。
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-green-600 text-white">
+            5
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">採用後のサポート</h4>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">
+              採用された場合：米国銀行口座開設、ビザ申請支援、米国での生活立ち上げサポート。3ヶ月のプログラム期間中も継続的にサポート。Demo
+              Day準備も支援。
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gray-600 text-white">
+            6
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">不採用の場合</h4>
+            <p class="mt-1 text-gray-600 dark:text-gray-400">
+              フィードバックを分析し、次回の申請に向けた改善計画を策定。多くの成功企業も2-3回目で採用されています。諦めずに改善を続けることが重要。次回申請時は50%割引でサポート。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Stories -->
+    <div class="mt-12 rounded-xl border-2 border-primary p-8">
+      <h3 class="text-2xl font-bold dark:text-white">💡 知っていましたか？</h3>
+      <div class="mt-4 grid gap-4 md:grid-cols-2">
+        <div class="rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20">
+          <p class="text-sm">
+            <strong>GitLab：</strong
+            >完全リモート企業として$15B評価額達成。日本からでもリモートで世界的企業を作れる証明。
+          </p>
+        </div>
+        <div class="rounded-lg bg-purple-50 p-4 dark:bg-purple-900/20">
+          <p class="text-sm">
+            <strong>Rappi：</strong>ラテンアメリカから参加し$5.25B評価額に。英語圏以外からでも成功可能。
+          </p>
+        </div>
+        <div class="rounded-lg bg-green-50 p-4 dark:bg-green-900/20">
+          <p class="text-sm">
+            <strong>Razorpay：</strong>インドから参加し$7.5B評価額に。アジアからの成功事例。
+          </p>
+        </div>
+        <div class="rounded-lg bg-orange-50 p-4 dark:bg-orange-900/20">
+          <p class="text-sm">
+            <strong>次はあなたの番：</strong>日本の技術力と市場理解を武器に、世界に挑戦しましょう。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 rounded-xl bg-gradient-to-r from-primary to-blue-600 p-8 text-center text-white">
+      <h3 class="text-2xl font-bold">今すぐ始めましょう</h3>
+      <p class="mt-3">次回のYC申請締切まで準備期間は限られています。早めの準備が採用率を大きく左右します。</p>
+      <div class="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <a
+          href="mailto:g-combinator@g-productions.studio?subject=YC申請サポート相談"
+          class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-gray-100"
+        >
+          <Icon name="tabler:mail" class="h-5 w-5" />
+          無料相談を予約
+        </a>
+        <a
+          href="https://www.ycombinator.com/apply"
+          target="_blank"
+          class="inline-flex items-center gap-2 rounded-lg border-2 border-white px-6 py-3 font-semibold text-white hover:bg-white hover:text-primary"
+        >
+          <Icon name="tabler:external-link" class="h-5 w-5" />
+          YC公式サイトを見る
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Investment Criteria -->
+  <Content
+    tagline="投資哲学"
+    title="投資基準"
+    items={[
+      {
+        title: '技術的卓越性',
+        description: '深い技術的専門知識を持ち、複雑なエンジニアリング課題を解決できるチーム。',
+      },
+      {
+        title: 'クロスボーダー志向',
+        description: '単なるローカル市場向けではなく、真の国際的成長ポテンシャルを持つ企業。',
+      },
+      {
+        title: '資本効率',
+        description: '最小限のリソースで意味のあるトラクションを構築でき、収益化への明確な道筋を持つ起業家。',
+      },
+      {
+        title: 'ネットワーク効果',
+        description: 'スケールするほど価値が高まり、防御可能な堀を作るビジネスモデル。',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&w=1024',
+      alt: '投資戦略',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">投資条件</h3>
+      <p class="mb-4">
+        <strong>直接投資：</strong>$20K〜$100Kで2〜5%の株式を取得。フォローオンラウンドへの参加権付き。
+      </p>
+      <p class="mb-4">
+        <strong>投資家マッチング：</strong>ネットワーク内の最適な投資家とのマッチング。
+        資金調達成功時には、調達額の2〜5%のサクセスフィーを頂きます。
+      </p>
+      <p class="mb-4">
+        <strong>アドバイザリーサービス：</strong>クロスボーダー投資インテリジェンスを求める機関投資家向けに、
+        月額$10Kからのリサーチ・アドバイザリー契約を提供。
+      </p>
+      <p>
+        従来のアクセラレーターと異なり、移転や固定期間のプログラムは不要。起業家の現在地で支援し、
+        グローバルにスケールする過程をサポートします。
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Pricing Table -->
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-primary">料金体系</h2>
+      <p class="mt-2 text-4xl font-bold tracking-tight dark:text-white sm:text-5xl">サービス料金テーブル</p>
+      <p class="mt-4 text-lg text-muted">プレミアムサービスにはプレミアム価格。全てを個別対応で完全サポート。</p>
+    </div>
+    <div class="mt-16 overflow-hidden rounded-lg border dark:border-gray-700">
+      <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+        <thead class="bg-gray-50 dark:bg-gray-800">
+          <tr>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+              >サービス</th
+            >
+            <th
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+              >USD価格</th
+            >
+            <th
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+              >JPY価格</th
+            >
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-900">
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">米国法人設立（デラウェア州 C-Corp/LLC）</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$2,000 + 州費用</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥300,000 + 諸費用</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">日本法人設立（株式会社/合同会社）</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$6,000 + 政府手数料</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥900,000 + 諸費用</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">YC申請サポート</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$3,000</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥450,000</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">月次コンプライアンス管理</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$200/月</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥30,000/月</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">投資リサーチ（プロジェクト単位）</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$500 - $6,000</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥75,000 - ¥900,000</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">投資アドバイザリー（月額リテイナー）</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$6,000/月</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥900,000/月</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">マーケティング用ランディングページ（米国/日本）</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$2,000/国</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥300,000/国</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">投資家紹介成功報酬</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">調達額の5%</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">調達額の5%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="rounded-lg bg-gray-50 p-6 dark:bg-gray-800">
+        <h3 class="text-lg font-semibold dark:text-white">お支払い方法</h3>
+        <div class="mt-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:building-bank" class="h-5 w-5 text-primary" />
+            <span>銀行振込（Wire）</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:credit-card" class="h-5 w-5 text-primary" />
+            <span>Visa、Mastercard、Amex</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:brand-stripe" class="h-5 w-5 text-primary" />
+            <span>Stripe決済</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:world" class="h-5 w-5 text-primary" />
+            <span>Wise（TransferWise）</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg bg-gray-50 p-6 dark:bg-gray-800">
+        <h3 class="text-lg font-semibold dark:text-white">サポートチャネル</h3>
+        <div class="mt-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:brand-zoom" class="h-5 w-5 text-primary" />
+            <span>1対1 Zoomコンサルテーション</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:brand-slack" class="h-5 w-5 text-primary" />
+            <span>専用Slackチャンネル</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:mail" class="h-5 w-5 text-primary" />
+            <span>優先メールサポート</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:phone" class="h-5 w-5 text-primary" />
+            <span>緊急電話ライン</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-sm text-muted">
+      全ての取引に正式な請求書と領収書を発行します。全てのサービスにパーソナライズされたサポートが含まれます。
+    </p>
+    <p class="mt-2 text-center text-xs text-muted">※ 表示価格に消費税および決済・送金手数料は含まれておりません</p>
+  </div>
+
+  <!-- Original Pricing Features Section -->
+  <Features
+    id="pricing-details"
+    tagline="サービス詳細"
+    title="含まれるサービス"
+    subtitle="全てのサービスには個別対応、Zoomミーティング、プロセス全体の完全なサポートが含まれます。"
+    items={[
+      {
+        title: '米国法人設立パッケージ',
+        description:
+          'デラウェア州C-CorpまたはLLC完全設立：$2,000 + 州費用。含まれるもの：法人設立、EIN取得、登録代理人（1年間）、銀行口座開設サポート、初期コンプライアンス設定、運営契約書/定款。',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: '日本法人設立',
+        description:
+          '株式会社または合同会社設立：¥400,000 + 政府手数料。含まれるもの：会社登記、銀行口座紹介、会計システム構築、ビザスポンサー能力、初期税務登録、バイリンガル書類。',
+        icon: 'tabler:currency-yen',
+      },
+      {
+        title: 'YC申請サポート',
+        description:
+          '包括的申請パッケージ：$3,000定額。含まれるもの：申請戦略、ピッチデック改善、面接準備、進捗追跡、採否後の戦略立案。YC採用の場合、プログラム期間中の継続サポートも追加料金なしで提供。',
+        icon: 'tabler:writing',
+      },
+      {
+        title: '継続的コンプライアンス',
+        description:
+          '年間コンプライアンス管理：$200/月。含まれるもの：登録代理人サービス、コンプライアンスカレンダー管理、年次報告書提出、税務期限リマインダー、規制アップデート。',
+        icon: 'tabler:calendar-check',
+      },
+      {
+        title: '投資リサーチパッケージ',
+        description:
+          'クロスボーダー市場インテリジェンス：$500〜$6,000/プロジェクト。含まれるもの：ターゲット企業詳細調査、セクター分析レポート、競合分析マッピング、規制リスク評価、投資仮説構築。月額$6,000の投資アドバイザリー契約で継続的カバレッジも可能。',
+        icon: 'tabler:report-analytics',
+      },
+    ]}
+  />
+
+  <!-- Rules & Guidelines -->
+  <Content
+    isReversed
+    tagline="プログラムガイドライン"
+    title="G Combinator運営原則"
+    items={[
+      {
+        title: '申請要件',
+        description:
+          '所在地を問わず全ての起業家が対象。ソフトウェア企業には技術共同創業者が必要。明確な国際展開の仮説。最小限の実用製品または強力な技術プロトタイプ。',
+      },
+      {
+        title: 'サービスコミットメント',
+        description:
+          '全ての法人設立を10営業日以内に完了。銀行口座を15営業日以内に稼働。YC申請は締切の最低2週間前に提出。全ての連絡に24時間以内に返信。',
+      },
+      {
+        title: '投資プロセス',
+        description:
+          '申請から7日以内に投資判断。標準的なSAFEまたは価格付きラウンドへの参加。$50K以上の投資にはボードオブザーバー権。後続ラウンドでのプロラタ権。',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&w=1024',
+      alt: 'ビジネス文書',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">倫理基準</h3>
+      <p class="mb-4">
+        最高水準のビジネス倫理と規制コンプライアンスを維持します。全てのサービスは米国法および日本法に準拠して提供。
+        ビザ詐欺、脱税スキーム、規制回避には一切関与しません。
+      </p>
+      <p>
+        私たちの成功は、ポートフォリオ企業の成功によって測られます。世界で最も革新的な経済圏を繋ぐ、
+        100年続く機関の構築を目指しています。
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Stats -->
+  <Stats
+    stats={[
+      { title: 'ポートフォリオ企業', amount: '5社以上' },
+      { title: '対応国', amount: '2ヶ国' },
+      { title: '経験年数', amount: '10年以上' },
+    ]}
+  />
+
+  <!-- FAQs -->
+  <FAQs
+    title="よくある質問"
+    subtitle="G Combinatorのサービスと投資プログラムについて知っておくべきこと。"
+    tagline="FAQ"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'G Combinatorのサービスを利用できるのは誰ですか？',
+        description:
+          '日米間での展開を目指す全ての起業家や企業が対象です。法人設立前のチーム、国際展開を求める既存企業など、あらゆる段階に対応。言語要件はありません - 完全なバイリンガルサポートを提供します。',
+      },
+      {
+        title: '米国法人設立にはどのくらい時間がかかりますか？',
+        description:
+          '標準的なデラウェア州C-Corp設立は5-10営業日。LLC設立は通常3-5日。銀行口座開設にはさらに5-10日。緊急の場合は追加料金で迅速化可能です。',
+      },
+      {
+        title: '法人設立サービスに株式譲渡は必要ですか？',
+        description:
+          'いいえ。法人設立サービスは透明な料金体系による有料サービスです。投資プログラムは完全に別で、オプションです。基本サービスに株式譲渡を求めることはありません。',
+      },
+      {
+        title: 'Stripe AtlasやEvery.ioとの違いは何ですか？',
+        description:
+          '法人設立を超えたエンドツーエンドのサポートを提供します。日本語サポート、クロスボーダー税務計画、Y Combinator申請支援、継続的なコンプライアンス管理など。私たちはあなたのChief International Officerです。',
+      },
+      {
+        title: 'ビザ要件についてサポートはありますか？',
+        description:
+          'はい、両方向のビザ戦略についてガイダンスを提供します。日本では、ビザスポンサーシップをサポートする株式会社構造を設定可能。米国では、移民弁護士と協力してO-1、L-1、E-2ビザオプションを検討します。',
+      },
+      {
+        title: '投資テーゼは何ですか？',
+        description:
+          'グローバルなポテンシャルを持つ製品を構築する技術チームに投資します。特に開発者ツール、B2B SaaS、AI/MLアプリケーション、ネットワーク効果を持つプラットフォームに関心があります。地理的制約はありません - 最高の起業家をどこでも支援します。',
+      },
+      {
+        title: '機密性はどのように扱われますか？',
+        description:
+          '全ての申請とビジネス情報は厳格な機密保持の下で扱われます。要請に応じてNDAを締結し、全ての文書に対して銀行レベルのセキュリティを維持。明示的な許可なしに情報を共有することはありません。',
+      },
+      {
+        title: 'Y Combinator採用後はどうなりますか？',
+        description:
+          'YC期間中およびその後も、ポートフォリオ企業を継続的にサポートします。投資家への温かい紹介、バッチ期間中の米国オペレーション支援、資金調達の戦略的アドバイス。複数の企業がトップティアVCからフォローオンラウンドを調達しています。',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: '申請を開始する',
+        href: 'mailto:g-combinator@g-productions.studio?subject=G%20Combinator申請&body=会社名:%0A創業者:%0A対象市場（米国/日本）:%0A事業概要:%0Aウェブサイト/デモ:%0A資金調達状況:%0Aサポートが必要な内容:',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title"> グローバル展開の準備はできましたか？ </Fragment>
+
+    <Fragment slot="subtitle">
+      クロスボーダー成功のために設計された初のアクセラレーターに参加しましょう。
+      <span class="font-semibold">g-combinator@g-productions.studio</span>へ申請書を送信し、一緒に未来を築きましょう。
+    </Fragment>
+  </CallToAction>
+</Layout>

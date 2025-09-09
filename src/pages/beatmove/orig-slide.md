@@ -1,14 +1,12 @@
-
 # 自己紹介
- 
+
 <fluent-emoji-person-light /> **<ruby>Günther<rt>グンタ</rt></ruby> <ruby>Brunner<rt>ブルンナー</rt></ruby>**
 
 <img src="/CALogo.svg" alt="CA" width="20px" height="20px" style="display: inline-block; vertical-align: middle; margin-bottom: 5px;" /> CyberAgent <span style="color: gray;">since 2012</span>
 <br>
 
-- <mdi-office-building class="text-orange-500" /> CTO統括室 <carbon-development class="text-teal-500" /> > [**Developer Productivity室**](https://site.developerproductivity.dev/) 
-<br>
-
+- <mdi-office-building class="text-orange-500" /> CTO統括室 <carbon-development class="text-teal-500" /> > [**Developer Productivity室**](https://site.developerproductivity.dev/)
+  <br>
 
 <flat-color-icons-like /> <logos-openai-icon /> AI <majesticons-ux-circle-line /> UX <logos-figma /> Design <emojione-v1-lightning-mood /> Performance
 <br>
@@ -37,12 +35,9 @@
 
 </div>
 
-
 ---
 
-
 今日話したいこと
-
 
 1
 事業責任者になりたい人向け
@@ -61,39 +56,43 @@ Sam Altmanが2025年にAGIができるとも言ってる。
 CAは私がジョインした時に、ちょうどスマホシフトした時に、他の会社はガラケーばかりだった
 今はその波以上に来てるけど、ツールが多すぎて検証しきれない。
 
-5. 
-今は生成AI開発ゼミで、色んなツールやサービスを試しながら今日はその中で一番良かったツールを紹介します
-やはりすべて課金しています。はい、個人だと高いが、会社の人件費で考えると安い。
+5.  今は生成AI開発ゼミで、色んなツールやサービスを試しながら今日はその中で一番良かったツールを紹介します
+    やはりすべて課金しています。はい、個人だと高いが、会社の人件費で考えると安い。
 
-
-6. 今日はその色んなツールを例に新規事業のプレゼンを例にしたいです。
+6.  今日はその色んなツールを例に新規事業のプレゼンを例にしたいです。
 
 ７。 別スライド
 
 8. めっちゃ良かったツール
 
 # スライド
+
 Gamma
 理由：かっこいい。画像生成モデルが入ってる
 
 # 画像生成
+
 ３つ
+
 - 品質良い写真
-MidJourney
+  MidJourney
 
 - 人の写真
-Flux Pro
+  Flux Pro
 
 - 文字・イラスト
-Ideogram 2
+  Ideogram 2
 
 # デザイン
+
 Canva
 
 # スライドのグラフ
+
 Napkin AI
 
 # コード生成
+
 Cursor Agent
 
 # 生成AIモデル
@@ -105,17 +104,19 @@ OpenAI o1（今日リリースされた）
 Claude 3.5
 
 # 動画編集
+
 CapCut
 自動字幕、音声エフェクト等
 
 # 音楽生成
+
 Udio
 Suno v4
 
 # 音声生成
+
 Elevenlabs
 
 #　やりたいことをどうやってやったか
 基本o1に事業計画書やスライドをMarkdownでやってもらって（理系）、
 コピーや台詞はClaude 3.5に（文系）。
-

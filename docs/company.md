@@ -22,12 +22,14 @@ G Productions is committed to being your partner in business growth and transfor
 ## Services
 
 ### AI Agents & RPA Development
+
 - Next-generation AI agent planning and design
 - Business automation RPA solutions development
 - Multimodal AI assistant implementation
 - Autonomous AI workflow construction
 
 ### AI Solutions
+
 - AI-powered software development
 - AI workflow design
 - AI design generation
@@ -35,6 +37,7 @@ G Productions is committed to being your partner in business growth and transfor
 - AI consulting
 
 ### Software Development
+
 - Website development
 - Full-stack development
 - Chatbot development
@@ -43,6 +46,7 @@ G Productions is committed to being your partner in business growth and transfor
 - Test automation
 
 ### Design
+
 - Content creation
 - Brand development
 - Design direction
@@ -51,11 +55,13 @@ G Productions is committed to being your partner in business growth and transfor
 - Prototype creation
 
 ### Music Production and Distribution
+
 - Music content creation
 - Music label management
 - Digital distribution
 
 ### Event Production
+
 - Event planning and production
 - Operations consulting
 - Location arrangements
@@ -63,6 +69,7 @@ G Productions is committed to being your partner in business growth and transfor
 - Comprehensive production
 
 ### Global Services
+
 - Translation
 - Interpretation
 - Localization
@@ -70,16 +77,19 @@ G Productions is committed to being your partner in business growth and transfor
 - Global marketing
 
 ### Video Production
+
 - Video creation
 - Video editing
 - Subtitle creation
 
 ### Media Appearances
+
 - Commercial appearances
 - TV appearances
 - Movie appearances
 
 ### Service Development
+
 - B2B service development and management
 - B2C service development and management
 - SaaS product development
@@ -91,7 +101,9 @@ G Productions is committed to being your partner in business growth and transfor
 Gathrly is a hybrid event design service that combines human creativity with AI efficiency to address challenges of different event scales.
 
 ### Service Focus:
+
 - **Human Responsibilities**:
+
   - Designing the essential value of events
   - Understanding and expressing brand identity
   - Detailed consulting
@@ -110,6 +122,7 @@ Learn more: [gathr.ly](https://gathr.ly)
 ## Portfolio
 
 ### Translation Projects
+
 - Adjustable Benefit Payment Notification (Utsunomiya City)
 - Garbage Sorting Manual (Konosu City)
 - Fixed-Amount Tax Reduction Declaration Form for Withholding Tax (National Tax Agency)
@@ -154,42 +167,50 @@ Learn more: [gathr.ly](https://gathr.ly)
 - Lake Biwa Water Quality Monitoring Survey (Lake Biwa Environmental Science Research Center)
 
 ### Interpretation Projects
+
 - Tokyo District Court Execution Officer Forced Execution Notice Interpretation (Tokyo District Court/MyHeart Inc.)
 - Blood Glucose Self-Measurement Device Regulatory Survey and Local Appointment Agency (Fuji Keizai Co., Ltd.)
 
 ### Media Appearances
+
 - J-League Commercial (Japan Professional Football League)
 - Seicho Matsumoto's "Zero Focus" Film - American Military Officer Role (Toho Co., Ltd.)
 - "Unbelievable" TV Program - Multiple Appearances in Reenactment Videos (Fuji Television)
 - "Deep Stories That Change Your Life in 1 Minute" - Multiple Appearances in Reenactment Videos (Nippon Television)
 
 ### Event Hosting
+
 - ELECTRIC OASIS (EBISU CityCamp, 100+ participants) - [Website](https://www.electricoasis.tokyo/)
 - AI Code Agents Festival (Shibuya Scramble Square, 200 offline participants, 15,000+ YouTube viewers) - [Website](https://events.code-agents.com/2025-winter/)
 
 ### Partnerships
+
 - Monogatari Transportation Co., Ltd.: Supporting digital promotion of traditional culture using AI technology and global perspectives to showcase Japanese traditional crafts worldwide - [Website](https://monoun.jp/)
 
 ### Investment Research
+
 - Coinpaper, Inc.: Providing research and analysis on investments in Japanese technology companies - [Website](https://coinpaper.com)
 
 ## Contact Information
 
 ### USA Headquarters
+
 **Address**:  
 30 N Gould St Ste N  
-Sheridan, WY 82801 USA  
+Sheridan, WY 82801 USA
 
 **Phone**: +1 (307) 291-9547
 
 [Google Maps](https://www.google.com/maps/place/30+N+Gould+St,+Sheridan,+WY+82801,+USA/)
 
 ### Tokyo Office
+
 **Address**:  
 〒153-0042  
-4-4-12 Aobadai, Meguro-ku, Tokyo  
+4-4-12 Aobadai, Meguro-ku, Tokyo
 
 **Access**:
+
 - 7 min walk from Shinsen Station (Keio Inokashira Line)
 - 9 min walk from Ikejiri-Ohashi Station (Den-en-toshi Line)
 - 11 min walk from Shibuya Station (Keio Inokashira Line)
@@ -199,4 +220,5 @@ Sheridan, WY 82801 USA
 [Google Maps](https://www.google.com/maps/place/THE+N3/@35.6538713,139.6871839,17z/)
 
 ## Contact
+
 For inquiries: [contact@g-productions.studio](mailto:contact@g-productions.studio)

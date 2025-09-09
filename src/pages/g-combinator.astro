@@ -1,0 +1,581 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import GCombinatorLogo from '~/assets/images/GCombinatorLogoBlack.png';
+
+const metadata = {
+  title: 'G Combinator - Cross-Border Startup Acceleration & Incorporation',
+  description:
+    'Launch your US startup from Japan or establish your Japanese subsidiary. Full-service incorporation, banking, compliance, and Y Combinator application support.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '/en' },
+        { text: 'G Combinator', href: '/g-combinator' },
+        { text: 'Services', href: '/en#services' },
+        { text: 'Portfolio', href: '#portfolio' },
+        { text: 'About', href: '/en#about' },
+        { text: 'Contact', href: '/en#contact' },
+      ]}
+      actions={[
+        {
+          text: 'Apply Now',
+          href: 'mailto:g-combinator@g-productions.studio?subject=G%20Combinator%20Application',
+          target: '_blank',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Logo Section -->
+  <div class="mx-auto max-w-7xl px-6 py-8 sm:py-12">
+    <div class="flex justify-center">
+      <Image
+        src={GCombinatorLogo}
+        alt="G Combinator"
+        width={1200}
+        height={300}
+        densities={[1, 2, 3]}
+        quality={90}
+        format="webp"
+        class="w-full max-w-2xl h-auto"
+      />
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <Hero
+    tagline=""
+    title="Build Global, Start Local"
+    subtitle="The first cross-border accelerator bridging Japan and the US. We handle everything with complete JP⇄EN translation — emails, documents, Zoom calls, legal contracts, investor meetings. Every interaction, in your language. We handle incorporation, banking, compliance, and funding — so you can focus on building."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Apply Now',
+        href: 'mailto:g-combinator@g-productions.studio?subject=G%20Combinator%20Application',
+        icon: 'tabler:mail',
+      },
+      { text: 'Portfolio', href: '#portfolio' },
+    ]}
+  />
+
+  <!-- Core Services -->
+  <Features
+    id="services"
+    tagline="Services"
+    title="Full-Stack Cross-Border Incorporation"
+    subtitle="From entity formation to Y Combinator applications, we handle the complexity of international expansion with complete bilingual support."
+    items={[
+      {
+        title: 'Complete Translation Services',
+        description:
+          'Full JP⇄EN translation for EVERYTHING: emails, Slack messages, Zoom meetings (live interpretation), legal documents, investor pitches, contracts, technical documentation, casual conversations. Your dedicated translator ensures perfect communication across all channels, 24/7.',
+        icon: 'tabler:language',
+      },
+      {
+        title: 'Japan → US Expansion',
+        description:
+          'Complete US incorporation for Japanese founders. Delaware C-Corp or LLC formation via Stripe Atlas or Every.io, EIN acquisition, US bank account setup, registered agent services, and full compliance management — all handled remotely without English proficiency requirements.',
+        icon: 'tabler:world-upload',
+      },
+      {
+        title: 'US → Japan Entry',
+        description:
+          'Establish your Japanese presence strategically. Whether setting up a KK (Kabushiki Kaisha), GK (Godo Kaisha), or branch office, we navigate Japanese corporate law, banking relationships, visa sponsorship capabilities, and tax optimization structures used by Google, Amazon, and Apple.',
+        icon: 'tabler:world-download',
+      },
+      {
+        title: 'YC Application Management',
+        description:
+          "End-to-end Y Combinator application support. Application strategy and positioning, pitch deck refinement, interview preparation, progress tracking dashboard, and post-application feedback analysis. We've studied every successful application pattern.",
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Investment Program',
+        description:
+          "Direct investment or curated introductions. We either invest $20K-$100K directly, or connect you with specialized investors from our network who align with your business. For successful introductions leading to funding, we charge a 5% finder's fee. Full due diligence support and term negotiation guidance included.",
+        icon: 'tabler:cash',
+      },
+      {
+        title: 'Investment Advisory & Research',
+        description:
+          'Cross-border investment intelligence for institutional investors. We provide deep-dive research on Japanese tech companies for US investors and comprehensive analysis of US opportunities for Japanese funds. Market entry strategies, competitive landscapes, and regulatory navigation included.',
+        icon: 'tabler:chart-dots',
+      },
+    ]}
+  />
+
+  <!-- How It Works -->
+  <Steps
+    title="Your Path to Global Expansion"
+    items={[
+      {
+        title: 'Step 1: Initial Contact',
+        description:
+          'Send an email to g-combinator@g-productions.studio describing what you want to achieve. No formal application needed - just tell us your vision and current situation. We schedule a Zoom call within 72 hours.',
+        icon: 'tabler:mail-forward',
+      },
+      {
+        title: 'Step 2: Strategic Planning',
+        description:
+          'We analyze your business model and create a customized incorporation strategy. This includes entity type selection, tax optimization planning, and timeline development. All discussed via Zoom with full documentation.',
+        icon: 'tabler:chess-queen',
+      },
+      {
+        title: 'Step 3: Entity Formation',
+        description:
+          'Complete incorporation through our partners (Stripe Atlas, Every.io, or direct filing). We handle all documentation, state registrations, and initial compliance requirements.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Step 4: Banking & Operations',
+        description:
+          'Secure business banking with Mercury, Brex, or traditional banks. Set up accounting systems, payment processing, and operational infrastructure for Day 1 readiness.',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Step 5: Growth Support',
+        description:
+          'Ongoing compliance management, Y Combinator application support if desired, fundraising introductions, and strategic advisory as you scale.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&w=1024',
+      alt: 'Global business expansion',
+    }}
+  />
+
+  <!-- Portfolio -->
+  <Features2
+    id="portfolio"
+    tagline="Portfolio"
+    title="Products We're Backing"
+    subtitle="We invest in exceptional products and platforms that are transforming their industries."
+    items={[
+      {
+        title: 'Gathr.ly',
+        description:
+          'Next-generation event management and community building platform. Revolutionizing how people connect and gather in hybrid environments.',
+        icon: 'tabler:users-group',
+        callToAction: {
+          text: 'Visit Site',
+          href: 'https://gathr.ly/',
+          targetBlank: true,
+        },
+      },
+      {
+        title: 'PRiority',
+        description:
+          'Intelligent task prioritization system that helps teams focus on what matters. Machine learning-driven priority management for modern workflows.',
+        icon: 'tabler:list-check',
+        callToAction: {
+          text: 'Visit Site',
+          href: 'https://priority.run',
+          targetBlank: true,
+        },
+      },
+      {
+        title: 'MCP Verified',
+        description:
+          'Trust and verification layer for Model Context Protocol. Ensuring AI agent interactions are secure and authenticated.',
+        icon: 'tabler:shield-check',
+        callToAction: {
+          text: 'Visit Site',
+          href: 'https://mcpverified.com/',
+          targetBlank: true,
+        },
+      },
+    ]}
+  />
+
+  <!-- Investment Criteria -->
+  <Content
+    tagline="Investment Philosophy"
+    title="What We Look For"
+    items={[
+      {
+        title: 'Technical Excellence',
+        description:
+          'We back teams with deep technical expertise and the ability to execute complex engineering challenges.',
+      },
+      {
+        title: 'Cross-Border Ambition',
+        description: 'Companies with genuine international growth potential, not just local market plays.',
+      },
+      {
+        title: 'Capital Efficiency',
+        description:
+          'Founders who can build meaningful traction with minimal resources and clear path to profitability.',
+      },
+      {
+        title: 'Network Effects',
+        description: 'Business models that become more valuable as they scale, creating defensive moats.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&w=1024',
+      alt: 'Investment strategy',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Investment Terms</h3>
+      <p class="mb-4">
+        <strong>Direct Investment:</strong> $20K to $100K for 2-5% equity, with participation rights for follow-on rounds.
+      </p>
+      <p class="mb-4">
+        <strong>Investor Matchmaking:</strong> We connect you with aligned investors from our network. For successful introductions
+        resulting in funding, we charge a 2-5% success fee on the raised amount.
+      </p>
+      <p class="mb-4">
+        <strong>Advisory Services:</strong> Research and advisory engagements start at $10K/month for institutional clients
+        seeking cross-border investment intelligence.
+      </p>
+      <p>
+        Unlike traditional accelerators, we don't require relocation or fixed-duration programs. We meet founders where
+        they are and support them as they scale globally.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Pricing Table -->
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-primary">Pricing</h2>
+      <p class="mt-2 text-4xl font-bold tracking-tight dark:text-white sm:text-5xl">Service Pricing Table</p>
+      <p class="mt-4 text-lg text-muted">
+        We handle incorporations through Stripe Atlas or Every.io as your agent (代行), providing cultural context,
+        legal guidance, and market insights.
+      </p>
+    </div>
+    <div class="mt-16 overflow-hidden rounded-lg border dark:border-gray-700">
+      <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+        <thead class="bg-gray-50 dark:bg-gray-800">
+          <tr>
+            <th
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+              >Service</th
+            >
+            <th
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+              >USD Price</th
+            >
+            <th
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+              >JPY Price</th
+            >
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-900">
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:flag-filled" class="h-4 w-4 text-primary" />
+                <span>US Incorporation (Delaware C-Corp/LLC)</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$2,000 + state fees</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥300,000 + fees</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:torii" class="h-4 w-4 text-primary" />
+                <span>Japan Entity Formation (KK/GK)</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$6,000 + gov fees</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥900,000 + fees</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:rocket" class="h-4 w-4 text-primary" />
+                <span>YC Application Support</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$3,000</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥450,000</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:calendar-check" class="h-4 w-4 text-primary" />
+                <span>Monthly Compliance Management</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$200/month</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥30,000/month</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:chart-line" class="h-4 w-4 text-primary" />
+                <span>Investment Research (per project)</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$500 - $6,000</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥75,000 - ¥900,000</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:briefcase" class="h-4 w-4 text-primary" />
+                <span>Investment Advisory (monthly retainer)</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$6,000/month</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥900,000/month</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:world" class="h-4 w-4 text-primary" />
+                <span>Marketing Landing Page (US/Japan)</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">$2,000 per country</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">¥300,000 per country</td>
+          </tr>
+          <tr>
+            <td class="whitespace-normal px-6 py-4 text-sm font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="tabler:users-group" class="h-4 w-4 text-primary" />
+                <span>Investor Introduction Success Fee</span>
+              </div>
+            </td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">5% of raised amount</td>
+            <td class="whitespace-nowrap px-6 py-4 text-sm">5% of raised amount</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="rounded-lg bg-gray-50 p-6 dark:bg-gray-800">
+        <h3 class="text-lg font-semibold dark:text-white">Payment Methods</h3>
+        <div class="mt-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:building-bank" class="h-5 w-5 text-primary" />
+            <span>Bank Transfer (Wire)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:credit-card" class="h-5 w-5 text-primary" />
+            <span>Visa, Mastercard, Amex</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:brand-stripe" class="h-5 w-5 text-primary" />
+            <span>Stripe Payments</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:world" class="h-5 w-5 text-primary" />
+            <span>Wise (TransferWise)</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg bg-gray-50 p-6 dark:bg-gray-800">
+        <h3 class="text-lg font-semibold dark:text-white">Support Channels</h3>
+        <div class="mt-4 space-y-3">
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:brand-zoom" class="h-5 w-5 text-primary" />
+            <span>1-on-1 Zoom Consultations</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:brand-slack" class="h-5 w-5 text-primary" />
+            <span>Dedicated Slack Channel</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:mail" class="h-5 w-5 text-primary" />
+            <span>Priority Email Support</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="tabler:phone" class="h-5 w-5 text-primary" />
+            <span>Emergency Phone Line</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-sm text-muted">
+      We provide official invoices and receipts (領収書) for all transactions. All services include personalized
+      support.
+    </p>
+    <p class="mt-2 text-center text-xs text-muted">
+      * All prices exclude applicable taxes and payment processing/transfer fees
+    </p>
+  </div>
+
+  <!-- Original Pricing Features Section -->
+  <Features
+    id="pricing-details"
+    tagline="Service Details"
+    title="What's Included"
+    subtitle="Every service includes personal attention, Zoom meetings, and complete hand-holding through the process."
+    items={[
+      {
+        title: 'US Incorporation Package',
+        description:
+          'Complete Delaware C-Corp or LLC formation: $2,000 + state fees. Includes: Entity formation, EIN acquisition, registered agent (1 year), bank account setup support, initial compliance setup, and operating agreement/bylaws.',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: 'Japan Entity Formation',
+        description:
+          'KK or GK establishment: ¥400,000 + government fees. Includes: Company registration, bank account introduction, accounting system setup, visa sponsorship capability, initial tax registration, and bilingual documentation.',
+        icon: 'tabler:currency-yen',
+      },
+      {
+        title: 'YC Application Support',
+        description:
+          'Comprehensive application package: $3,000 flat fee. Includes: Application strategy, pitch deck refinement, interview preparation, progress tracking, and post-decision strategy. If accepted to YC, we provide continued support throughout the program at no additional charge.',
+        icon: 'tabler:writing',
+      },
+      {
+        title: 'Ongoing Compliance',
+        description:
+          'Annual compliance management: $200/month. Includes: Registered agent service, compliance calendar management, annual report filing, tax deadline reminders, and regulatory updates.',
+        icon: 'tabler:calendar-check',
+      },
+      {
+        title: 'Investment Research Package',
+        description:
+          'Cross-border market intelligence: $500-$6,000/project. Includes: Target company deep dives, sector analysis reports, competitive landscape mapping, regulatory risk assessment, and investment thesis development. Monthly advisory retainers available at $6,000/month for continuous coverage.',
+        icon: 'tabler:report-analytics',
+      },
+    ]}
+  />
+
+  <!-- Rules & Guidelines -->
+  <Content
+    isReversed
+    tagline="Program Guidelines"
+    title="G Combinator Operating Principles"
+    items={[
+      {
+        title: 'Application Requirements',
+        description:
+          'Open to all founders regardless of location. Technical co-founder required for software companies. Clear international expansion thesis. Minimum viable product or strong technical prototype.',
+      },
+      {
+        title: 'Service Commitment',
+        description:
+          'All incorporations completed within 10 business days. Bank accounts operational within 15 business days. YC applications submitted minimum 2 weeks before deadline. 24-hour response time on all communications.',
+      },
+      {
+        title: 'Investment Process',
+        description:
+          'Investment decisions within 7 days of application. Standard SAFE or priced round participation. Board observer rights for investments over $50K. Pro-rata rights in subsequent rounds.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&w=1024',
+      alt: 'Business documentation',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ethical Standards</h3>
+      <p class="mb-4">
+        We maintain the highest standards of business ethics and regulatory compliance. All services are provided in
+        accordance with US and Japanese law. We never engage in visa fraud, tax evasion schemes, or regulatory
+        arbitrage.
+      </p>
+      <p>
+        Our success is measured by the success of our portfolio companies. We're building a 100-year institution that
+        bridges the world's most innovative economies.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Stats -->
+  <Stats
+    stats={[
+      { title: 'Portfolio Companies', amount: '5+' },
+      { title: 'Countries Served', amount: '2' },
+      { title: 'Years Experience', amount: '10+' },
+    ]}
+  />
+
+  <!-- FAQs -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about G Combinator's services and investment programs."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Who is eligible for G Combinator services?',
+        description:
+          'Any founder or company looking to expand between Japan and the US. We work with pre-incorporation teams, existing companies seeking international expansion, and everything in between. No language requirements — we provide full bilingual support.',
+      },
+      {
+        title: 'How quickly can you complete a US incorporation?',
+        description:
+          'Standard Delaware C-Corp incorporation takes 5-10 business days. LLC formation is typically 3-5 days. Bank account setup adds another 5-10 days. We can expedite for an additional fee if you have urgent timelines.',
+      },
+      {
+        title: 'Do you require equity for incorporation services?',
+        description:
+          'No. Incorporation services are fee-based with transparent pricing. Our investment program is completely separate and optional. We never require equity for basic services, unlike some accelerators.',
+      },
+      {
+        title: 'What makes you different from Stripe Atlas or Every.io?',
+        description:
+          'We provide end-to-end support beyond just incorporation. This includes Japanese language support, cross-border tax planning, Y Combinator application assistance, and ongoing compliance management. Think of us as your Chief International Officer.',
+      },
+      {
+        title: 'Can you help with visa requirements?',
+        description:
+          'Yes, we provide guidance on visa strategies for both directions. For Japan, we can set up KK structures that support visa sponsorship. For the US, we work with immigration attorneys to explore O-1, L-1, and E-2 visa options.',
+      },
+      {
+        title: 'What is your investment thesis?',
+        description:
+          "We invest in technical teams building products with global potential. We're particularly interested in developer tools, B2B SaaS, AI/ML applications, and platforms with network effects. Geography is not a constraint — we back the best founders wherever they are.",
+      },
+      {
+        title: 'How do you handle confidentiality?',
+        description:
+          'All applications and business information are treated with strict confidentiality. We sign NDAs upon request and maintain bank-level security for all documentation. Your information is never shared without explicit permission.',
+      },
+      {
+        title: 'What happens after Y Combinator acceptance?',
+        description:
+          'We continue supporting portfolio companies through YC and beyond. This includes warm introductions to investors, help with US operations during the batch, and strategic advice on fundraising. Several of our companies have raised follow-on rounds from top-tier VCs.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start Your Application',
+        href: 'mailto:g-combinator@g-productions.studio?subject=G%20Combinator%20Application&body=Company%20Name:%0AFounder(s):%0ATarget%20Market%20(US/Japan):%0ABrief%20Description:%0AWebsite/Demo:%0AFunding%20Status:%0AHow%20can%20we%20help:',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title"> Ready to Go Global? </Fragment>
+
+    <Fragment slot="subtitle">
+      Join the first accelerator designed for cross-border success. Send your application to
+      <span class="font-semibold">g-combinator@g-productions.studio</span> and let's build the future together.
+    </Fragment>
+  </CallToAction>
+</Layout>
