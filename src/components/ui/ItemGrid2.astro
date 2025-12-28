@@ -4,48 +4,115 @@ import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
 
-const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
+const { items = [], columns, defaultIcon = '', classes = {}, variant = 'default' } = Astro.props;
 
 const {
   container: containerClass = '',
-  // container: containerClass = "sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
   panel: panelClass = '',
   title: titleClass = '',
   description: descriptionClass = '',
-  icon: defaultIconClass = 'text-primary',
+  icon: defaultIconClass = 'text-accent',
 } = classes;
+
+// Bento grid sizing - first item is featured (larger)
+const getBentoClass = (index: number, total: number) => {
+  if (variant === 'bento') {
+    // First item takes 2 columns on md+
+    if (index === 0 && total > 2) return 'md:col-span-2 md:row-span-2';
+    // Last item in odd total takes full width
+    if (index === total - 1 && total % 2 === 1 && total > 3) return 'md:col-span-2';
+    return '';
+  }
+  return '';
+};
 ---
 
 {
   items && (
     <div
       class={twMerge(
-        `grid gap-8 gap-x-12 sm:gap-y-8 ${
-          columns === 4
-            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
-            : columns === 3
-              ? 'lg:grid-cols-3 sm:grid-cols-2'
-              : columns === 2
-                ? 'sm:grid-cols-2 '
-                : ''
+        `grid gap-5 md:gap-6 ${
+          variant === 'bento'
+            ? 'md:grid-cols-2 lg:grid-cols-3'
+            : columns === 4
+              ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+              : columns === 3
+                ? 'lg:grid-cols-3 sm:grid-cols-2'
+                : columns === 2
+                  ? 'sm:grid-cols-2'
+                  : ''
         }`,
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div class={twMerge('relative flex flex-col', panelClass, itemClasses?.panel)}>
+      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }, index) => (
+        <div 
+          class={twMerge(
+            'group relative flex flex-col',
+            'rounded-2xl bg-white dark:bg-zinc-900',
+            'border border-zinc-200/60 dark:border-zinc-800/60',
+            'p-6 md:p-8',
+            'transition-all duration-300 ease-out',
+            'hover:shadow-elegant-lg hover:-translate-y-1 hover:border-zinc-300 dark:hover:border-zinc-700',
+            getBentoClass(index, items.length),
+            panelClass, 
+            itemClasses?.panel
+          )}
+          style={`animation-delay: ${index * 100}ms`}
+        >
+          {/* Icon with accent background */}
           {(icon || defaultIcon) && (
-            <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
-          )}
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
-          )}
-          {callToAction && (
-            <div class="mt-2">
-              <Button {...callToAction} />
+            <div class="mb-5">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 dark:bg-accent/20 group-hover:bg-accent/15 transition-colors duration-300">
+                <Icon 
+                  name={icon || defaultIcon} 
+                  class={twMerge('w-6 h-6', defaultIconClass, itemClasses?.icon)} 
+                />
+              </div>
             </div>
           )}
+          
+          {/* Title */}
+          <h3 class={twMerge(
+            'font-heading font-semibold text-xl text-ink dark:text-white',
+            'group-hover:text-accent transition-colors duration-300',
+            titleClass, 
+            itemClasses?.title
+          )}>
+            {title}
+          </h3>
+          
+          {/* Description - simplified, no bullet points */}
+          {description && (
+            <div 
+              class={twMerge(
+                'mt-3 text-ink-secondary dark:text-zinc-400 leading-relaxed',
+                'prose prose-sm prose-zinc dark:prose-invert',
+                '[&_ul]:list-none [&_ul]:pl-0 [&_ul]:space-y-2 [&_ul]:mt-3',
+                '[&_li]:flex [&_li]:items-start [&_li]:gap-2',
+                '[&_strong]:text-ink [&_strong]:dark:text-white',
+                descriptionClass, 
+                itemClasses?.description
+              )} 
+              set:html={description} 
+            />
+          )}
+          
+          {/* CTA Button */}
+          {callToAction && (
+            <div class="mt-auto pt-5">
+              <Button 
+                {...callToAction} 
+                class="btn-ghost text-accent hover:text-accent-hover font-medium text-sm group/btn"
+              >
+                <span>{callToAction.text}</span>
+                <Icon name="tabler:arrow-right" class="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+          )}
+          
+          {/* Hover accent line */}
+          <div class="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-accent to-geometric-orange scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full"></div>
         </div>
       ))}
     </div>

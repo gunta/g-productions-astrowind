@@ -1,6 +1,7 @@
 ---
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
+import GeometricBackground from '~/components/ui/GeometricBackground.astro';
 import type { CallToAction } from '~/types';
 
 export interface Props {
@@ -10,7 +11,8 @@ export interface Props {
   tagline?: string;
   content?: string;
   actions?: string | CallToAction[];
-  image?: string | unknown; // TODO: find HTMLElementProps
+  image?: string | unknown;
+  variant?: 'default' | 'split' | 'centered';
 }
 
 const {
@@ -21,72 +23,124 @@ const {
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
+  variant = 'default',
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+<section class="relative md:-mt-[76px] not-prose overflow-hidden" {...id ? { id } : {}}>
+  <!-- Geometric background -->
+  <GeometricBackground variant="hero" />
+  
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
-              set:html={tagline}
-            />
-          )
-        }
-        {
-          title && (
+    
+    <div class="py-16 md:py-24 lg:py-32">
+      {/* Asymmetric grid layout */}
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        {/* Content column - takes 7 cols on large screens */}
+        <div class="lg:col-span-7 text-left">
+          {/* Tagline with accent */}
+          {tagline && (
+            <div class="animate-fade-up">
+              <span 
+                class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-accent mb-4"
+              >
+                <span class="w-8 h-px bg-accent"></span>
+                <span set:html={tagline} />
+              </span>
+            </div>
+          )}
+          
+          {/* Main title - bold display typography */}
+          {title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
-              set:html={title}
-            />
-          )
-        }
-        <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
-          {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
-              </div>
-            )
-          }
+              class="font-display font-semibold tracking-tight text-ink dark:text-white animate-fade-up animation-delay-100"
+            >
+              <span 
+                class="block text-4xl sm:text-5xl md:text-6xl lg:text-display-lg leading-[1.1]"
+                set:html={title}
+              />
+            </h1>
+          )}
+          
+          {/* Subtitle with improved typography */}
+          <div class="mt-6 lg:mt-8 max-w-xl">
+            {subtitle && (
+              <p 
+                class="text-lg md:text-xl text-ink-secondary dark:text-zinc-300 leading-relaxed animate-fade-up animation-delay-200"
+                set:html={subtitle} 
+              />
+            )}
+          </div>
+          
+          {/* Actions with stagger animation */}
+          {actions && (
+            <div class="mt-8 lg:mt-10 flex flex-wrap gap-4 animate-fade-up animation-delay-300">
+              {Array.isArray(actions) ? (
+                actions.map((action, index) => (
+                  <Button 
+                    {...(action || {})} 
+                    class:list={[
+                      index === 0 ? 'btn-primary' : 'btn-secondary',
+                      'px-8 py-4 text-base'
+                    ]}
+                  />
+                ))
+              ) : (
+                <Fragment set:html={actions} />
+              )}
+            </div>
+          )}
+          
+          {/* Additional content slot */}
+          {content && (
+            <div class="mt-8 animate-fade-up animation-delay-400">
+              <Fragment set:html={content} />
+            </div>
+          )}
         </div>
-        {content && <Fragment set:html={content} />}
-      </div>
-      <div>
-        {
-          image && (
-            <div class="relative m-auto max-w-5xl">
+        
+        {/* Image column - takes 5 cols with offset positioning */}
+        {image && (
+          <div class="lg:col-span-5 relative animate-fade-left animation-delay-200">
+            {/* Decorative frame accent */}
+            <div class="absolute -inset-4 bg-gradient-to-br from-accent/20 via-transparent to-geometric-orange/20 rounded-3xl blur-2xl opacity-60"></div>
+            
+            {/* Image container with elegant styling */}
+            <div class="relative">
+              {/* Corner accents */}
+              <div class="absolute -top-3 -left-3 w-12 h-12 border-l-2 border-t-2 border-accent/40 rounded-tl-2xl"></div>
+              <div class="absolute -bottom-3 -right-3 w-12 h-12 border-r-2 border-b-2 border-geometric-orange/40 rounded-br-2xl"></div>
+              
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto rounded-md w-full"
+                  class="relative rounded-2xl shadow-elegant-xl w-full object-cover"
                   widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 40vw"
                   loading="eager"
-                  width={1024}
-                  height={576}
+                  width={800}
+                  height={600}
                   {...image}
                 />
               )}
             </div>
-          )
-        }
+            
+            {/* Floating accent badge */}
+            <div class="absolute -bottom-4 -left-4 md:-left-8 bg-white dark:bg-zinc-800 rounded-xl shadow-elegant-lg px-4 py-3 animate-float">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                <span class="text-sm font-medium text-ink dark:text-white">Innovation Studio</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   </div>
+  
+  {/* Bottom gradient fade */}
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-surface to-transparent pointer-events-none dark:from-zinc-900"></div>
 </section>

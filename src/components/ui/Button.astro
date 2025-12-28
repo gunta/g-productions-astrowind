@@ -13,28 +13,85 @@ const {
   ...rest
 } = Astro.props;
 
+// Refined button variants with modern styling
+const baseStyles = `
+  inline-flex items-center justify-center gap-2
+  font-medium text-center leading-snug
+  transition-all duration-300 ease-out
+  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent/50
+  disabled:opacity-50 disabled:cursor-not-allowed
+  cursor-pointer
+`;
+
 const variants = {
-  primary: 'btn-primary',
-  secondary: 'btn-secondary',
-  tertiary: 'btn btn-tertiary',
-  link: 'cursor-pointer hover:text-primary',
+  primary: twMerge(
+    baseStyles,
+    `px-6 py-3 rounded-xl
+     bg-accent text-white border-2 border-accent
+     hover:bg-accent-hover hover:border-accent-hover
+     hover:shadow-elegant-lg hover:-translate-y-0.5
+     dark:bg-accent dark:border-accent
+     dark:hover:bg-accent-hover dark:hover:border-accent-hover`
+  ),
+  secondary: twMerge(
+    baseStyles,
+    `px-6 py-3 rounded-xl
+     bg-white text-ink border-2 border-zinc-200
+     hover:border-zinc-400 hover:shadow-elegant
+     dark:bg-zinc-800 dark:text-white dark:border-zinc-700
+     dark:hover:border-zinc-500`
+  ),
+  tertiary: twMerge(
+    baseStyles,
+    `px-4 py-2 rounded-lg
+     bg-transparent text-ink-secondary border-0
+     hover:text-ink hover:bg-zinc-100
+     dark:text-zinc-400 dark:hover:text-white dark:hover:bg-zinc-800`
+  ),
+  link: twMerge(
+    baseStyles,
+    `px-0 py-0
+     text-accent hover:text-accent-hover
+     underline-offset-4 hover:underline`
+  ),
+  ghost: twMerge(
+    baseStyles,
+    `px-4 py-2 rounded-lg
+     bg-transparent text-ink border-0
+     hover:bg-zinc-100 dark:hover:bg-zinc-800
+     dark:text-white`
+  ),
 };
 ---
 
 {
   type === 'button' || type === 'submit' || type === 'reset' ? (
-    <button type={type} class={twMerge(variants[variant] || '', className)} {...rest}>
+    <button 
+      type={type} 
+      class={twMerge(variants[variant] || variants.secondary, className)} 
+      {...rest}
+    >
       <Fragment set:html={text} />
-      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+      {icon && (
+        <Icon 
+          name={icon} 
+          class="w-5 h-5 transition-transform group-hover:translate-x-0.5" 
+        />
+      )}
     </button>
   ) : (
     <a
-      class={twMerge(variants[variant] || '', className)}
+      class={twMerge(variants[variant] || variants.secondary, 'group', className)}
       {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
       {...rest}
     >
       <Fragment set:html={text} />
-      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+      {icon && (
+        <Icon 
+          name={icon} 
+          class="w-5 h-5 transition-transform group-hover:translate-x-0.5" 
+        />
+      )}
     </a>
   )
 }

@@ -25,46 +25,72 @@ export interface Props {
 
 let { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
 
-// Reset
+// Reset - but keep the data for the new footer
 secondaryLinks = [];
 links = [];
 socialLinks = [];
 ---
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
-  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300">
-    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-      <div class="col-span-12 lg:col-span-4">
-        <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
-        </div>
-        <div class="text-sm text-muted flex gap-1">
-          {
-            secondaryLinks.map(({ text, href }, index) => (
-              <>
-                {index !== 0 ? ' · ' : ''}
+<footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose bg-surface-alt dark:bg-zinc-900']}>
+  {/* Top decorative line */}
+  <div class="h-px bg-gradient-to-r from-transparent via-zinc-300 dark:via-zinc-700 to-transparent"></div>
+  
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+    {/* Main footer content */}
+    <div class="py-12 md:py-16">
+      <div class="grid grid-cols-12 gap-8 lg:gap-12">
+        {/* Brand column */}
+        <div class="col-span-12 lg:col-span-4">
+          <a 
+            class="inline-flex items-center gap-2 group" 
+            href={getHomePermalink()}
+          >
+            <span class="font-display font-semibold text-xl text-ink dark:text-white group-hover:text-accent transition-colors">
+              {SITE?.name}
+            </span>
+          </a>
+          
+          <p class="mt-4 text-sm text-ink-secondary dark:text-zinc-400 max-w-xs leading-relaxed">
+            Crafting AI-powered futures through innovation, technology, and cross-cultural expertise.
+          </p>
+          
+          {/* Social links */}
+          {socialLinks?.length > 0 && (
+            <div class="mt-6 flex gap-3">
+              {socialLinks.map(({ ariaLabel, href, icon }) => (
                 <a
-                  class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
+                  class="w-10 h-10 flex items-center justify-center rounded-xl
+                         bg-white dark:bg-zinc-800 
+                         border border-zinc-200 dark:border-zinc-700
+                         text-ink-secondary dark:text-zinc-400
+                         hover:text-accent hover:border-accent dark:hover:text-accent dark:hover:border-accent
+                         transition-all duration-200"
+                  aria-label={ariaLabel}
                   href={href}
-                  set:html={text}
-                />
-              </>
-            ))
-          }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {icon && <Icon name={icon} class="w-5 h-5" />}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-      </div>
-      {
-        links.map(({ title, links }) => (
+        
+        {/* Link columns */}
+        {links.map(({ title, links: linkItems }) => (
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="dark:text-gray-300 font-medium mb-2">{title}</div>
-            {links && Array.isArray(links) && links.length > 0 && (
-              <ul class="text-sm">
-                {links.map(({ text, href, ariaLabel }) => (
-                  <li class="mb-2">
+            <h3 class="font-heading font-semibold text-sm text-ink dark:text-white mb-4">
+              {title}
+            </h3>
+            {linkItems && Array.isArray(linkItems) && linkItems.length > 0 && (
+              <ul class="space-y-3">
+                {linkItems.map(({ text, href, ariaLabel }) => (
+                  <li>
                     <a
-                      class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                      class="text-sm text-ink-secondary dark:text-zinc-400 
+                             hover:text-accent dark:hover:text-accent 
+                             transition-colors duration-200"
                       href={href}
                       aria-label={ariaLabel}
                     >
@@ -75,33 +101,34 @@ socialLinks = [];
               </ul>
             )}
           </div>
-        ))
-      }
+        ))}
+      </div>
     </div>
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
-      {
-        socialLinks?.length ? (
-          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 md:rtl:ml-0 md:rtl:mr-4">
-            {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-              <li>
-                <a
-                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-hidden focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                  aria-label={ariaLabel}
-                  href={href}
-                >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
-                  <Fragment set:html={text} />
-                </a>
-              </li>
+    
+    {/* Bottom bar */}
+    <div class="border-t border-zinc-200 dark:border-zinc-800 py-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        {/* Secondary links */}
+        {secondaryLinks?.length > 0 && (
+          <div class="flex flex-wrap gap-4 text-sm">
+            {secondaryLinks.map(({ text, href }) => (
+              <a
+                class="text-ink-tertiary hover:text-ink dark:text-zinc-500 dark:hover:text-zinc-300 transition-colors"
+                href={href}
+                set:html={text}
+              />
             ))}
-          </ul>
-        ) : (
-          ''
-        )
-      }
-
-      <div class="text-sm mr-4 dark:text-muted">
-        <Fragment set:html={footNote} />
+          </div>
+        )}
+        
+        {/* Copyright */}
+        <div class="text-sm text-ink-tertiary dark:text-zinc-500">
+          {footNote ? (
+            <Fragment set:html={footNote} />
+          ) : (
+            <span>© {new Date().getFullYear()} {SITE?.name}. All rights reserved.</span>
+          )}
+        </div>
       </div>
     </div>
   </div>

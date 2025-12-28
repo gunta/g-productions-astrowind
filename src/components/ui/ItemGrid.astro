@@ -11,7 +11,7 @@ const {
   panel: panelClass = '',
   title: titleClass = '',
   description: descriptionClass = '',
-  icon: defaultIconClass = 'text-primary',
+  icon: defaultIconClass = 'text-accent',
   action: actionClass = '',
 } = classes;
 ---
@@ -20,43 +20,73 @@ const {
   items && (
     <div
       class={twMerge(
-        `grid mx-auto gap-8 md:gap-y-12 ${
+        `grid mx-auto gap-6 md:gap-8 ${
           columns === 4
             ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
             : columns === 3
               ? 'lg:grid-cols-3 sm:grid-cols-2'
               : columns === 2
-                ? 'sm:grid-cols-2 '
+                ? 'sm:grid-cols-2'
                 : ''
         }`,
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div>
-          <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
-            <div class="flex justify-center">
-              {(icon || defaultIcon) && (
-                <Icon
-                  name={icon || defaultIcon}
-                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
-                />
+      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }, index) => (
+        <div 
+          class="group"
+          style={`animation-delay: ${index * 100}ms`}
+        >
+          <div class={twMerge('flex flex-col h-full', panelClass, itemClasses?.panel)}>
+            {/* Icon */}
+            {(icon || defaultIcon) && (
+              <div class="mb-4">
+                <div class={twMerge(
+                  'inline-flex items-center justify-center w-12 h-12 rounded-xl',
+                  'bg-accent/10 dark:bg-accent/20 group-hover:bg-accent/15 transition-colors duration-300',
+                )}>
+                  <Icon
+                    name={icon || defaultIcon}
+                    class={twMerge('w-6 h-6', defaultIconClass, itemClasses?.icon)}
+                  />
+                </div>
+              </div>
+            )}
+            
+            {/* Content */}
+            <div class="flex-1">
+              {title && (
+                <h3 class={twMerge(
+                  'font-heading font-semibold text-xl text-ink dark:text-white',
+                  'group-hover:text-accent transition-colors duration-300',
+                  titleClass, 
+                  itemClasses?.title
+                )}>
+                  {title}
+                </h3>
               )}
-            </div>
-            <div class="mt-0.5">
-              {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
+              
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(
+                    'mt-3 text-ink-secondary dark:text-zinc-400 leading-relaxed',
+                    descriptionClass, 
+                    itemClasses?.description
+                  )}
                   set:html={description}
                 />
               )}
-              {callToAction && (
-                <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
-                  <Button variant="link" {...callToAction} />
-                </div>
-              )}
             </div>
+            
+            {/* CTA */}
+            {callToAction && (
+              <div class={twMerge('mt-4 pt-4 border-t border-zinc-100 dark:border-zinc-800', actionClass, itemClasses?.actionClass)}>
+                <Button variant="link" class="text-accent font-medium text-sm group/btn" {...callToAction}>
+                  <span>{callToAction.text}</span>
+                  <Icon name="tabler:arrow-right" class="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       ))}

@@ -1,0 +1,108 @@
+---
+/**
+ * SectionDivider - Visual transition between sections
+ * Creates angular/diagonal dividers for modern look
+ */
+
+export interface Props {
+  variant?: 'diagonal' | 'wave' | 'curve' | 'angle';
+  flip?: boolean;
+  color?: string;
+  class?: string;
+}
+
+const { 
+  variant = 'diagonal', 
+  flip = false, 
+  color = 'fill-surface-alt dark:fill-zinc-900',
+  class: className = '' 
+} = Astro.props;
+---
+
+{variant === 'diagonal' && (
+  <div 
+    class:list={[
+      'relative w-full h-16 md:h-24 -mb-px',
+      flip && 'rotate-180',
+      className
+    ]} 
+    aria-hidden="true"
+  >
+    <svg 
+      class="absolute bottom-0 w-full h-full" 
+      preserveAspectRatio="none" 
+      viewBox="0 0 1200 120"
+    >
+      <polygon 
+        class={color}
+        points="1200 0 1200 120 0 120"
+      />
+    </svg>
+  </div>
+)}
+
+{variant === 'wave' && (
+  <div 
+    class:list={[
+      'relative w-full h-16 md:h-24 -mb-px',
+      flip && 'rotate-180',
+      className
+    ]} 
+    aria-hidden="true"
+  >
+    <svg 
+      class="absolute bottom-0 w-full h-full" 
+      preserveAspectRatio="none" 
+      viewBox="0 0 1200 120"
+    >
+      <path 
+        class={color}
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.1,118.92,156.63,69.08,321.39,56.44Z"
+      />
+    </svg>
+  </div>
+)}
+
+{variant === 'curve' && (
+  <div 
+    class:list={[
+      'relative w-full h-16 md:h-24 -mb-px',
+      flip && 'rotate-180',
+      className
+    ]} 
+    aria-hidden="true"
+  >
+    <svg 
+      class="absolute bottom-0 w-full h-full" 
+      preserveAspectRatio="none" 
+      viewBox="0 0 1200 120"
+    >
+      <path 
+        class={color}
+        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z"
+      />
+    </svg>
+  </div>
+)}
+
+{variant === 'angle' && (
+  <div 
+    class:list={[
+      'relative w-full h-12 md:h-20 -mb-px',
+      flip && 'rotate-180',
+      className
+    ]} 
+    aria-hidden="true"
+  >
+    <svg 
+      class="absolute bottom-0 w-full h-full" 
+      preserveAspectRatio="none" 
+      viewBox="0 0 1200 120"
+    >
+      <polygon 
+        class={color}
+        points="0 60 600 120 1200 60 1200 120 0 120"
+      />
+    </svg>
+  </div>
+)}

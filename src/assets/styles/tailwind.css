@@ -1,15 +1,70 @@
+/* Font imports - must come first */
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
 @import 'tailwindcss';
 
 @config "../../../tailwind.config.js";
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+/* ============================================
+   G PRODUCTIONS - PROFESSIONAL DESIGN SYSTEM
+   Tech-Forward + Light Elegant
+   ============================================ */
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* CSS Custom Properties - Design Tokens */
+:root {
+  /* Surface colors - warm, sophisticated */
+  --color-surface: #FAFAF9;
+  --color-surface-alt: #F5F5F4;
+  --color-surface-elevated: #FFFFFF;
+  
+  /* Text colors */
+  --color-ink: #18181B;
+  --color-ink-secondary: #52525B;
+  --color-ink-tertiary: #A1A1AA;
+  
+  /* Accent colors */
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-subtle: #3B82F6;
+  
+  /* Geometric accent colors */
+  --color-geometric-orange: #F97316;
+  --color-geometric-blue: #3B82F6;
+  --color-geometric-violet: #8B5CF6;
+  
+  /* Legacy compatibility */
+  --aw-color-primary: #2563EB;
+  --aw-color-secondary: #1D4ED8;
+  --aw-color-accent: #F97316;
+  --aw-color-text-default: #18181B;
+  --aw-color-text-muted: #52525B;
+  --aw-color-bg-page: #FAFAF9;
+  --aw-color-bg-page-dark: #18181B;
+  --aw-color-text-page: #18181B;
+  
+  /* Typography */
+  --aw-font-sans: 'Satoshi', system-ui, sans-serif;
+  --aw-font-heading: 'Clash Display', system-ui, sans-serif;
+  --aw-font-jp: 'Noto Sans JP', sans-serif;
+  
+  /* Spacing rhythm */
+  --space-section: 6rem;
+  --space-section-lg: 8rem;
+}
+
+.dark {
+  --color-surface: #18181B;
+  --color-surface-alt: #27272A;
+  --color-surface-elevated: #3F3F46;
+  --color-ink: #FAFAFA;
+  --color-ink-secondary: #D4D4D8;
+  --color-ink-tertiary: #71717A;
+  --aw-color-bg-page: #18181B;
+  --aw-color-text-page: #FAFAFA;
+}
+
+/* Base layer - borders and smooth rendering */
 @layer base {
   *,
   ::after,
@@ -18,10 +73,31 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--aw-font-sans);
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+  }
+  
+  /* Japanese text handling */
+  [lang="ja"] {
+    font-family: var(--aw-font-jp), var(--aw-font-sans);
+  }
 }
 
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
 @utility bg-page {
-  background-color: var(--aw-color-bg-page);
+  background-color: var(--color-surface);
 }
 
 @utility bg-dark {
@@ -29,7 +105,19 @@
 }
 
 @utility bg-light {
-  background-color: var(--aw-color-bg-page);
+  background-color: var(--color-surface);
+}
+
+@utility bg-surface {
+  background-color: var(--color-surface);
+}
+
+@utility bg-surface-alt {
+  background-color: var(--color-surface-alt);
+}
+
+@utility bg-surface-elevated {
+  background-color: var(--color-surface-elevated);
 }
 
 @utility text-page {
@@ -40,34 +128,122 @@
   color: var(--aw-color-text-muted);
 }
 
+@utility text-ink {
+  color: var(--color-ink);
+}
+
+@utility text-ink-secondary {
+  color: var(--color-ink-secondary);
+}
+
+@utility text-ink-tertiary {
+  color: var(--color-ink-tertiary);
+}
+
+/* ============================================
+   BUTTON STYLES - Refined & Professional
+   ============================================ */
+
 @utility btn {
-  @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+  @apply inline-flex items-center justify-center font-medium text-center text-base leading-snug transition-all duration-300 ease-out cursor-pointer;
+  @apply py-3.5 px-7 md:px-8;
+  @apply rounded-xl border-2 border-transparent;
+  @apply bg-transparent text-zinc-900;
+  @apply hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+  @apply dark:text-slate-200;
 }
 
 @utility btn-primary {
-  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+  @apply btn font-semibold;
+  @apply bg-blue-600 text-white border-blue-600;
+  @apply hover:bg-blue-700 hover:border-blue-700 hover:shadow-xl hover:-translate-y-0.5;
+  @apply dark:bg-blue-600 dark:border-blue-600 dark:hover:bg-blue-700;
 }
 
 @utility btn-secondary {
   @apply btn;
+  @apply bg-white border-zinc-200;
+  @apply hover:border-zinc-400 hover:shadow-lg;
+  @apply dark:bg-zinc-800 dark:border-zinc-700 dark:hover:border-zinc-500;
 }
 
 @utility btn-tertiary {
-  @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+  @apply btn border-none shadow-none;
+  @apply text-zinc-600 hover:text-zinc-900;
+  @apply dark:text-zinc-400 dark:hover:text-white;
 }
 
-#header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
-  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+@utility btn-ghost {
+  @apply btn border-none bg-transparent;
+  @apply hover:bg-zinc-100 dark:hover:bg-zinc-800;
 }
+
+/* ============================================
+   GEOMETRIC BACKGROUNDS & PATTERNS
+   ============================================ */
+
+@utility bg-dots {
+  background-image: radial-gradient(circle, var(--color-ink-tertiary) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.3;
+}
+
+@utility bg-grid {
+  background-image: 
+    linear-gradient(to right, var(--color-ink-tertiary) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-ink-tertiary) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+}
+
+@utility bg-gradient-mesh {
+  background: 
+    radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(240, 100%, 70%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 0.15) 0px, transparent 50%);
+}
+
+/* Noise texture applied via regular CSS class */
+.bg-noise {
+  position: relative;
+}
+
+.bg-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* Geometric shapes */
+@utility geometric-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@utility geometric-blur {
+  filter: blur(60px);
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+
+#header.scroll > div:first-child {
+  @apply bg-surface/95 md:bg-white/90 md:backdrop-blur-xl;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+}
+
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
+  @apply bg-surface/95 md:bg-zinc-900/90 border-b border-zinc-800/50;
   box-shadow: none;
 }
-/* #header.scroll > div:last-child {
-  @apply py-3;
-} */
 
 #header.expanded nav {
   position: fixed;
@@ -78,11 +254,19 @@
   padding: 0 5px;
 }
 
+/* ============================================
+   NAVIGATION & DROPDOWN
+   ============================================ */
+
 .dropdown:focus .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+/* ============================================
+   ICON STYLES
+   ============================================ */
 
 [astro-icon].icon-light > * {
   stroke-width: 1.2;
@@ -92,9 +276,14 @@
   stroke-width: 2.4;
 }
 
+/* ============================================
+   MOBILE MENU TOGGLE
+   ============================================ */
+
 [data-aw-toggle-menu] path {
-  @apply transition;
+  @apply transition-all duration-300;
 }
+
 [data-aw-toggle-menu].expanded g > path:first-child {
   @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
 }
@@ -103,7 +292,107 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
-/* To deprecated */
+/* ============================================
+   SECTION STYLES
+   ============================================ */
+
+@utility section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+@utility section-padding-sm {
+  @apply py-12 md:py-16 lg:py-20;
+}
+
+/* ============================================
+   CARD STYLES - Bento Grid
+   ============================================ */
+
+@utility card-base {
+  @apply rounded-2xl bg-surface-elevated p-6 md:p-8;
+  @apply border border-zinc-200/50 dark:border-zinc-800/50;
+  @apply transition-all duration-300 ease-out;
+}
+
+@utility card-hover {
+  @apply hover:shadow-elegant-lg hover:-translate-y-1;
+  @apply hover:border-zinc-300 dark:hover:border-zinc-700;
+}
+
+@utility card-interactive {
+  @apply card-base card-hover cursor-pointer;
+}
+
+/* Bento grid item sizes */
+@utility bento-sm {
+  @apply col-span-1 row-span-1;
+}
+
+@utility bento-md {
+  @apply col-span-1 md:col-span-2 row-span-1;
+}
+
+@utility bento-lg {
+  @apply col-span-1 md:col-span-2 row-span-2;
+}
+
+@utility bento-tall {
+  @apply col-span-1 row-span-2;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+
+@utility heading-display {
+  @apply font-display font-semibold tracking-tight;
+  @apply text-4xl md:text-5xl lg:text-6xl;
+}
+
+@utility heading-section {
+  @apply font-display font-semibold tracking-tight;
+  @apply text-3xl md:text-4xl;
+}
+
+@utility heading-card {
+  @apply font-heading font-semibold tracking-tight;
+  @apply text-xl md:text-2xl;
+}
+
+@utility body-large {
+  @apply text-lg md:text-xl text-ink-secondary leading-relaxed;
+}
+
+@utility body-base {
+  @apply text-base text-ink-secondary leading-relaxed;
+}
+
+/* ============================================
+   ANIMATION UTILITIES
+   ============================================ */
+
+@utility animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+@utility animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animations */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 200ms; }
+.stagger-4 { animation-delay: 300ms; }
+.stagger-5 { animation-delay: 400ms; }
+.stagger-6 { animation-delay: 500ms; }
+
+/* ============================================
+   LEGACY / DEPRECATED
+   ============================================ */
 
 .dd *:first-child {
   margin-top: 0;

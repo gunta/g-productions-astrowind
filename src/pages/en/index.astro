@@ -6,10 +6,8 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
-import { Icon } from 'astro-icon/components';
-// import { getPermalink } from '~/utils/permalinks';
+import SectionDivider from '~/components/ui/SectionDivider.astro';
 
-// Metadata for USA company
 const metadata = {
   title: 'G Productions: Global AI Innovation Studio | AI, Software & Global Services',
   description:
@@ -24,16 +22,14 @@ const metadata = {
       links={[
         { text: 'Home', href: '/en#home' },
         { text: 'Services', href: '/en#services' },
-        { text: 'Company Services', href: '/en#company-services' },
-        { text: 'Why Us?', href: '/en#why-us' },
+        { text: 'Why Us', href: '/en#why-us' },
         { text: 'Portfolio', href: '/en#portfolio' },
         { text: 'About', href: '/en#about' },
         { text: 'Contact', href: '/en#contact' },
       ]}
       actions={[
         {
-          // Link to the Japanese site
-          text: 'Japan (日本)',
+          text: '日本 (Japan)',
           href: '/ja',
           target: '_self',
         },
@@ -43,13 +39,13 @@ const metadata = {
     />
   </Fragment>
 
-  <!-- Hero Section (#home) -->
+  <!-- Hero Section -->
   <Hero
     id="home"
     title="G Productions"
-    tagline="Crafting AI-Powered Futures, Globally"
+    tagline="AI Innovation Studio"
     image={{
-      src: '~/assets/images/hero-1.png', // Global/tech-focused hero image
+      src: '~/assets/images/hero-1.png',
       alt: 'G Productions, LLC - Global AI Innovation',
     }}
     actions={[
@@ -57,257 +53,134 @@ const metadata = {
         variant: 'primary',
         text: 'Explore Solutions',
         href: '/en#services',
-        target: '_self',
+        icon: 'tabler:arrow-right',
       },
       {
         variant: 'secondary',
         text: 'Get In Touch',
         href: '/en#contact',
-        target: '_self',
       },
     ]}
   >
     <Fragment slot="subtitle">
-      We're not just another tech company. We're architects of possibility.<br />
-      <span class="font-semibold">G Productions, LLC</span> combines human-centered design with AI innovation to solve complex
-      challenges across borders. Where technology meets creativity, that's where we thrive.
+      We architect possibility at the intersection of AI and human creativity. 
+      <span class="font-semibold text-ink dark:text-white">G Productions</span> combines 
+      cutting-edge technology with design thinking to solve complex challenges across borders.
     </Fragment>
   </Hero>
 
-  <!-- Services Section (#services) -->
+  <!-- Services Section -->
   <Features2
     id="services"
-    title="Our AI & Innovation Studio"
+    title="Our Capabilities"
     subtitle="We blend advanced technology with creative vision to deliver transformative solutions"
-    columns={4}
-    defaultIcon="tabler:rocket"
+    columns={3}
+    variant="bento"
     items={[
       {
         title: 'AI Solutions & Consulting',
-        description: `<ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><Icon name="tabler:brain" class="w-5 h-5" /></span>
-            <span><strong>Tailored AI Agents:</strong> Custom assistants that intuitively understand your business context</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><Icon name="tabler:refresh" class="w-5 h-5" /></span>
-            <span><strong>Workflow Reimagination:</strong> Rethinking processes through an AI-first lens</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><Icon name="tabler:sitemap" class="w-5 h-5" /></span>
-            <span><strong>Strategic Integration:</strong> Weaving AI into your business DNA, not just bolting it on</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><Icon name="tabler:wand" class="w-5 h-5" /></span>
-            <span><strong>Generative Systems:</strong> Unlocking creative potential through AI-powered content engines</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-purple-600 dark:text-purple-400 inline-block mr-2 mt-1"><Icon name="tabler:chart-line" class="w-5 h-5" /></span>
-            <span><strong>ROI Focus:</strong> Delivering measurable value and competitive advantage</span>
-          </li>
-        </ul>`,
+        description: 'Custom AI agents that understand your business context. We design intelligent workflows, strategic integrations, and generative systems that deliver measurable ROI.',
         icon: 'tabler:brain',
       },
       {
         title: 'Custom Software Engineering',
-        description: `<ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:layers" class="w-5 h-5" /></span>
-            <span><strong>Full-Stack Excellence:</strong> Crafting beautiful, functional digital experiences</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:cloud" class="w-5 h-5" /></span>
-            <span><strong>SaaS Architecture:</strong> Building scalable platforms that grow with your business</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:messages" class="w-5 h-5" /></span>
-            <span><strong>Conversational AI:</strong> Creating natural, helpful digital interactions</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:server" class="w-5 h-5" /></span>
-            <span><strong>Edge-Deployed Solutions:</strong> Leveraging Cloudflare and modern infrastructure</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:git-fork" class="w-5 h-5" /></span>
-            <span><strong>Future-Ready Code:</strong> Engineering for adaptability and long-term evolution</span>
-          </li>
-        </ul>`,
+        description: 'Full-stack excellence from beautiful interfaces to scalable cloud architecture. We build SaaS platforms, conversational AI, and future-ready systems on modern infrastructure.',
         icon: 'tabler:code',
       },
       {
         title: 'Global Business Services',
-        description: `<ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><Icon name="tabler:language" class="w-5 h-5" /></span>
-            <span><strong>Cross-Cultural Translation:</strong> Nuanced JP↔EN communication that captures intent</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><Icon name="tabler:file-description" class="w-5 h-5" /></span>
-            <span><strong>Technical & Legal Expertise:</strong> Industry-specific terminology and context</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><Icon name="tabler:chart-bar" class="w-5 h-5" /></span>
-            <span><strong>Market Entry Strategy:</strong> Navigate international waters with experienced guides</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><Icon name="tabler:users" class="w-5 h-5" /></span>
-            <span><strong>Cultural Consulting:</strong> Beyond words—understanding the unspoken rules</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-emerald-600 dark:text-emerald-400 inline-block mr-2 mt-1"><Icon name="tabler:scale" class="w-5 h-5" /></span>
-            <span><strong>Global/Local Balance:</strong> Maintaining brand identity across diverse markets</span>
-          </li>
-        </ul>`,
+        description: 'Cross-cultural expertise bridging Japan and the West. Nuanced JP⇄EN translation, market entry strategy, and cultural consulting that captures intent, not just words.',
         icon: 'tabler:world-share',
       },
       {
         title: 'Creative Technology Events',
-        description: `<ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><Icon name="tabler:device-desktop" class="w-5 h-5" /></span>
-            <span><strong>Hybrid Experiences:</strong> Blending physical and digital for maximum impact</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><Icon name="tabler:robot" class="w-5 h-5" /></span>
-            <span><strong>AI-Enhanced Events:</strong> Using technology to create memorable moments</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><Icon name="tabler:world" class="w-5 h-5" /></span>
-            <span><strong>Global Audience Design:</strong> Connecting diverse participants across time zones</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><Icon name="tabler:topology-star" class="w-5 h-5" /></span>
-            <span><strong>Tech Community Building:</strong> Creating spaces for collaboration and growth</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-600 dark:text-amber-400 inline-block mr-2 mt-1"><Icon name="tabler:checklist" class="w-5 h-5" /></span>
-            <span><strong>Gathr.ly Methodology:</strong> Our proven approach to meaningful gatherings</span>
-          </li>
-        </ul>`,
+        description: 'Hybrid experiences that connect. AI-enhanced events, tech community building, and global audience design using our proven Gathr.ly methodology.',
         icon: 'tabler:calendar-event',
       },
       {
         title: 'G Combinator Accelerator',
-        description: `<ul class="space-y-2">
-          <li class="flex items-start">
-            <span class="text-rose-600 dark:text-rose-400 inline-block mr-2 mt-1"><Icon name="tabler:flag-filled" class="w-5 h-5" /></span>
-            <span><strong>US Incorporation:</strong> Delaware C-Corp/LLC via Stripe Atlas/Every.io with full agent support</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-rose-600 dark:text-rose-400 inline-block mr-2 mt-1"><Icon name="tabler:torii" class="w-5 h-5" /></span>
-            <span><strong>Japan Entity Formation:</strong> Complete KK/GK establishment with banking and compliance</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-rose-600 dark:text-rose-400 inline-block mr-2 mt-1"><Icon name="tabler:rocket" class="w-5 h-5" /></span>
-            <span><strong>YC Application Support:</strong> End-to-end assistance with Y Combinator applications</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-rose-600 dark:text-rose-400 inline-block mr-2 mt-1"><Icon name="tabler:language" class="w-5 h-5" /></span>
-            <span><strong>Full Translation Services:</strong> Complete JP⇄EN translation for all communications, documents, and meetings</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-rose-600 dark:text-rose-400 inline-block mr-2 mt-1"><Icon name="tabler:moneybag" class="w-5 h-5" /></span>
-            <span><strong>Investment & Advisory:</strong> Direct investment program and institutional research services</span>
-          </li>
-        </ul>`,
+        description: 'US/Japan entity formation, YC application support, and investment advisory. Complete startup launch services with full translation and compliance support.',
         icon: 'tabler:rocket',
         callToAction: {
           text: 'Learn More',
           href: '/g-combinator',
-          target: '_self',
+          variant: 'link',
         },
       },
     ]}
   />
 
-  <!-- Why Choose Us Section (#why-us) -->
+  <SectionDivider variant="diagonal" color="fill-surface-alt dark:fill-zinc-800/50" />
+
+  <!-- Why Choose Us Section -->
   <Content
     id="why-us"
     title="Why Partner with G Productions?"
-    columns={2}
+    tagline="Our Edge"
     image={{
       src: '~/assets/images/i543726b09799.jpg',
       alt: 'G Productions Advantage',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4 flex items-center">
-        <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
-          ><Icon name="tabler:diamond" class="w-6 h-6" /></span
-        >
-        Our Unique Approach
-      </h3>
-
       <div class="space-y-6">
-        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-300 dark:border-blue-700">
-          <h4 class="text-lg font-semibold text-blue-600 dark:text-blue-400 flex items-center">
-            <span class="inline-block mr-2"><Icon name="tabler:users" class="w-5 h-5" /></span>
-            Human-Centered Technology
-          </h4>
-          <p class="mt-1 pl-4 border-l-2 border-blue-200 dark:border-blue-800 ml-1">
-            We believe technology should serve humans, not the other way around. Every solution we design starts with
-            understanding the people who will use it—their needs, challenges, and aspirations. This philosophy ensures
-            our AI and software solutions feel intuitive and genuinely helpful rather than frustrating or alienating.
-          </p>
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+            <span class="text-accent text-lg">01</span>
+          </div>
+          <div>
+            <h4 class="font-heading font-semibold text-lg text-ink dark:text-white mb-1">Human-Centered Technology</h4>
+            <p class="text-ink-secondary dark:text-zinc-400">Every solution starts with understanding the people who will use it. Our AI feels intuitive and genuinely helpful, never frustrating.</p>
+          </div>
         </div>
 
-        <div
-          class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border-l-4 border-purple-300 dark:border-purple-700"
-        >
-          <h4 class="text-lg font-semibold text-purple-600 dark:text-purple-400 flex items-center">
-            <span class="inline-block mr-2"><Icon name="tabler:world" class="w-5 h-5" /></span>
-            Cross-Cultural Intelligence
-          </h4>
-          <p class="mt-1 pl-4 border-l-2 border-purple-200 dark:border-purple-800 ml-1">
-            With deep expertise in both Western and Japanese business cultures, we bring a rare dual perspective to
-            global projects. We don't just translate words—we translate concepts, intentions, and experiences across
-            cultural contexts, ensuring nothing gets lost in translation as you expand internationally.
-          </p>
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+            <span class="text-accent text-lg">02</span>
+          </div>
+          <div>
+            <h4 class="font-heading font-semibold text-lg text-ink dark:text-white mb-1">Cross-Cultural Intelligence</h4>
+            <p class="text-ink-secondary dark:text-zinc-400">Deep expertise in both Western and Japanese business cultures. We translate concepts and intentions, not just words.</p>
+          </div>
         </div>
 
-        <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-green-300 dark:border-green-700">
-          <h4 class="text-lg font-semibold text-green-600 dark:text-green-400 flex items-center">
-            <span class="inline-block mr-2"><Icon name="tabler:bulb" class="w-5 h-5" /></span>
-            Creative AI Advantage
-          </h4>
-          <p class="mt-1 pl-4 border-l-2 border-green-200 dark:border-green-800 ml-1">
-            While others see AI as merely a technical tool, we recognize it as a creative medium. Our team combines
-            technical excellence with creative vision to imagine possibilities others miss. This creative-technical
-            fusion allows us to craft AI solutions that surprise and delight while delivering measurable business
-            outcomes.
-          </p>
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+            <span class="text-accent text-lg">03</span>
+          </div>
+          <div>
+            <h4 class="font-heading font-semibold text-lg text-ink dark:text-white mb-1">Creative AI Advantage</h4>
+            <p class="text-ink-secondary dark:text-zinc-400">Technical excellence meets creative vision. We craft AI solutions that surprise and delight while delivering measurable outcomes.</p>
+          </div>
         </div>
 
-        <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg border-l-4 border-amber-300 dark:border-amber-700">
-          <h4 class="text-lg font-semibold text-amber-600 dark:text-amber-400 flex items-center">
-            <span class="inline-block mr-2"><Icon name="tabler:bulb" class="w-5 h-5" /></span>
-            Globally Connected, Locally Attuned
-          </h4>
-          <p class="mt-1 pl-4 border-l-2 border-amber-200 dark:border-amber-800 ml-1">
-            Through our interconnected structure—with G Productions, LLC in the US and <a
-              href="/ja/#company"
-              class="text-blue-600 dark:text-blue-400 hover:underline font-medium">G Productions Japan 合同会社</a
-            > in Tokyo—we offer seamless global service with authentic local presence. This unique arrangement provides you
-            with both international perspective and deep local market understanding.
-          </p>
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+            <span class="text-accent text-lg">04</span>
+          </div>
+          <div>
+            <h4 class="font-heading font-semibold text-lg text-ink dark:text-white mb-1">Global-Local Presence</h4>
+            <p class="text-ink-secondary dark:text-zinc-400">
+              US headquarters with <a href="/ja/#company" class="text-accent hover:underline">G Productions Japan</a> in Tokyo. 
+              International perspective with authentic local understanding.
+            </p>
+          </div>
         </div>
       </div>
     </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-blue-900/30"></div>
-    </Fragment>
   </Content>
 
-  <!-- Portfolio / Case Studies Section (#portfolio) -->
+  <SectionDivider variant="diagonal" flip color="fill-surface dark:fill-zinc-900" />
+
+  <!-- Portfolio Section -->
   <Features
     id="portfolio"
-    title="Our Work: Innovation with Purpose"
-    subtitle="Projects that demonstrate our commitment to solving meaningful challenges through technology"
+    title="Our Work"
+    subtitle="Innovation with purpose: projects that demonstrate our commitment to solving meaningful challenges"
     items={[
       {
         title: 'AI Code Agents Festival',
-        description:
-          "We didn't just organize a tech conference—we created a community movement. This hybrid event connected 200+ in-person attendees with 20,000+ online participants, featuring live coding demonstrations, expert panels, and interactive AI workshops that showcased the human potential of AI technology.",
+        description: 'A community movement connecting 200+ in-person attendees with 20,000+ online participants. Live coding, expert panels, and interactive AI workshops showcasing human potential.',
         icon: 'tabler:robot',
         callToAction: {
           text: 'Explore the Event',
@@ -318,29 +191,27 @@ const metadata = {
       },
       {
         title: 'Cross-Cultural Product Launch',
-        description:
-          'When a leading US software company needed to enter the Japanese market, we provided more than translation—we orchestrated a complete cultural adaptation. Our team redesigned UI/UX elements, localized marketing messages for cultural resonance, and provided technical glossaries that captured nuanced terminology across languages.',
+        description: 'Complete cultural adaptation for a US software company entering Japan. UI/UX redesign, localized marketing, and technical glossaries capturing nuanced terminology.',
         icon: 'tabler:language',
       },
       {
-        title: 'Retail Revolution AI Agent',
-        description:
-          "For a specialty retailer facing customer service challenges, we developed an AI agent that doesn't just answer questions—it creates genuine connections. The system understands context, remembers customer preferences, and communicates with authentic brand personality, resulting in 60% automation and a 23% increase in customer satisfaction.",
+        title: 'Retail AI Agent',
+        description: 'AI that creates genuine connections—understanding context, remembering preferences, communicating with brand personality. 60% automation with 23% satisfaction increase.',
         icon: 'tabler:shopping-cart',
       },
       {
         title: 'Healthcare Analytics Platform',
-        description:
-          'We engineered a HIPAA-compliant SaaS platform that transforms how healthcare providers understand patient data. Using privacy-preserving AI models and intuitive visualizations, the solution helps clinicians identify patterns and make more informed decisions, reducing diagnostic time by 35% in pilot deployments.',
+        description: 'HIPAA-compliant SaaS transforming patient data insights. Privacy-preserving AI models reducing diagnostic time by 35% in pilot deployments.',
         icon: 'tabler:heart-rate-monitor',
       },
     ]}
   />
 
-  <!-- Global Presence / About Section (#about) -->
+  <!-- About Section -->
   <Content
     id="about"
-    title="Our Story: Bridging Worlds Through Technology"
+    title="Our Story"
+    tagline="Bridging Worlds"
     isReversed
     image={{
       src: '~/assets/images/office-02.jpeg',
@@ -348,307 +219,76 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2 flex items-center">
-        <span class="text-amber-600 dark:text-amber-400 inline-block mr-2"
-          ><Icon name="tabler:history" class="w-6 h-6" /></span
-        >
-        The Genesis
-      </h3>
-      <p class="mb-4 text-lg pl-4 border-l-2 border-amber-200 dark:border-amber-800">
-        G Productions was born from a simple yet profound realization: technology's greatest potential lies in
-        connecting people across geographical, cultural, and conceptual divides. Founded in Wyoming by Günther Brunner,
-        our journey began with a vision to create an innovation studio that defies traditional boundaries between
-        disciplines, merging technical expertise with creative sensibility.
+      <p class="text-lg text-ink-secondary dark:text-zinc-400 mb-6">
+        G Productions was born from a simple realization: technology's greatest potential lies in 
+        connecting people across geographical, cultural, and conceptual divides.
+      </p>
+      
+      <p class="text-ink-secondary dark:text-zinc-400 mb-6">
+        Founded in Wyoming by Günther Brunner, we've intentionally designed our structure to mirror 
+        our philosophy—globally connected, locally authentic. Our US entity develops the broader 
+        technology vision while <a href="/ja/#company" class="text-accent hover:underline">G Productions Japan</a> 
+        brings deep cultural understanding to our work in Asia.
       </p>
 
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2 flex items-center">
-        <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
-          ><Icon name="tabler:globe" class="w-6 h-6" /></span
-        >
-        Our Global-Local Philosophy
-      </h3>
-      <p class="mb-4 text-lg pl-4 border-l-2 border-blue-200 dark:border-blue-800">
-        We've intentionally designed our company structure to mirror our core philosophy: globally connected, locally
-        authentic. G Productions, LLC develops our broader technology vision and AI innovation approach, while our
-        sister entity, <a href="/ja/#company" class="text-blue-600 dark:text-blue-400 hover:underline font-medium"
-          >G Productions Japan 合同会社</a
-        >, brings deep cultural understanding to our work in Asia. This unique arrangement allows us to think globally
-        while acting locally in ways that truly resonate.
-      </p>
-
-      <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-2 flex items-center">
-        <span class="text-purple-600 dark:text-purple-400 inline-block mr-2"
-          ><Icon name="tabler:users" class="w-6 h-6" /></span
-        >
-        The Team Behind the Magic
-      </h3>
-      <p class="text-lg pl-4 border-l-2 border-purple-200 dark:border-purple-800">
-        We're proud of our diverse team that spans continents, disciplines, and perspectives. Led by founder Günther
-        Brunner, our collective includes AI engineers, designers, business strategists, linguists, and creative
-        technologists. We deliberately cultivate this diversity because we believe the most interesting solutions emerge
-        at the intersection of different ways of thinking.
-      </p>
-
-      <blockquote
-        class="text-lg italic border-l-4 border-blue-500 pl-4 my-4 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-r-lg"
-      >
-        <span class="text-blue-600 dark:text-blue-400 inline-block mb-2"
-          ><Icon name="tabler:quote" class="w-6 h-6" /></span
-        >
-        <br />
-        "We're building a company that uses technology not just to solve problems, but to expand what's possible for people
-        and businesses across cultures. That's the future we want to create."
-        <footer class="text-right mt-2 font-semibold">— Günther Brunner, CEO & Founder</footer>
+      <blockquote class="border-l-2 border-accent pl-6 py-2 my-6 bg-surface-alt dark:bg-zinc-800/50 rounded-r-xl">
+        <p class="text-ink dark:text-zinc-300 italic">
+          "We're building a company that uses technology not just to solve problems, but to expand 
+          what's possible for people and businesses across cultures."
+        </p>
+        <footer class="mt-2 text-sm font-semibold text-ink dark:text-white">— Günther Brunner, CEO & Founder</footer>
       </blockquote>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-gray-50 dark:bg-gray-800/50"></div>
     </Fragment>
   </Content>
 
   <!-- Company Services Section -->
   <Features2
     id="company-services"
-    title="Company Services"
-    subtitle="Our suite of specialized services combining AI innovation with human creativity"
-    columns={2}
+    title="Our Products"
+    subtitle="AI-powered platforms and services we've built"
+    columns={3}
     items={[
       {
-        title: 'Gathrly - Hybrid Event Design',
-        description: `<div class="space-y-4">
-          <p class="border-l-4 border-pink-300 dark:border-pink-600 pl-3 py-1 bg-pink-50 dark:bg-pink-900/20 rounded-r">
-            Drawing from our experience organizing events of various scales, we understand the unique challenges each size presents. 
-            Event production requires both human creativity and AI-powered efficiency.
-          </p>
-          
-          <p class="font-semibold text-center py-2 bg-gradient-to-r from-pink-100 to-blue-100 dark:from-pink-900/30 dark:to-blue-900/30 rounded-lg">
-            <span class="text-pink-600 dark:text-pink-400 mr-2"><Icon name="tabler:star" class="w-5 h-5 inline" /></span>
-            Gathrly is our hybrid event design service that maximizes the strengths of both approaches
-            <span class="text-blue-600 dark:text-blue-400 ml-2"><Icon name="tabler:star" class="w-5 h-5 inline" /></span>
-          </p>
-
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
-            <div>
-              <h4 class="font-bold flex items-center gap-2 mb-2 text-pink-700 dark:text-pink-300">
-                <span class="text-pink-600 dark:text-pink-400"><Icon name="tabler:users-group" class="w-5 h-5" /></span> Human-Driven Components
-              </h4>
-              <ul class="ml-4 space-y-1">
-                <li class="flex items-start">
-                  <span class="text-pink-500 dark:text-pink-400 inline-block mr-2 mt-1"><Icon name="tabler:diamond" class="w-4 h-4" /></span>
-                  <span>Crafting the core value proposition</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-pink-500 dark:text-pink-400 inline-block mr-2 mt-1"><Icon name="tabler:paint" class="w-4 h-4" /></span>
-                  <span>Understanding and expressing brand identity</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-pink-500 dark:text-pink-400 inline-block mr-2 mt-1"><Icon name="tabler:messages" class="w-4 h-4" /></span>
-                  <span>Personalized consulting and quality control</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold flex items-center gap-2 mb-2 text-blue-700 dark:text-blue-300">
-                <span class="text-blue-600 dark:text-blue-400"><Icon name="tabler:robot" class="w-5 h-5" /></span> AI-Enhanced Elements
-              </h4>
-              <ul class="ml-4 space-y-1">
-                <li class="flex items-start">
-                  <span class="text-blue-500 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:vector-bezier" class="w-4 h-4" /></span>
-                  <span>Generating design variations</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-500 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:ticket" class="w-4 h-4" /></span>
-                  <span>Automating ticketing and entry management</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-blue-500 dark:text-blue-400 inline-block mr-2 mt-1"><Icon name="tabler:chart-line" class="w-4 h-4" /></span>
-                  <span>Visualizing progress and optimizing resources</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
-            <h4 class="font-bold mb-2 flex items-center text-lg">
-              <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:megaphone" class="w-5 h-5" /></span>
-              Currently accepting trial participants for events of all sizes!
-            </h4>
-            <div class="mt-2">
-              <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:link" class="w-5 h-5 inline" /></span>
-              Learn more at:
-              <a href="https://gathr.ly" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
-                gathr.ly <Icon name="tabler:external-link" class="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>`,
+        title: 'Gathr.ly',
+        description: 'Hybrid event design combining human creativity with AI efficiency. From intimate gatherings to large-scale conferences.',
         icon: 'tabler:calendar-event',
+        callToAction: {
+          text: 'Visit Gathr.ly',
+          href: 'https://gathr.ly',
+          target: '_blank',
+          variant: 'link',
+        },
       },
       {
-        title: 'AI Code Agents - Developer Productivity',
-        description: `<div class="space-y-4">
-          <p class="border-l-4 border-green-300 dark:border-green-600 pl-3 py-1 bg-green-50 dark:bg-green-900/20 rounded-r">
-            Our development support service balances increased productivity with quality assurance through advanced AI integration.
-          </p>
-          
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-2">
-            <ul class="space-y-2">
-              <li class="flex items-start">
-                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><Icon name="tabler:brain" class="w-4 h-4" /></span>
-                <span>Understanding developer intent to support code generation</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><Icon name="tabler:bookmark" class="w-4 h-4" /></span>
-                <span>Recommending implementations based on best practices</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><Icon name="tabler:search" class="w-4 h-4" /></span>
-                <span>Enhancing code review efficiency and quality</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-600 dark:text-green-400 inline-block mr-2 mt-1"><Icon name="tabler:file-text" class="w-4 h-4" /></span>
-                <span>Generating documentation to improve maintainability</span>
-              </li>
-            </ul>
-          </div>
-
-          <p class="text-center py-2 bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900/30 dark:to-teal-900/30 rounded-lg">
-            <span class="text-teal-600 dark:text-teal-400 mr-2"><Icon name="tabler:rocket" class="w-5 h-5 inline" /></span>
-            AI Code Agents maximizes developer creativity and productivity, allowing them to focus on higher-value tasks while maintaining code quality.
-          </p>
-
-          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
-            <div class="mt-2">
-              <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:link" class="w-5 h-5 inline" /></span>
-              Learn more at:
-              <a href="https://code-agents.com" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
-                code-agents.com <Icon name="tabler:external-link" class="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>`,
+        title: 'AI Code Agents',
+        description: 'Developer productivity through AI. Code generation, best practice recommendations, review automation, and documentation.',
         icon: 'tabler:code',
+        callToAction: {
+          text: 'Visit Code Agents',
+          href: 'https://code-agents.com',
+          target: '_blank',
+          variant: 'link',
+        },
       },
       {
-        title: 'MCPVerified - Model Control Protocol Guide',
-        description: `<div class="space-y-4">
-          <p class="border-l-4 border-cyan-300 dark:border-cyan-600 pl-3 py-1 bg-cyan-50 dark:bg-cyan-900/20 rounded-r">
-            MCPVerified is your trusted guide to the Model Control Protocol ecosystem, providing opinionated, carefully curated recommendations backed by real-world experience.
-          </p>
-          
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 space-y-3">
-            <h4 class="font-bold mb-2 flex items-center text-cyan-700 dark:text-cyan-300">
-              <span class="text-cyan-600 dark:text-cyan-400 mr-2"><Icon name="tabler:diamond" class="w-5 h-5" /></span>
-              Core Values
-            </h4>
-            <ul class="space-y-2">
-              <li class="flex items-start">
-                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><Icon name="tabler:brand-typescript" class="w-4 h-4" /></span>
-                <span><strong>TypeScript First:</strong> The right balance of type safety and developer experience</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><Icon name="tabler:shield" class="w-4 h-4" /></span>
-                <span><strong>Security First:</strong> Carefully vetted services and best practices</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><Icon name="tabler:gauge" class="w-4 h-4" /></span>
-                <span><strong>Performance Matters:</strong> Built with performance in mind from the beginning</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-cyan-600 dark:text-cyan-400 inline-block mr-2 mt-1"><Icon name="tabler:device-laptop-code" class="w-4 h-4" /></span>
-                <span><strong>Developer Experience:</strong> Prioritizing DX while maintaining production quality</span>
-              </li>
-            </ul>
-          </div>
-
-          <p class="text-center py-2 bg-gradient-to-r from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 rounded-lg">
-            MCPVerified cuts through the noise to provide clear, direct guidance on building successful MCP applications, prioritizing modular serverless architectures, official packages, security-first approaches, and excellent developer experience.
-          </p>
-
-          <div class="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
-            <div class="mt-2">
-              <span class="text-blue-600 dark:text-blue-400 mr-2"><Icon name="tabler:link" class="w-5 h-5 inline" /></span>
-              Learn more at:
-              <a href="https://mcpverified.com/introduction" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
-                mcpverified.com <Icon name="tabler:external-link" class="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>`,
-        icon: 'tabler:school',
+        title: 'MCPVerified',
+        description: 'Your trusted guide to the Model Context Protocol ecosystem. TypeScript-first, security-focused recommendations.',
+        icon: 'tabler:shield-check',
+        callToAction: {
+          text: 'Visit MCPVerified',
+          href: 'https://mcpverified.com/introduction',
+          target: '_blank',
+          variant: 'link',
+        },
       },
     ]}
   />
 
-  <!-- Contact Section (#contact) -->
-  <Features2
-    id="contact"
-    title="Let's Create Something Extraordinary Together"
-    tagline="We'd love to hear about your challenges and ideas"
-    columns={2}
-    items={[
-      {
-        title: 'Get in Touch',
-        description: `<div class="space-y-4">
-          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-300 dark:border-blue-700">
-            <div class="mb-3">
-              <strong class="text-lg flex items-center text-blue-700 dark:text-blue-300">
-                <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"><Icon name="tabler:building" class="w-5 h-5" /></span>
-                G Productions, LLC
-              </strong>
-              <div class="mt-1 pl-6">
-                <div class="flex items-start">
-                  <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-4 text-center"><Icon name="tabler:map-pin" class="w-4 h-4" /></span>
-                  <span>30 N Gould St Ste N<br />Sheridan, WY 82801 USA</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="flex items-center mb-2">
-              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-4 text-center"><Icon name="tabler:phone" class="w-4 h-4" /></span>
-              <strong>Call us:</strong> <a href="tel:+13072919547" class="hover:underline text-blue-600 dark:text-blue-400 ml-1">+1 (307) 291-9547</a>
-            </div>
-            
-            <div class="flex items-center mb-2">
-              <span class="text-blue-600 dark:text-blue-400 inline-block mr-2 w-4 text-center"><Icon name="tabler:mail" class="w-4 h-4" /></span>
-              <strong>Email us:</strong> <a href="mailto:contact@g-productions.studio" class="hover:underline text-blue-600 dark:text-blue-400 ml-1">contact@g-productions.studio</a>
-            </div>
-          </div>
-          
-          <p class="text-sm italic border-l-3 border-gray-300 dark:border-gray-600 pl-3 py-2 bg-gray-50 dark:bg-gray-800 rounded-r">Whether you have a specific project in mind or simply want to explore possibilities, we're eager to start a conversation. Our team responds to all inquiries within 24 hours.</p>
-          
-          <hr class="my-2 border-gray-300 dark:border-gray-600"/>
-          
-          <p class="flex items-center mt-2">
-            <span class="text-red-600 dark:text-red-400 inline-block mr-2"><Icon name="tabler:flag" class="w-5 h-5" /></span>
-            <span class="text-gray-700 dark:text-gray-300">For inquiries specific to the Japanese market, please contact our</span> 
-            <a href="/ja#contact" class="text-blue-600 dark:text-blue-400 hover:underline font-medium ml-1 inline-flex items-center">
-              Japan Office (日本)
-              <span class="ml-1 text-blue-700 dark:text-blue-300"><Icon name="tabler:external-link" class="w-3 h-3" /></span>
-            </a>
-          </p>
-        </div>`,
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Visit Our Headquarters',
-        description: `
-        <div class="space-y-4">
-          <div class="flex items-center mb-2">
-            <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"><Icon name="tabler:map" class="w-5 h-5" /></span>
-            <span class="font-semibold">Our US Headquarters in Wyoming</span>
-          </div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167703411779!2d-106.9549504!3d44.797770799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a66677f%3A0x8f85bd068d1afb8a!2s30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2sjp!4v1718789512794!5m2!1sen!2sjp" width="100%" height="300px" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>`,
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
-
-  <!-- Final CTA -->
+  <!-- Contact Section -->
   <CallToAction
-    title="Your Vision, Our Expertise"
-    subtitle="Every breakthrough begins with a conversation. Let's discover what we can achieve together."
+    id="contact"
+    title="Let's Create Something Extraordinary"
+    subtitle="Every breakthrough begins with a conversation. We'd love to hear about your challenges and ideas."
     actions={[
       {
         variant: 'primary',
@@ -659,24 +299,30 @@ const metadata = {
     ]}
   >
     <Fragment slot="content">
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="text-lg mb-4 flex items-center justify-center flex-wrap">
-          <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
-            ><Icon name="tabler:rocket" class="w-5 h-5" /></span
-          >
-          The future belongs to those who can imagine it, shape it, and bring it to life. Our team is ready to help you navigate
-          the intersection of technology, creativity, and human experience.
-        </p>
-        <p class="italic bg-gray-50 dark:bg-gray-800 p-3 rounded-lg inline-block">
-          <span class="text-blue-600 dark:text-blue-400 inline-block mr-2"
-            ><Icon name="tabler:quote" class="w-4 h-4" /></span
-          >
-          "The best way to predict the future is to create it."
-          <span class="text-blue-600 dark:text-blue-400 inline-block ml-2"
-            ><Icon name="tabler:quote" class="w-4 h-4" /></span
-          >
-        </p>
+      <div class="grid md:grid-cols-2 gap-8 mt-8 text-left max-w-2xl mx-auto">
+        <div class="bg-surface-alt dark:bg-zinc-800/50 rounded-xl p-6">
+          <h4 class="font-heading font-semibold text-ink dark:text-white mb-3">US Headquarters</h4>
+          <p class="text-sm text-ink-secondary dark:text-zinc-400 mb-2">
+            30 N Gould St Ste N<br />
+            Sheridan, WY 82801 USA
+          </p>
+          <p class="text-sm">
+            <a href="tel:+13072919547" class="text-accent hover:underline">+1 (307) 291-9547</a>
+          </p>
+        </div>
+        
+        <div class="bg-surface-alt dark:bg-zinc-800/50 rounded-xl p-6">
+          <h4 class="font-heading font-semibold text-ink dark:text-white mb-3">Japan Office</h4>
+          <p class="text-sm text-ink-secondary dark:text-zinc-400 mb-2">
+            For Japanese market inquiries, please visit our 
+            <a href="/ja#contact" class="text-accent hover:underline">Japan page</a>.
+          </p>
+        </div>
       </div>
+      
+      <p class="text-center text-sm text-ink-tertiary dark:text-zinc-500 mt-6">
+        We respond to all inquiries within 24 hours.
+      </p>
     </Fragment>
   </CallToAction>
 </Layout>

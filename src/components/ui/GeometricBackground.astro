@@ -1,0 +1,98 @@
+---
+/**
+ * GeometricBackground - Abstract geometric shapes for visual atmosphere
+ * Creates dynamic, tech-forward visual elements without being distracting
+ */
+
+export interface Props {
+  variant?: 'hero' | 'section' | 'minimal' | 'accent';
+  class?: string;
+}
+
+const { variant = 'section', class: className = '' } = Astro.props;
+---
+
+{variant === 'hero' && (
+  <div class:list={['absolute inset-0 overflow-hidden pointer-events-none', className]} aria-hidden="true">
+    <!-- Large gradient orb - top right -->
+    <div 
+      class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-30 animate-pulse-slow"
+      style="background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);"
+    />
+    
+    <!-- Orange accent orb - bottom left -->
+    <div 
+      class="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full opacity-25 animate-float"
+      style="background: radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%); animation-delay: 2s;"
+    />
+    
+    <!-- Subtle violet orb - center right -->
+    <div 
+      class="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full opacity-20 animate-pulse-slow"
+      style="background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%); animation-delay: 1s;"
+    />
+    
+    <!-- Grid pattern overlay -->
+    <div 
+      class="absolute inset-0 opacity-[0.03]"
+      style="background-image: linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px); background-size: 60px 60px;"
+    />
+    
+    <!-- Diagonal line accent -->
+    <svg class="absolute bottom-0 left-0 w-full h-32 opacity-10" preserveAspectRatio="none" viewBox="0 0 1200 120">
+      <path d="M0,0 L1200,120 L1200,120 L0,120 Z" fill="url(#diagonalGradient)" />
+      <defs>
+        <linearGradient id="diagonalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(59, 130, 246);stop-opacity:0.3" />
+          <stop offset="100%" style="stop-color:rgb(249, 115, 22);stop-opacity:0.3" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+)}
+
+{variant === 'section' && (
+  <div class:list={['absolute inset-0 overflow-hidden pointer-events-none', className]} aria-hidden="true">
+    <!-- Subtle gradient mesh -->
+    <div 
+      class="absolute inset-0 opacity-50"
+      style="background: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.06) 0px, transparent 50%);"
+    />
+    
+    <!-- Dot pattern - very subtle -->
+    <div 
+      class="absolute inset-0 opacity-[0.02]"
+      style="background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 24px 24px;"
+    />
+  </div>
+)}
+
+{variant === 'minimal' && (
+  <div class:list={['absolute inset-0 overflow-hidden pointer-events-none', className]} aria-hidden="true">
+    <!-- Single subtle gradient -->
+    <div 
+      class="absolute -top-1/2 -right-1/4 w-full h-full rounded-full opacity-30"
+      style="background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 60%);"
+    />
+  </div>
+)}
+
+{variant === 'accent' && (
+  <div class:list={['absolute inset-0 overflow-hidden pointer-events-none', className]} aria-hidden="true">
+    <!-- Accent geometric shapes -->
+    <div 
+      class="absolute top-10 right-10 w-20 h-20 rotate-45 opacity-20"
+      style="background: linear-gradient(135deg, rgb(249, 115, 22) 0%, transparent 100%);"
+    />
+    <div 
+      class="absolute bottom-10 left-10 w-32 h-32 rounded-full opacity-15"
+      style="background: radial-gradient(circle, rgb(59, 130, 246) 0%, transparent 70%);"
+    />
+    
+    <!-- Corner accent lines -->
+    <svg class="absolute top-0 right-0 w-40 h-40 opacity-20" viewBox="0 0 100 100">
+      <line x1="100" y1="0" x2="60" y2="0" stroke="currentColor" stroke-width="1" />
+      <line x1="100" y1="0" x2="100" y2="40" stroke="currentColor" stroke-width="1" />
+    </svg>
+  </div>
+)}
