@@ -103,7 +103,6 @@ Gathrly is a hybrid event design service that combines human creativity with AI 
 ### Service Focus:
 
 - **Human Responsibilities**:
-
   - Designing the essential value of events
   - Understanding and expressing brand identity
   - Detailed consulting

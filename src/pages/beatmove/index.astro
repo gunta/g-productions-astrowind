@@ -2,8 +2,6 @@
 // Import Tailwind CSS
 import '../../styles/global.css';
 import { Picture, Image } from 'astro:assets';
-import heroImage from './hero.png';
-import aboutImage from './about.png';
 import persona1Image from './persona1.png';
 import persona2Image from './persona2.png';
 import persona3Image from './persona3.png';
@@ -705,11 +703,14 @@ import experienceImage from './experience.png';
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener('click', function (e) {
+          anchor.addEventListener('click', (e) => {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth',
-            });
+            const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+            if (href) {
+              document.querySelector(href)?.scrollIntoView({
+                behavior: 'smooth',
+              });
+            }
           });
         });
       });

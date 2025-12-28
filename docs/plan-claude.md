@@ -78,19 +78,16 @@ Create all materials in both Japanese and English to serve both markets effectiv
 ### Primary Revenue Streams (Immediate Focus)
 
 1. **AI Agent Development and Consulting**
-
    - Custom AI assistants for Japanese businesses
    - Integration with Japanese business systems and workflows
    - Japanese language optimization for AI tools
 
 2. **Technical Advisory Services (技術顧問)**
-
    - Recurring monthly contracts with Japanese companies
    - Technology roadmap consulting for Japanese startups
    - AI implementation strategy for traditional businesses
 
 3. **Software/App Development**
-
    - Custom applications with Japanese localization
    - Mobile apps tailored for Japanese market
    - SaaS solutions addressing Japanese business needs
@@ -103,7 +100,6 @@ Create all materials in both Japanese and English to serve both markets effectiv
 ### Secondary Services (Longer-term)
 
 1. **AI Training and Workshops**
-
    - Corporate training programs on AI implementation
    - Technical workshops for Japanese developers
 
@@ -116,13 +112,11 @@ Create all materials in both Japanese and English to serve both markets effectiv
 ### Trust Building
 
 1. **Team Presentation**:
-
    - Create profiles for multiple team members/advisors on website
    - Use "we" instead of "I" in all communications
    - Consider bringing on Japanese advisors or partners
 
 2. **Credentials Emphasis**:
-
    - Highlight the US parent company's international experience
    - Showcase existing portfolio and case studies
    - Obtain testimonials from both international and Japanese clients
@@ -135,13 +129,11 @@ Create all materials in both Japanese and English to serve both markets effectiv
 ### Client Acquisition Channels
 
 1. **Business Partnerships**:
-
    - Partner with complementary service providers
    - Develop referral relationships with business consultants
    - Consider partnerships with Japanese IT companies
 
 2. **Online Presence**:
-
    - Japanese SEO optimization
    - Content marketing in Japanese
    - Case studies in Japanese business contexts
@@ -156,7 +148,6 @@ Create all materials in both Japanese and English to serve both markets effectiv
 ### Banking Setup
 
 1. **Business Banking**:
-
    - Open a Japanese business bank account
    - Set up international transfer capabilities
    - Consider multiple currency accounts
@@ -168,12 +159,10 @@ Create all materials in both Japanese and English to serve both markets effectiv
 ### Tax Considerations
 
 1. **Consumption Tax (消費税)**:
-
    - Register for consumption tax if expected revenue exceeds 10 million yen
    - Understand filing requirements
 
 2. **Corporate Tax**:
-
    - Understand corporation tax obligations
    - Consider the tax implications of fund transfers between US and Japanese entities
 

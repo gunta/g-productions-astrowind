@@ -86,6 +86,7 @@ export default defineConfig({
       },
     },
 
-    plugins: [tailwindcss()],
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    plugins: [tailwindcss() as any],
   },
 });

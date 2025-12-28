@@ -38,7 +38,6 @@ Registering a 合同会社 (GK) is generally simpler and less expensive than a �
 
 - **Entity Type:** 合同会社 (Godo Kaisha - GK)
 - **Key Requirements (Consult a Professional!):**
-
   - **Company Name (商号):** G Productions Japan 合同会社 (or chosen name)
   - **Registered Office Address (本店所在地):** A physical address in Japan.
   - **Members (社員):** Names and addresses of all members (investors).
